@@ -80,8 +80,7 @@
                 </a>
             </li>
         </ul>
-    </div>
-    <div class="btn-group" role="group">
+        <div class="btn-group" role="group">
             <button type="button" data-class="fixed-left" class="btn btn-primary">
                 <i class="fa fa-arrow-left"></i>
                 Fixed Left
@@ -96,6 +95,7 @@
                 Fixed Right
             </button>
         </div>
+    </div>
 </nav>
 
     <form onsubmit="return false;">
