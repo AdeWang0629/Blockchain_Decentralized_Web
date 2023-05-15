@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HTML Encryption using CryptoJS</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <title>Decentrealized Web - A More Secure, Private, and Free Anonymous Internet</title>
+        <link rel="icon" type="image/png" href="favicon.png">
+        <meta name="description" content="Create and manage your own decentrealized website with ease using our Web-3 powered CMS. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
+        <meta name="keywords" content="decentrealized web, web3, internet freedom, online privacy, anonymous internet">
+    <script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
     <style>
     </style>
 </head>
@@ -23,9 +26,9 @@
 
         // Update the URL with the encrypted HTML using the pushState method
         if (history.pushState) {
-         //   var path = "/site/" + encodeURIComponent(encrypted);
-        //    window.history.pushState({path: path}, '', path);
-        //    var url = window.location.origin + path;
+            var path = "/site/" + encodeURIComponent(encrypted);
+            window.history.pushState({path: path}, '', path);
+            var url = window.location.origin + path;
             // Displaying encrypted URL to user
             document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
         }
@@ -87,4 +90,5 @@
     }
 </script>
 <div id="encrypted-url"></div>
-</body> </html>
+</body>
+</html>
