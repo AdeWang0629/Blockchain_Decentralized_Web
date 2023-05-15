@@ -54,8 +54,8 @@
     document.getElementById('decrypted-html').appendChild(div);
 
     // Hide the form fields
-    document.getElementById('html-code').style.display = 'none';
-    document.querySelector('form button:first-of-type').style.display = 'none';
+    document.getElementById('html-code').style.display = 'block';
+    document.querySelector('form button:first-of-type').style.display = 'block';
     document.querySelector('form button:last-of-type').style.display = 'inline-block';
 }
 
@@ -67,7 +67,11 @@ function decrypt() {
         var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
         document.getElementById('decrypted-html').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
 
-       
+        // Hide the form fields
+        document.getElementById('html-code').style.display = 'block';
+        document.querySelector('form button:first-of-type').style.display = 'block';
+        document.querySelector('form button:last-of-type').style.display = 'block';
+    } else {
         // Show the form fields
         document.getElementById('html-code').style.display = 'block';
         document.querySelector('form button:first-of-type').style.display = 'inline-block';
