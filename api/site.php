@@ -1,3 +1,10 @@
+<?php
+$encrypted = '';
+if (isset($_SERVER['PATH_INFO'])) {
+    $encrypted = substr($_SERVER['PATH_INFO'], 1);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,21 +22,21 @@
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
     <div id="encrypted-html"></div>
-<div id="decrypted-html"></div>
-<script>
-    function encrypt() {
-        var htmlCode = document.getElementById('html-code').value;
-        var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
+    <div id="decrypted-html"></div>
+    <script>
+        function encrypt() {
+            var htmlCode = document.getElementById('html-code').value;
+            var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
 
-        // Update the URL with the encrypted HTML using the pushState method
-        if (history.pushState) {
-            var path = "/site/" + encodeURIComponent(encrypted);
-            window.history.pushState({path: path}, '', path);
-            var url = window.location.origin + path;
-            // Displaying encrypted URL to user
+            // Update the URL with the encrypted HTML using the pushState method
+            if (history.pushState) {
+                var path = "/site/" + encodeURIComponent(encrypted);
+                window.history.pushState({path: path}, '', path);
+                var url = window.location.origin + path;
+            // Displaying encrypted URL to the user
             document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
         }
-        
+
         // Clear existing HTML from decrypted-html div
         document.getElementById('decrypted-html').innerHTML = '';
 
@@ -45,46 +52,21 @@
     }
 
     function decrypt() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var encryptedHtml = urlParams.get('encrypted-html');
-            if (encryptedHtml) {
-        var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
+        <?php if ($encrypted) { ?>
+        // Decrypt the encrypted HTML code and write it to the decrypted-html div
+        var decrypted = CryptoJS.AES.decrypt(de        codeURI('<?php echo $encrypted ?>')), "SecretKey123");
         document.getElementById('decrypted-html').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
-    }
-}
-
-function copyURL() {
-    var encryptedURL = document.getElementById('encrypted-url').getElementsByTagName('pre')[0].textContent;
-    navigator.clipboard.writeText(encryptedURL);
-    alert('URL copied to clipboard!');
-}
-
-// Call the decrypt function on page load
-if (window.location.pathname.startsWith('/site/') && window.location.pathname.slice(6)) {
-    var encrypted = decodeURIComponent(window.location.pathname.slice(6));
-    var encryptedHtml = { 'encrypted-html': encrypted };
-
-    // Update the URL with the encrypted HTML using the pushState method
-    if (history.pushState) {
-        window.history.replaceState({}, '', '/site/' + encodeURIComponent(encrypted));
+        <?php } ?>
     }
 
-    // Displaying encrypted URL touser
-    var url = window.location.origin + window.location.pathname;
-    document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
+    function copyURL() {
+        var encryptedURL = document.getElementById('encrypted-url').getElementsByTagName('pre')[0].textContent;
+        navigator.clipboard.writeText(encryptedURL);
+        alert('URL copied to clipboard!');
+    }
 
-    // Decrypt and display the HTML code
-    var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "SecretKey123");
-    document.getElementById('decrypted-html').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
-
-    // Hide the form fields
-    document.getElementById('html-code').style.display = 'none';
-    document.querySelector('form button:first-of-type').style.display = 'none';
-    document.querySelector('form button:last-of-type').style.display = 'inline-block';
-} else {
-    document.querySelector('form button:first-of-type').style.display = 'inline-block';
-}
+    // Call the decrypt function on page load
+    decrypt();
 </script>
 <div id="encrypted-url"></div>
-</body>
-</html>
+</body> </html>
