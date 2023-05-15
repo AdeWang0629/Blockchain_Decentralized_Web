@@ -63,9 +63,9 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-class="fixed-left">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">
                     <i class="fa fa-arrow-left"></i>
-                    Fixed Left
+                    Settings
                 </a>
             </li>
             <li class="nav-item">
@@ -82,21 +82,6 @@
                 </a>
             </li>
         </ul>
-        <div class="btn-group" role="group">
-            <button type="button" data-class="fixed-left" class="btn btn-primary">
-                <i class="fa fa-arrow-left"></i>
-                Fixed Left
-            </button>
-            <button type="button" data-class="fixed-top" class="btn btn-primary">
-                <i class="fa fa-arrow-up"></i>
-                Fixed Top
-                <small>(original)</small>
-            </button>
-            <button type="button" data-class="fixed-right" class="btn btn-primary">
-                <i class="fa fa-arrow-right"></i>
-                Fixed Right
-            </button>
-        </div>
     </div>
 </nav>
 
@@ -183,7 +168,22 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        
+        <div class="btn-group" role="group">
+            <button type="button" data-class="fixed-left" class="btn btn-primary">
+                <i class="fa fa-arrow-left"></i>
+                Fixed Left
+            </button>
+            <button type="button" data-class="fixed-top" class="btn btn-primary">
+                <i class="fa fa-arrow-up"></i>
+                Fixed Top
+                <small>(original)</small>
+            </button>
+            <button type="button" data-class="fixed-right" class="btn btn-primary">
+                <i class="fa fa-arrow-right"></i>
+                Fixed Right
+            </button>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
