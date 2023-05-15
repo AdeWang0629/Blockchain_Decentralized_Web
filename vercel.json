@@ -2,12 +2,16 @@
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.3.3"
+    },
+    "api/site.php": {
+      "runtime": "vercel-php@0.3.3"
     }
   },
   "routes": [
-    { "src": "/(css|js)/(.*)", "dest": "public/$1/$2" },
-    { "src": "/(.*)", "dest": "/api/index.php" }
-  ],
-  "outputDirectory": "public",
-  "public": true
+    { "src": "/(css|js)/(.)", "dest": "public/$1/$2" },
+{ "src": "/site/(.)", "dest": "/api/site.php" },
+{ "src": "/(.*)", "dest": "/api/index.php" }
+],
+"outputDirectory": "public",
+"public": true
 }
