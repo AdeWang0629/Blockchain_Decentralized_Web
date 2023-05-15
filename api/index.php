@@ -41,13 +41,6 @@
   div.innerHTML = htmlCode;
   document.getElementById("decrypted-html").appendChild(div);
 
-  // Hide the form fields
-  document.getElementById("html-code").style.display = "none";
-  document.querySelector("form button:first-of-type").style.display = "none";
-  document.querySelector("form button:last-of-type").style.display = "inline-block";
-
-  
-
   // Prevent the page from reloading
   return false;
 }
