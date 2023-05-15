@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="decrypted-html">
+<html>
 <head>
 	<title>HTML Encryption using CryptoJS</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
