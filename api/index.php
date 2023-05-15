@@ -68,19 +68,6 @@
                     Settings
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-class="fixed-top">
-                    <i class="fa fa-arrow-up"></i>
-                    Fixed Top
-                    <small>(original)</small>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-class="fixed-right">
-                    <i class="fa fa-arrow-right"></i>
-                    Fixed Right
-                </a>
-            </li>
         </ul>
     </div>
 </nav>
@@ -117,35 +104,7 @@
         </p>
         <p>Same as when using <code>.fixed-top</code> for navbar - add class <code>.fixed-left</code> or <code>.fixed-right</code>
             where needed.</p>
-        <p>Click buttons below, and appropriate class will be added to example navbar.</p>
-        <div class="btn-group" role="group">
-            <button type="button" data-class="fixed-left" class="btn btn-primary">
-                <i class="fa fa-arrow-left"></i>
-                Fixed Left
-            </button>
-            <button type="button" data-class="fixed-top" class="btn btn-primary">
-                <i class="fa fa-arrow-up"></i>
-                Fixed Top
-                <small>(original)</small>
-            </button>
-            <button type="button" data-class="fixed-right" class="btn btn-primary">
-                <i class="fa fa-arrow-right"></i>
-                Fixed Right
-            </button>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label>
-                    Select another bootstrap theme from
-                    <a href="https://bootswatch.com/" target="_blank">Bootswatch</a>
-                </label>
-                <select class="form-control width-md" id="theme_select" onchange="selectTheme(value)"></select>
-            </div>
-        </div>
-    </div>
+        <p>Click buttons below, and appropriate class will be added to example navbar.</p>  
 
     <footer>
         Repository maintained by <a href="https://github.com/mladenplavsic">mladenplavsic</a>
@@ -184,6 +143,17 @@
                 Fixed Right
             </button>
         </div>
+        <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label>
+                    Select another bootstrap theme from
+                    <a href="https://bootswatch.com/" target="_blank">Bootswatch</a>
+                </label>
+                <select class="form-control width-md" id="theme_select" onchange="selectTheme(value)"></select>
+            </div>
+        </div>
+    </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
