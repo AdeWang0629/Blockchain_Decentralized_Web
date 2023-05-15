@@ -21,7 +21,14 @@
         var htmlCode = document.getElementById('html-code').value;
         var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
 
-       
+        // Update the URL with the encrypted HTML using the pushState method
+        if (history.pushState) {
+         //   var path = "/site/" + encodeURIComponent(encrypted);
+        //    window.history.pushState({path: path}, '', path);
+        //    var url = window.location.origin + path;
+            // Displaying encrypted URL to user
+            document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
+        }
         
         // Clear existing HTML from decrypted-html div
         document.getElementById('decrypted-html').innerHTML = '';
