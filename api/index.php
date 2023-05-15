@@ -13,10 +13,10 @@
           id="theme_link"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-right.min.css">
-      <link href="http://getbootstrap.com/4.3.1/assets/css/bootstrap.css" rel="stylesheet" />
+      <link href="https://getbootstrap.com/4.3.1/assets/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-left.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/docs.css">
-    <link href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/jschr/bootstrap-modal@master/css/bootstrap-modal.css" rel="stylesheet" />
     <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
