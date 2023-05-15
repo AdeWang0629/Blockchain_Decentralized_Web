@@ -6,11 +6,24 @@
         <meta name="description" content="Create and manage your own decentrealized website with ease using our Web-3 powered CMS. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
         <meta name="keywords" content="decentrealized web, web3, internet freedom, online privacy, anonymous internet">
     <script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>  
+    <script>  
+      tinymce.init({  
+        selector: '#html-code'  
+      });  
+    </script>  
     <style>
     </style>
 </head>
 <body>
-    <h1>HTML Encryption using CryptoJS</h1>
+<div class="h-screen grid grid-cols-3 divide-x">
+    <div class="col-span-2 h-screen flex flex-col bg-slate-100">
+        <div class="flex-1 overflow-y-auto p-8">
+        Decentrealized Web
+        </div>
+    </div>
+</div>
+
     <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
         <textarea id="html-code" name="html-code" rows="10" cols="50"></textarea><br><br>
