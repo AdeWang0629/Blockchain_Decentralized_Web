@@ -1,3 +1,4 @@
+<!-- La Ilaha Illallah Mohammadur Rasulullah -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,23 +7,79 @@
         <meta name="description" content="Create and manage your own decentrealized website with ease using our Web-3 powered CMS. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
         <meta name="keywords" content="decentrealized web, web3, internet freedom, online privacy, anonymous internet">
     <script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>  
-    <script>  
-      tinymce.init({  
-        selector: '#html-codee'  
-      });  
-    </script>  
+    <link rel="stylesheet"
+          id="theme_link"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-right.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-left.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/docs.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/docs.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <style>
     </style>
 </head>
 <body>
-<div class="h-screen grid grid-cols-3 divide-x">
-    <div class="col-span-2 h-screen flex flex-col bg-slate-100">
-        <div class="flex-1 overflow-y-auto p-8">
-        Decentrealized Web
-        </div>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+    <a class="navbar-brand" href>Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item">Action</a>
+                    <a class="dropdown-item">Another action</a>
+                    <a class="dropdown-item">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Separated link</a>
+                    <a class="dropdown-item">One more separated link</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-class="fixed-left">
+                    <i class="fa fa-arrow-left"></i>
+                    Fixed Left
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-class="fixed-top">
+                    <i class="fa fa-arrow-up"></i>
+                    Fixed Top
+                    <small>(original)</small>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-class="fixed-right">
+                    <i class="fa fa-arrow-right"></i>
+                    Fixed Right
+                </a>
+            </li>
+        </ul>
     </div>
-</div>
+</nav>
 
     <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
@@ -32,6 +89,65 @@
     </form>
     <div id="encrypted-html"></div>
 <div id="decrypted-html"></div>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">
+            Bootstrap Navbar Sidebar
+            <br>
+            <small>Fixed to Left or Right</small>
+        </h1>
+        <p>
+            <strong>
+                Use classic Bootstrap navbar as sidebar, on left or right side.
+            </strong>
+        </p>
+        <p>
+            <a class="github-button" href="https://github.com/mladenplavsic/bootstrap-navbar-sidebar"
+               data-icon="octicon-star" data-show-count="true"
+               aria-label="Star mladenplavsic/bootstrap-navbar-sidebar on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/mladenplavsic/bootstrap-navbar-sidebar/fork"
+               data-icon="octicon-repo-forked" data-show-count="true"
+               aria-label="Fork mladenplavsic/bootstrap-navbar-sidebar on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/mladenplavsic"
+               aria-label="Follow @mladenplavsic on GitHub">Follow @mladenplavsic</a>
+        </p>
+        <p>Same as when using <code>.fixed-top</code> for navbar - add class <code>.fixed-left</code> or <code>.fixed-right</code>
+            where needed.</p>
+        <p>Click buttons below, and appropriate class will be added to example navbar.</p>
+        <div class="btn-group" role="group">
+            <button type="button" data-class="fixed-left" class="btn btn-primary">
+                <i class="fa fa-arrow-left"></i>
+                Fixed Left
+            </button>
+            <button type="button" data-class="fixed-top" class="btn btn-primary">
+                <i class="fa fa-arrow-up"></i>
+                Fixed Top
+                <small>(original)</small>
+            </button>
+            <button type="button" data-class="fixed-right" class="btn btn-primary">
+                <i class="fa fa-arrow-right"></i>
+                Fixed Right
+            </button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label>
+                    Select another bootstrap theme from
+                    <a href="https://bootswatch.com/" target="_blank">Bootswatch</a>
+                </label>
+                <select class="form-control width-md" id="theme_select" onchange="selectTheme(value)"></select>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Repository maintained by <a href="https://github.com/mladenplavsic">mladenplavsic</a>
+    </footer>
+
+</div>
 <script>
     function encrypt() {
         var htmlCode = document.getElementById('html-code').value;
