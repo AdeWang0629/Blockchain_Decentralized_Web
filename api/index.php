@@ -34,73 +34,59 @@
 <div id="decrypted-html"></div>
 <script>
     function encrypt() {
-        var htmlCode = document.getElementById('html-code').value;
-        var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
+    var htmlCode = document.getElementById('html-code').value;
+    var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
 
-        // Update the URL with the encrypted HTML using the pushState method
-        if (history.pushState) {
-            var path = "/site/" + encodeURIComponent(encrypted);
-            window.history.pushState({path: path}, '', path);
-            var url = window.location.origin + path;
-            // Displaying encrypted URL to user
-            document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
-        }
-        
-        // Clear existing HTML from decrypted-html div
-        document.getElementById('decrypted-html').innerHTML = '';
+    // Generating URL with querystring containing the encrypted data
+    var urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('encrypted-html', encrypted);
+    var url = window.location.origin + window.location.pathname + '?' + urlParams.toString();
 
-        // Append a div element to the decrypted-html div
-        var div = document.createElement('div');
-        div.innerHTML = htmlCode;
-        document.getElementById('decrypted-html').appendChild(div);
+    // Displaying encrypted URL to user
+    document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
 
-        // Hide the form fields
-        document.getElementById('html-code').style.display = 'none';
-        document.querySelector('form button:first-of-type').style.display = 'none';
-        document.querySelector('form button:last-of-type').style.display = 'inline-block';
-    }
+    // Clear existing HTML from decrypted-html div
+    document.getElementById('decrypted-html').innerHTML = '';
 
-    function decrypt() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var encryptedHtml = urlParams.get('encrypted-html');
+    // Append a div element to the decrypted-html div
+    var div = document.createElement('div');
+    div.innerHTML = htmlCode;
+    document.getElementById('decrypted-html').appendChild(div);
 
-        if (encryptedHtml) {
-            var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
-            document.getElementById('decrypted-html').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
-        }
-    }
+    // Hide the form fields
+    document.getElementById('html-code').style.display = 'none';
+    document.querySelector('form button:first-of-type').style.display = 'none';
+    document.querySelector('form button:last-of-type').style.display = 'inline-block';
+}
 
-    function copyURL() {
-        var encryptedURL = document.getElementById('encrypted-url').getElementsByTagName('pre')[0].textContent;
-        navigator.clipboard.writeText(encryptedURL);
-        alert('URL copied to clipboard!');
-    }
+function decrypt() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var encryptedHtml = urlParams.get('encrypted-html');
 
-    // Call the decrypt function on page load
-    if (window.location.pathname.startsWith('/site/') && window.location.pathname.slice(6)) {
-        var encrypted = decodeURIComponent(window.location.pathname.slice(6));
-        var encryptedHtml = { 'encrypted-html': encrypted };
-
-        // Update the URL with the encrypted HTML using the pushState method
-        if (history.pushState) {
-            window.history.replaceState({}, '', '/site/' + encodeURIComponent(encrypted));
-        }
-
-        // Displaying encrypted URL to user
-        var url = window.location.origin + window.location.pathname;
-        document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
-
-        // Decrypt and display the HTML code
-        var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "SecretKey123");
+    if (encryptedHtml) {
+        var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
         document.getElementById('decrypted-html').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
 
         // Hide the form fields
         document.getElementById('html-code').style.display = 'none';
         document.querySelector('form button:first-of-type').style.display = 'none';
-        document.querySelector('form button:last-of-type').style.display = 'inline-block';
+        document.querySelector('form button:last-of-type').style.display = 'none';
     } else {
+        // Show the form fields
+        document.getElementById('html-code').style.display = 'block';
         document.querySelector('form button:first-of-type').style.display = 'inline-block';
+        document.querySelector('form button:last-of-type').style.display = 'none';
     }
+}
+
+function copyURL() {
+    var encryptedURL = document.getElementById('encrypted-url').getElementsByTagName('pre')[0].textContent;
+    navigator.clipboard.writeText(encryptedURL);
+    alert('URL copied to clipboard!');
+}
+
+// Call the decrypt function on page load
+decrypt();
 </script>
 <div id="encrypted-url"></div>
 </body>
