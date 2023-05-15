@@ -21,36 +21,45 @@
 
 <script>
 	function encrypt() {
-		var htmlCode = document.getElementById('html-code').value;
-		var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
+  var htmlCode = document.getElementById("html-code").value;
+  var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
 
-		// Generating URL with querystring containing the encrypted data
-		var urlParams = new URLSearchParams(window.location.search);
-		urlParams.set('encrypted-html', encrypted);
-		var url = window.location.origin + window.location.pathname + '?' + urlParams.toString();
+  // Generating URL with querystring containing the encrypted data
+  var urlParams = new URLSearchParams("");
+  urlParams.set("encrypted-html", encrypted);
+  var url = window.location.origin + window.location.pathname + "?" + urlParams.toString();
 
-		// Displaying encrypted URL to user
-		document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
+  // Displaying encrypted URL to user
+  document.getElementById("encrypted-url").innerHTML =
+    '<p>Your encrypted URL:</p><pre>' + url + "</pre>";
 
-		// Clear existing HTML from decrypted-html div
-		document.getElementById('decrypted-html').innerHTML = '';
+  // Clear existing HTML from decrypted-html div
+  document.getElementById("decrypted-html").innerHTML = "";
 
-		// Append a div element to the decrypted-html div
-		var div = document.createElement('div');
-		div.innerHTML = htmlCode;
-		document.getElementById('decrypted-html').appendChild(div);
+  // Append a div element to the decrypted-html div
+  var div = document.createElement("div");
+  div.innerHTML = htmlCode;
+  document.getElementById("decrypted-html").appendChild(div);
 
-		// Hide the form fields
-			document.getElementById('html-code').style.display = 'none';
-	document.querySelector('form button:first-of-type').style.display = 'none';
-	document.querySelector('form button:last-of-type').style.display = 'inline-block';
+  // Hide the form fields
+  document.getElementById("html-code").style.display = "none";
+  document.querySelector("form button:first-of-type").style.display = "none";
+  document.querySelector("form button:last-of-type").style.display = "inline-block";
 
-	// Update the URL with the encrypted HTML using the pushState method
-	if (history.pushState) {
-		var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?encrypted-html=' + encodeURIComponent(encrypted);
-		window.history.pushState({path: newUrl}, '', newUrl);
-	}
+  // Update the URL with the encrypted HTML using the pushState method
+  if (history.pushState) {
+    var newUrl =
+      window.location.origin +
+      window.location.pathname +
+      "?encrypted-html=" +
+      encodeURIComponent(encrypted);
+    window.history.pushState({ path: newUrl }, "", newUrl);
+  }
+
+  // Prevent the page from reloading
+  return false;
 }
+
 
 function decrypt() {
 	var urlParams = new URLSearchParams(window.location.search);
