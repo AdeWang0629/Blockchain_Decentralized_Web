@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-right.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-left.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/docs.css">
+    <link href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/jschr/bootstrap-modal@master/css/bootstrap-modal.css" rel="stylesheet" />
     <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
@@ -165,6 +167,28 @@
     </footer>
 
 </div>
+<div class="full-width" style="position: relative; overflow: hidden">
+  				  <h3>Full Width</h3>
+  				  <pre class="pre-scrollable prettyprint linenums" data-source="#full-width">
+  				  </pre>
+  				  <div class="text-center">
+  					<button class="demo btn btn-primary btn-large" data-toggle="modal" href="#full-width">View Demo</button>
+  				  </div>
+  				</div>
+<div id="full-width" class="modal container hide fade" tabindex="-1">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Full Width</h3>
+  </div>
+  <div class="modal-body">
+    <p>This modal will resize itself to the same dimensions as the container class.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin ipsum ac ante fermentum suscipit. In ac augue non purus accumsan lobortis id sed nibh. Nunc egestas hendrerit ipsum, et porttitor augue volutpat non. Aliquam erat volutpat. Vestibulum scelerisque lobortis pulvinar. Aenean hendrerit risus neque, eget tincidunt leo. Vestibulum est tortor, commodo nec cursus nec, vestibulum vel nibh. Morbi elit magna, ornare placerat euismod semper, dignissim vel odio. Phasellus elementum quam eu ipsum euismod pretium.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" data-dismiss="modal" class="btn">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+</div>
 <script>
     function encrypt() {
         var htmlCode = document.getElementById('html-code').value;
@@ -235,6 +259,35 @@
         document.querySelector('form button:first-of-type').style.display = 'inline-block';
     }
 </script>
+<script type="text/javascript">
+
+  $(function(){
+
+    $.fn.modalmanager.defaults.resize = true;
+
+    $('[data-source]').each(function(){
+      var $this = $(this),
+        $source = $($this.data('source'));
+
+      var text = [];
+      $source.each(function(){
+        var $s = $(this);
+        if ($s.attr('type') == 'text/javascript'){
+          text.push($s.html().replace(/(\n)*/, ''));
+        } else {
+          text.push($s.clone().wrap('<div>').parent().html());
+        }
+      });
+      
+      $this.text(text.join('\n\n').replace(/\t/g, '    '));
+    });
+
+    prettyPrint();
+  });
+</script>
 <div id="encrypted-url"></div>
+<script type="text/javascript" src="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jschr/bootstrap-modal@master/js/bootstrap-modalmanager.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/jschr/bootstrap-modal@master/js/bootstrap-modal.js"></script>
 </body>
 </html>
