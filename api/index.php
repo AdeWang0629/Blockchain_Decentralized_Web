@@ -51,7 +51,7 @@
     var newUrl =
       window.location.origin +
       window.location.pathname +
-      "?encrypted-html=" +
+      "site.html?encrypted-html=" +
       encodeURIComponent(encrypted);
     window.history.pushState({ path: newUrl }, "", newUrl);
   }
