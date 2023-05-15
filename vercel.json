@@ -8,10 +8,10 @@
     }
   },
   "routes": [
-    { "src": "/(css|js)/(.)", "dest": "public/$1/$2" },
-{ "src": "/site/(.)", "dest": "/api/site.php" },
-{ "src": "/(.*)", "dest": "/api/index.php" }
-],
-"outputDirectory": "public",
-"public": true
+    { "src": "/(css|js|img)/(.*)", "dest": "public/$1/$2" },
+    { "src": "/site/?(.*)?", "dest": "/api/site.php" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ],
+  "outputDirectory": "public",
+  "public": true
 }
