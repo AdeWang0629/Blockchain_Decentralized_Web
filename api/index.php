@@ -26,7 +26,7 @@
 
   // Generating URL with querystring containing the encrypted data
   var urlParams = new URLSearchParams("");
-  urlParams.set("site/encrypted-html", encrypted);
+  urlParams.set("encrypted-html", encrypted);
   var url = window.location.origin + window.location.pathname + "?" + urlParams.toString();
 
   // Displaying encrypted URL to user
