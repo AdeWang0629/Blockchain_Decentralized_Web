@@ -32,7 +32,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-    <a class="navbar-brand" href>Navbar</a>
+    <a class="navbar-brand" href><img class="h-16 w-auto" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -70,9 +70,9 @@
             </li>
         </ul>
     </div>
-</nav>
-
-    <form onsubmit="return false;">
+</nav>   
+<div class="container">
+ <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
         <textarea id="html-code" name="html-code" rows="10" cols="50"></textarea><br><br>
         <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
@@ -80,41 +80,7 @@
     </form>
     <div id="encrypted-html"></div>
 <div id="decrypted-html"></div>
-<div class="container">
-    <div class="jumbotron">
-        <h1 class="display-4">
-            Bootstrap Navbar Sidebar
-            <br>
-            <small>Fixed to Left or Right</small>
-        </h1>
-        <p>
-            <strong>
-                Use classic Bootstrap navbar as sidebar, on left or right side.
-            </strong>
-        </p>
-        <p>
-            <a class="github-button" href="https://github.com/mladenplavsic/bootstrap-navbar-sidebar"
-               data-icon="octicon-star" data-show-count="true"
-               aria-label="Star mladenplavsic/bootstrap-navbar-sidebar on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/mladenplavsic/bootstrap-navbar-sidebar/fork"
-               data-icon="octicon-repo-forked" data-show-count="true"
-               aria-label="Fork mladenplavsic/bootstrap-navbar-sidebar on GitHub">Fork</a>
-            <a class="github-button" href="https://github.com/mladenplavsic"
-               aria-label="Follow @mladenplavsic on GitHub">Follow @mladenplavsic</a>
-        </p>
-        <p>Same as when using <code>.fixed-top</code> for navbar - add class <code>.fixed-left</code> or <code>.fixed-right</code>
-            where needed.</p>
-        <p>Click buttons below, and appropriate class will be added to example navbar.</p>  
-
-    <footer>
-        Repository maintained by <a href="https://github.com/mladenplavsic">mladenplavsic</a>
-    </footer>
-
 </div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
