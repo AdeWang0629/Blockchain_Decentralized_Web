@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Encrypted HTML</h1>
+    <h2>No form</h2>
     <div id="decrypted-html"></div>
 
     <script>
