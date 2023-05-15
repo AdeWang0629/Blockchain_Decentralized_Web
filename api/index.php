@@ -81,6 +81,21 @@
             </li>
         </ul>
     </div>
+    <div class="btn-group" role="group">
+            <button type="button" data-class="fixed-left" class="btn btn-primary">
+                <i class="fa fa-arrow-left"></i>
+                Fixed Left
+            </button>
+            <button type="button" data-class="fixed-top" class="btn btn-primary">
+                <i class="fa fa-arrow-up"></i>
+                Fixed Top
+                <small>(original)</small>
+            </button>
+            <button type="button" data-class="fixed-right" class="btn btn-primary">
+                <i class="fa fa-arrow-right"></i>
+                Fixed Right
+            </button>
+        </div>
 </nav>
 
     <form onsubmit="return false;">
