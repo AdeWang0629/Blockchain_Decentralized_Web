@@ -46,14 +46,7 @@
   document.querySelector("form button:first-of-type").style.display = "none";
   document.querySelector("form button:last-of-type").style.display = "inline-block";
 
-  // Update the URL with the encrypted HTML using the pushState method
-  if (history.pushState) {
-    var newUrl =
-      window.location.origin +
-      window.location.pathname +
-      "site.html?encrypted-html=" +
-      encodeURIComponent(encrypted);
-  }
+  
 
   // Prevent the page from reloading
   return false;
