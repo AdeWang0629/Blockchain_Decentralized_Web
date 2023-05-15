@@ -53,7 +53,6 @@
       window.location.pathname +
       "site.html?encrypted-html=" +
       encodeURIComponent(encrypted);
-    window.history.pushState({ path: newUrl }, "", newUrl);
   }
 
   // Prevent the page from reloading
