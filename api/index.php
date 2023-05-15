@@ -13,7 +13,7 @@
           id="theme_link"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-right.min.css">
-      <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet" />
+      <link href="http://getbootstrap.com/4.3.1/assets/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/navbar-fixed-left.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mladenplavsic/bootstrap-navbar-sidebar@master/docs/docs.css">
     <link href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
@@ -260,34 +260,11 @@
     }
 </script>
 <script type="text/javascript">
-
-  $(function(){
-
-    $.fn.modalmanager.defaults.resize = true;
-
-    $('[data-source]').each(function(){
-      var $this = $(this),
-        $source = $($this.data('source'));
-
-      var text = [];
-      $source.each(function(){
-        var $s = $(this);
-        if ($s.attr('type') == 'text/javascript'){
-          text.push($s.html().replace(/(\n)*/, ''));
-        } else {
-          text.push($s.clone().wrap('<div>').parent().html());
-        }
-      });
-      
-      $this.text(text.join('\n\n').replace(/\t/g, '    '));
-    });
-
-    prettyPrint();
-  });
+ $('#modal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
 </script>
 <div id="encrypted-url"></div>
-<script type="text/javascript" src="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.js"></script>
-<script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/jschr/bootstrap-modal@master/js/bootstrap-modalmanager.js"></script>
  <script src="https://cdn.jsdelivr.net/gh/jschr/bootstrap-modal@master/js/bootstrap-modal.js"></script>
 </body>
