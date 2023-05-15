@@ -72,8 +72,13 @@ alert('URL copied to clipboard!');
 }
 // Call the decrypt function on page load
 if (window.location.search.includes('encrypted-html')) {
-	decrypt();
+    decrypt();
 } else {
-	document.querySelector('form button:first-of-type').style.display = 'inline-block';
+    var pathParts = window.location.pathname.split('/');
+    if (pathParts[1] === 'site' && pathParts[2]) {
+        document.querySelector('form button:first-of-type').style.display = 'none';
+    } else {
+        document.querySelector('form button:first-of-type').style.display = 'inline-block';
+    }
 }
 </script> <div id="encrypted-url"></div> <div id="decrypted-html"></div> </body> </html>
