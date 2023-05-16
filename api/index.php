@@ -37,11 +37,14 @@
     padding-left: 1rem;
     padding-right: 1rem;
     };
+    .px-0 {
+    padding: 0rem;
+    };
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top px-4">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top px-4 px-0">
     <a class="navbar-brand" href><img class="h-4rem w-100" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
