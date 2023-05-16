@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html id="man-creator-is-one-he-is-allah">
 <head>
-	<title>HTML Encryption using CryptoJS</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+	<title>Man Creator is One and He is Allah</title>
+	<script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
 	<style>
-	
 	</style>
 </head>
 <body>
-	<h1>HTML Encryption using CryptoJS</h1>
+	<h1>Man Creator is One and He is Allah</h1>
 	<form onsubmit="return false;">
-		<label for="html-code">Enter your HTML code:</label><br>
+		<label for="html-code">Believe that your creator is one:</label><br>
 		<textarea id="html-code" name="html-code" rows="10" cols="50"></textarea><br><br>
-		<button type="button" onclick="encrypt()">Generate Encrypted URL</button>
+		<button type="button" onclick="encrypt()">He is not one eyed</button>
 		<button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
 	</form>
 <div id="encrypted-html"></div>
 <div id="man-creator-is-one-he-is-allah"></div>
-
-
 <script>
 	function encrypt() {
     var htmlCode = document.getElementById('html-code').value;
