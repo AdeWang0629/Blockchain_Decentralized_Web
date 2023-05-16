@@ -23,10 +23,27 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+ <style>
+  .bgray {
+    --tw-bg-opacity: 1;
+    background-color: #f3f4f6;
+    background-color: rgb(243 244 246/var(--tw-bg-opacity));
+}
+  .navbar a{
+    --tw-text-opacity: 1;
+    color: #111827;
+    color: rgb(17 24 39/var(--tw-text-opacity));
+}
+  .bg-white {
+    --tw-bg-opacity: 1;
+    background-color: #fff;
+    background-color: rgb(255 255 255/var(--tw-bg-opacity));
+}
+ </style>
 </head>
 <body>
 
-<nav style="padding:0px !important;padding-left:1rem !important;padding-right:1rem !important;" class="navbar navbar-expand-md navbar-dark bg-primary fixed-top prl-1r">
+<nav style="padding:0px !important;padding-left:1rem !important;padding-right:1rem !important;" class="navbar navbar-expand-md navbar-dark bg-primary fixed-top prl-1r bgray">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +51,7 @@
     </button>
     <a style="display:block;margin:auto;margin-left: 44px !important;" class="navbar-brand" href><img class="h-4rem w-100" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="collapse navbar-collapse bg-white" id="navbarsExampleDefault">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link">Home</a>
