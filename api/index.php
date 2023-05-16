@@ -26,7 +26,7 @@
 </head>
 <body>
 
-<nav style="padding:0px !important;padding-left:1rem;padding-right:1rem;" class="navbar navbar-expand-md navbar-dark bg-primary fixed-top prl-1r">
+<nav style="padding:0px !important;padding-left:1rem !important;padding-right:1rem !important;" class="navbar navbar-expand-md navbar-dark bg-primary fixed-top prl-1r">
     <a class="navbar-brand" href><img class="h-4rem w-100" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
