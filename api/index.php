@@ -40,6 +40,9 @@
     .px-0 {
     padding: 0rem !important;
     };
+    .navbar {
+    padding: 0 !important;
+    };
     </style>
 </head>
 <body>
