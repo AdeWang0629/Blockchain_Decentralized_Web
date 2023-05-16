@@ -41,8 +41,20 @@
     padding: 0rem !important;
     };
     .navbar {
-    padding: 0 !important;
-    };
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0rem 0rem;
+    }
     </style>
 </head>
 <body>
