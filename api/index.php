@@ -27,17 +27,17 @@
   .bgray {
     --tw-bg-opacity: 1;
     background-color: #f3f4f6;
-    background-color: rgb(243 244 246/var(--tw-bg-opacity));
+    background-color: rgb(243 244 246/var(--tw-bg-opacity)) !important;
 }
   .navbar a{
     --tw-text-opacity: 1;
-    color: #111827;
-    color: rgb(17 24 39/var(--tw-text-opacity));
+    color: #111827 !important;
+    color: rgb(17 24 39/var(--tw-text-opacity)) !important;
 }
   .bg-white {
     --tw-bg-opacity: 1;
-    background-color: #fff;
-    background-color: rgb(255 255 255/var(--tw-bg-opacity));
+    background-color: #fff !important;
+    background-color: rgb(255 255 255/var(--tw-bg-opacity)) !important;
 }
  </style>
 </head>
