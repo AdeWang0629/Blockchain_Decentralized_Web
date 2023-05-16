@@ -38,7 +38,7 @@
     padding-right: 1rem;
     };
     .px-0 {
-    padding: 0rem;
+    padding: 0rem !important;
     };
     </style>
 </head>
