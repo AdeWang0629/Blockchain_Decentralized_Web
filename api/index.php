@@ -33,33 +33,18 @@
     .w-100 {
     width:100%;
     };
-    .px-4 {
+    .prl-1r {
     padding-left: 1rem;
     padding-right: 1rem;
     };
-    .px-0 {
-    padding: 0rem !important;
-    };
-    .navbar {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 0rem 0rem;
-    }
+    nav.navbar.navbar-expand-md.navbar-dark.bg-primary.px-4.px-0.fixed-left {
+    padding: 0;
+    };    
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top px-4 px-0">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top prl-1r">
     <a class="navbar-brand" href><img class="h-4rem w-100" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
