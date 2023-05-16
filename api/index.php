@@ -52,7 +52,7 @@
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a style="margin:auto;" class="navbar-brand" href><img class="h-4rem w-100" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
+    <a style="margin-right:4rem;" class="navbar-brand" href><img class="h-4rem w-100" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
 
     <div class="collapse navbar-collapse bg-white" id="navbarsExampleDefault">
         <ul class="navbar-nav">
@@ -147,7 +147,7 @@
 <script>
     function encrypt() {
         var htmlCode = document.getElementById('html-code').value;
-        var encrypted = CryptoJS.AES.encrypt(htmlCode, "SecretKey123");
+        var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
 
         // Update the URL with the encrypted HTML using the pushState method
         if (history.pushState) {
