@@ -95,7 +95,7 @@
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
     <div id="encrypted-html"></div>
-<div id="decrypted-html"></div>
+<div id="man-creator-is-one-he-is-allah"></div>
 </div>
 
 <!-- Modal -->
@@ -159,12 +159,12 @@
         }
         
         // Clear existing HTML from decrypted-html div
-        document.getElementById('decrypted-html').innerHTML = '';
+        document.getElementById('man-creator-is-one-he-is-allah').innerHTML = '';
 
         // Append a div element to the decrypted-html div
         var div = document.createElement('div');
         div.innerHTML = htmlCode;
-        document.getElementById('decrypted-html').appendChild(div);
+        document.getElementById('man-creator-is-one-he-is-allah').appendChild(div);
 
         // Hide the form fields
         document.getElementById('html-code').style.display = 'block';
@@ -178,7 +178,7 @@
 
         if (encryptedHtml) {
             var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
-            document.getElementById('decrypted-html').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+            document.getElementById('man-creator-is-one-he-is-allah').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
         }
     }
 
@@ -204,7 +204,7 @@
 
         // Decrypt and display the HTML code
         var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "SecretKey123");
-        document.getElementById('decrypted-html').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+        document.getElementById('man-creator-is-one-he-is-allah').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
 
         // Hide the form fields
         document.getElementById('html-code').style.display = 'block';

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="decrypted-html">
+<html id="man-creator-is-one-he-is-allah">
 <head>
 	<title>HTML Encryption using CryptoJS</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -16,7 +16,7 @@
 		<button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
 	</form>
 <div id="encrypted-html"></div>
-<div id="decrypted-html"></div>
+<div id="man-creator-is-one-he-is-allah"></div>
 
 
 <script>
@@ -29,12 +29,12 @@
     document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
 
     // Clear existing HTML from decrypted-html div
-    document.getElementById('decrypted-html').innerHTML = '';
+    document.getElementById('man-creator-is-one-he-is-allah').innerHTML = '';
 
     // Append a div element to the decrypted-html div
     var div = document.createElement('div');
     div.innerHTML = htmlCode;
-    document.getElementById('decrypted-html').appendChild(div);
+    document.getElementById('man-creator-is-one-he-is-allah').appendChild(div);
 
     // Hide the form fields
     document.getElementById('html-code').style.display = 'none';
@@ -56,7 +56,7 @@ function decrypt() {
         var encryptedHtml = decodeURIComponent(pathParts[2]);
         var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
         var html = decrypted.toString(CryptoJS.enc.Utf8);
-        document.getElementById('decrypted-html').innerHTML = html;
+        document.getElementById('man-creator-is-one-he-is-allah').innerHTML = html;
 
         // Hide the form fields
         document.getElementById('html-code').style.display = 'none';
@@ -88,4 +88,4 @@ if (pathParts[1] === 'site' && pathParts[2]) {
 } else {
     document.querySelector('form button:first-of-type').style.display = 'inline-block';
 }
-</script> <div id="encrypted-url"></div> <div id="decrypted-html"></div> </body> </html>
+</script> <div id="encrypted-url"></div> <div id="man-creator-is-one-he-is-allah"></div> </body> </html>
