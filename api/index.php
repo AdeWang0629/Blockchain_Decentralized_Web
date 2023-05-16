@@ -39,6 +39,10 @@
     background-color: #fff !important;
     background-color: rgb(255 255 255/var(--tw-bg-opacity)) !important;
 }
+  .navbar-toggler-icon {
+background-image: url('data
+/svg+xml;utf8,<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path stroke="black" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>') !important;
+}
  </style>
 </head>
 <body>
