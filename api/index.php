@@ -267,8 +267,16 @@ for (var i = 0; i < headings.length; i++) {
   headingsDropdownContent.append(option);
 }
 
-// Show headings dropdown
-headingsDropdown.show();
+// Hide dropdown if no headings are found
+if (headingsDropdownContent.children().length > 0) {
+  headingsDropdown.show();
+} else {
+  headingsDropdown.hide();
+}
+
+// Show dropdown
+headingsDropdown.toggleClass('show', true);
+
 
 
         // Highlight selected text
@@ -302,14 +310,15 @@ headingsDropdown.show();
   var end = textarea[0].selectionEnd;
   var text = textarea.val();
   
-  // Only return selected text if selection length is greater than 0
-  if (end - start > 0) {
+  // Only return selected text if selection length is greater than 0 and selection range is valid
+  if (end - start > 0 && start >= 0 && end <= text.length) {
     var selectedText = text.slice(start, end);
     return selectedText;
   }
 
   return '';
 }
+
 
 
 });
