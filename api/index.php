@@ -57,7 +57,7 @@
       left: 0;
       background-color: #f9f9f9;
       min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
     }
     .dropdown:hover .dropdown-content {
@@ -74,6 +74,9 @@
     }
     .selected-text {
       background-color: #ffff00;
+    }
+    .image-form input {
+      margin-bottom: 10px;
     }
  </style>
 </head>
@@ -123,20 +126,8 @@
 <div class="container">
  <form onsubmit="return false;">
         <label for="html-code">Content:</label><br>
-        <div class="dropdown-content">
-      <a href="#" data-tag="h1">H1</a>
-      <a href="#" data-tag="h2">H2</a>
-      <a href="#" data-tag="h3">H3</a>
-      <a href="#" data-tag="h4">H4</a>
-      <a href="#" data-tag="h5">H5</a>
-      <a href="#" data-tag="h6">H6</a>
-    </div>
-  </div>
-  <button data-tag="a">Link</button>
-  <button data-tag="b">Bold</button>
-        <textarea id="html-code" name="html-code"></textarea>
-        <div class="dropdown" id="headings-dropdown">
-    <button class="dropbtn">Headings</button> <br><br>
+       <div class="dropdown" id="headings-dropdown"> <button class="dropbtn">Headings</button> <div class="dropdown-content"></div> </div> <button data-tag="a">Link</button> <button data-tag="b">Bold</button> <button data-tag="i">Italic</button> <button data-tag="u">Underline</button> <button data-tag="img">Image</button> <button data-tag="meta">Meta</button> <div class="modal fade" tabindex="-1" role="dialog" id="meta-modal"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Meta Head Fields</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"> <form id="meta-form" class="image-form"> <div class="form-group"> <label for="title-input">Title:</label> <input type="text" class="form-control" id="title-input" name="title"> </div> <div class="form-group"> <label for="description-input">Description:</label> <input type="text" class="form-control" id="description-input" name="description"> </div> <div class="form-group"> <label for="author-input">Author:</label> <input type="text" class="form-control" id="author-input" name="author"> </div> <div class="form-group"> <label for="keywords-input">Keywords:</label> <input type="text" class="form-control" id="keywords-input" name="keywords"> </div> <div class="form-group"> <label for="charset-input">Charset:</label> <input type="text" class="form-control" id="charset-input" name="charset"> </div> </form> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="meta-submit">OK</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> </div> </div> </div> </div>
+        <textarea id="html-code" name="html-code"></textarea><br><br>
         <button type="button" onclick="encrypt()">Publish</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
@@ -195,50 +186,98 @@
 <script>
     $(document).ready(function() {
       var textarea = $('#html-code');
-      var dropdown = $('#headings-dropdown');
-      var dropdownContent = dropdown.find('.dropdown-content');
-      var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+      var headingsDropdown = $('#headings-dropdown');
+      var headingsDropdownContent = headingsDropdown.find('.dropdown-content');
+      var nonHeadingsButtons = $('button:not([data-tag="h1"], [data-tag="h2"], [data-tag="h3"], [data-tag="h4"], [data-tag="h5"], [data-tag="h6"], [data-tag="meta"], [data-tag="title"], [data-tag="img"])');
+      var metaModal = $('#meta-modal');
       
       // Add event listener for button clicks
-      $('button[data-tag!="a"]').click(function() {
+      nonHeadingsButtons.click(function() {
         insertTag($(this).data('tag'), getSelectedText(textarea));
       });
-      
+
       // Add event listener for hyperlink tag click
       $('button[data-tag="a"]').click(function() {
-        var url = prompt('Enter URL:', 'https://');
+        var url = prompt('Enter URL:', 'http://');
         if (url) {
           insertTag('a', getSelectedText(textarea), ' href="' + url + '"');
         }
       });
-      
+
+      // Add event listener for image tag click
+      $('button[data-tag="img"]').click(function() {
+        var url = prompt('Enter image URL:', 'http://');
+        if (url) {
+          insertTag('img', '', ' src="' + url + '"');
+        }
+      });
+
+      // Add event listener for meta tag click
+      $('button[data-tag="meta"]').click(function() {
+        metaModal.modal('show');
+      });
+
+      // Add event listener for meta modal submit button click
+      $('#meta-submit').click(function() {
+        var form = $('#meta-form');
+        var title = form.find('input[name="title"]').val();
+        var description = form.find('input[name="description"]').val();
+        var author = form.find('input[name="author"]').val();
+        var keywords = form.find('input[name="keywords"]').val();
+        var charset = form.find('input[name="charset"]').val();
+
+        if (title.length > 0) {
+          insertTag('title', title);
+        }
+        if (description.length > 0) {
+          insertTag('meta', '', ' name="description" content="' + description + '"');
+        }
+        if (author.length > 0) {
+          insertTag('meta', '', ' name="author" content="' + author + '"');
+        }
+        if (keywords.length > 0) {
+          insertTag('meta', '', ' name="keywords" content="' + keywords + '"');
+        }
+        if (charset.length > 0) {
+          insertTag('meta', '', ' charset="' + charset + '"');
+        }
+
+        metaModal.modal('hide');
+      });
+
       // Add event listener for dropdown clicks
-      dropdownContent.on('click', 'a', function() {
+      headingsDropdownContent.on('click', 'a', function() {
         insertTag($(this).data('tag'), getSelectedText(textarea));
       });
-      
+
       // Add event listener for textarea selection change
       textarea.on('mouseup keyup', function() {
         var start = textarea[0].selectionStart;
         var end = textarea[0].selectionEnd;
         var text = textarea.val();
         var selectedText = getSelectedText(textarea);
-        
+        var hasText = (text.length > 0 && text.replace(/<\/?[^>]+(>|$)/g, '').length > 0);
+        var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
         // Update dropdown menu for headings
-        dropdownContent.empty();
+        headingsDropdownContent.empty();
         for (var i = 0; i < headings.length; i++) {
           var heading = headings[i];
           var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
-          dropdownContent.append(option);
+          headingsDropdownContent.append(option);
         }
         if (selectedText.length > 0) {
-          dropdown.show();
+          headingsDropdown.show();
           var selectedTextPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
-          dropdown.css('left', selectedTextPos);
+          headingsDropdown.css('left', selectedTextPos);
+        } else if (hasText) {
+          headingsDropdown.show();
+          var textPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
+          headingsDropdown.css('left', textPos);
         } else {
-          dropdown.hide();
+          headingsDropdown.hide();
         }
-        
+
         // Highlight selected text
         var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
         if (selectedText.length > 0) {
@@ -246,26 +285,27 @@
         }
         textarea.val(newText);
       });
-      
+
       function insertTag(tag, selectedText, attributes) {
         if (attributes === undefined) {
           attributes = '';
         }
-        var start = textarea[0].selectionStart;
-        var end = textarea[0].selectionEnd;
-        var text = textarea.val();
-        var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
-        textarea.val(newText);
-      }
-      
-      function getSelectedText() {
-        var start = textarea[0].selectionStart;
-        var end = textarea[0].selectionEnd;
-        var text = textarea.val();
-        var selectedText = text.slice(start, end);
-        return selectedText;
-      }
-    });
+            var start = textarea[0].selectionStart;
+    var end = textarea[0].selectionEnd;
+    var text = textarea.val();
+    var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
+    textarea.val(newText);
+  }
+
+  function getSelectedText() {
+    var start = textarea[0].selectionStart;
+    var end = textarea[0].selectionEnd;
+    var text = textarea.val();
+    var selectedText = text.slice(start, end);
+    return selectedText;
+  }
+});
+
 </script>
 
 
