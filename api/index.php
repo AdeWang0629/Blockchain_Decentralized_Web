@@ -133,7 +133,12 @@
   </div>
   <div class="row">
     <div class="col">
-      <textarea id="html-code" name="html-code"></textarea>
+       <form onsubmit="return false;">
+        <label for="html-code">Enter your HTML code:</label><br>
+        <textarea id="html-code" name="html-code"></textarea><br><br>
+        <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
+        <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
+    </form>
     </div>
   </div>
   <div class="row">
