@@ -356,54 +356,6 @@
   $('#myInput').trigger('focus')
 })
 </script>
-<script>
-var textarea = document.getElementById("html-code");
-var lineNumbers = document.createElement("div");
-lineNumbers.className = "line-numbers";
-
-for (var i = 1; i <= textarea.rows; i++) {
-  var div = document.createElement("div");
-  div.innerHTML = i;
-  lineNumbers.appendChild(div);
-}
-
-textarea.parentNode.insertBefore(lineNumbers, textarea);
-
-textarea.addEventListener("input", function() {
-  updateLineNumbers();
-});
-
-textarea.addEventListener("scroll", function() {
-  updateLineNumbers();
-});
-
-function updateLineNumbers() {
-  var scrollTop = textarea.scrollTop;
-  var lineHeight = parseFloat(getComputedStyle(textarea).lineHeight);
-  var firstVisibleLine = Math.round(scrollTop / lineHeight) + 1;
-  
-  var lineNumbers = document.querySelectorAll(".line-numbers > div");
-  
-  for (var i = 0; i < lineNumbers.length; i++) {
-    var lineNumber = i + firstVisibleLine;
-    lineNumbers[i].innerHTML = lineNumber;
-  }
-  
-  var currentLine = Math.floor(scrollTop / lineHeight);
-  var currentLineElement = document.querySelector(".current-line");
-  
-  if (currentLineElement) {
-    currentLineElement.classList.remove("current-line");
-  }
-  
-  var lineElements = document.querySelectorAll(".line-numbers > div");
-  var currentLineElement = lineElements[currentLine];
-  
-  if (currentLineElement) {
-    currentLineElement.classList.add("current-line");
-  }
-}
-</script>
 <div id="encrypted-url"></div>
 </body>
 </html>
