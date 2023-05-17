@@ -260,23 +260,16 @@
         var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
         // Update dropdown menu for headings
-        headingsDropdownContent.empty();
-        for (var i = 0; i < headings.length; i++) {
-          var heading = headings[i];
-          var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
-          headingsDropdownContent.append(option);
-        }
-        if (selectedText.length > 0) {
-          headingsDropdown.show();
-          var selectedTextPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
-          headingsDropdown.css('left', selectedTextPos);
-        } else if (hasText) {
-          headingsDropdown.show();
-          var textPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
-          headingsDropdown.css('left', textPos);
-        } else {
-          headingsDropdown.hide();
-        }
+headingsDropdownContent.empty();
+for (var i = 0; i < headings.length; i++) {
+  var heading = headings[i];
+  var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
+  headingsDropdownContent.append(option);
+}
+
+// Show headings dropdown
+headingsDropdown.show();
+
 
         // Highlight selected text
         var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
