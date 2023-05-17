@@ -146,6 +146,16 @@
   </div>
 </div>
 <script>
+    window.onload = function() {
+        ClassicEditor
+            .create(document.querySelector('#html-code'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    };
     function encrypt() {
         var htmlCode = document.getElementById('html-code').value;
         var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
