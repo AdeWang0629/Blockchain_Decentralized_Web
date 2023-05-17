@@ -23,6 +23,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
  <style>
   .bgray {
     --tw-bg-opacity: 1;
@@ -90,7 +91,7 @@
 <div class="container">
  <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
-        <textarea id="html-code" name="html-code"></textarea><br><br>
+        <textarea id="html-code" name="editor"></textarea><br><br>
         <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
@@ -218,6 +219,9 @@
  $('#modal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+</script>
+<script>
+  CKEDITOR.replace('editor');
 </script>
 <div id="encrypted-url"></div>
 </body>
