@@ -42,6 +42,38 @@
   .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(17, 24, 39, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
+
+
+/* Editor */
+.dropdown {
+      display: inline-block;
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 25px;
+      left: 0;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .selected-text {
+      background-color: #ffff00;
+    }
  </style>
 </head>
 <body>
@@ -89,9 +121,24 @@
 </nav>   
 <div class="container">
  <form onsubmit="return false;">
-        <label for="html-code">Enter your HTML code:</label><br>
-        <textarea id="html-code" name="html-code"></textarea><br><br>
-        <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
+        <label for="html-code">Content:</label><br>
+        <textarea id="html-code" name="html-code"></textarea>
+        <div class="dropdown" id="headings-dropdown">
+    <button class="dropbtn">Headings</button>
+    <div class="dropdown-content">
+      <a href="#" data-tag="h1">H1</a>
+      <a href="#" data-tag="h2">H2</a>
+      <a href="#" data-tag="h3">H3</a>
+      <a href="#" data-tag="h4">H4</a>
+      <a href="#" data-tag="h5">H5</a>
+      <a href="#" data-tag="h6">H6</a>
+    </div>
+  </div>
+  <button data-tag="a">Link</button>
+  <button data-tag="b">Bold</button>
+
+        <br><br>
+        <button type="button" onclick="encrypt()">Publish</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
     <div id="encrypted-html"></div>
@@ -144,6 +191,72 @@
     </div>
   </div>
 </div>
+  <script>
+  //editor
+    $(document).ready(function() {
+      // Add event listener for button clicks
+      $('button').click(function() {
+        // Get textarea and button data
+        var textarea = $('#html-code');
+        var tag = $(this).data('tag');
+        
+        // Insert tag at current cursor position
+        var start = textarea[0].selectionStart;
+        var end = textarea[0].selectionEnd;
+        var text = textarea.val();
+        var newText = text.slice(0, start) + '<' + tag + '>' + text.slice(start, end) + '</' + tag + '>' + text.slice(end);
+        textarea.val(newText);
+      });
+      
+      // Add event listener for dropdown clicks
+      $('.dropdown-content a').click(function() {
+        // Get textarea and dropdown data
+        var textarea = $('#html-code');
+        var tag = $(this).data('tag');
+        
+        // Insert tag at current cursor position
+        var start = textarea[0].selectionStart;
+        var end = textarea[0].selectionEnd;
+        var text = textarea.val();
+        var newText = text.slice(0, start) + '<' + tag + '>' + text.slice(start, end) + '</' + tag + '>' + text.slice(end);
+        textarea.val(newText);
+      });
+      
+      // Add event listener for textarea selection change
+      $('#html-code').on('mouseup keyup', function() {
+        var textarea = $(this);
+        var start = textarea[0].selectionStart;
+        var end = textarea[0].selectionEnd;
+        var text = textarea.val();
+        var selectedText = text.slice(start, end);
+        var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+        
+        // Update dropdown menu for headings
+        var dropdown = $('#headings-dropdown');
+        var dropdownContent = dropdown.find('.dropdown-content');
+        dropdownContent.empty();
+        for (var i = 0; i < headings.length; i++) {
+          var heading = headings[i];
+          var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
+          dropdownContent.append(option);
+        }
+        if (selectedText.length > 0) {
+          dropdown.show();
+          var selectedTextPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
+          dropdown.css('left', selectedTextPos);
+        } else {
+          dropdown.hide();
+        }
+        
+        // Highlight selected text
+        var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
+        if (selectedText.length > 0) {
+          newText = newText.slice(0, start) + '<span class="selected-text">' + newText.slice(start, end) + '</span>' + newText.slice(end);
+        }
+        textarea.val(newText);
+      });
+    });
+  </script>
 <script>
     function encrypt() {
         var htmlCode = document.getElementById('html-code').value;
