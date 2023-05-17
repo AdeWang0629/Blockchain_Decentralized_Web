@@ -23,7 +23,6 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
  <style>
   .bgray {
     --tw-bg-opacity: 1;
@@ -146,16 +145,6 @@
   </div>
 </div>
 <script>
-    window.onload = function() {
-        ClassicEditor
-            .create(document.querySelector('#html-code'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    };
     function encrypt() {
         var htmlCode = document.getElementById('html-code').value;
         var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
