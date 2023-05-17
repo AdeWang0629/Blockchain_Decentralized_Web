@@ -177,7 +177,7 @@
         var encryptedHtml = urlParams.get('encrypted-html');
 
         if (encryptedHtml) {
-            var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
+            var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "ALLAH");
             document.getElementById('man-creator-is-one-he-is-allah').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
         }
     }
@@ -203,7 +203,7 @@
         document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
 
         // Decrypt and display the HTML code
-        var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "SecretKey123");
+        var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "ALLAH");
         document.getElementById('man-creator-is-one-he-is-allah').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
 
         // Hide the form fields

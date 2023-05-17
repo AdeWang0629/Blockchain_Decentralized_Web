@@ -51,7 +51,7 @@ function decrypt() {
 
     if (pathParts[1] === 'site' && pathParts[2]) {
         var encryptedHtml = decodeURIComponent(pathParts[2]);
-        var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "SecretKey123");
+        var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "ALLAH");
         var html = decrypted.toString(CryptoJS.enc.Utf8);
         document.getElementById('man-creator-is-one-he-is-allah').innerHTML = html;
 
