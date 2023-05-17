@@ -280,23 +280,35 @@ headingsDropdown.show();
       });
 
       function insertTag(tag, selectedText, attributes) {
-        if (attributes === undefined) {
-          attributes = '';
-        }
-            var start = textarea[0].selectionStart;
-    var end = textarea[0].selectionEnd;
-    var text = textarea.val();
-    var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
-    textarea.val(newText);
+  if (attributes === undefined) {
+    attributes = '';
   }
+  
+  var cursorPos = textarea.prop('selectionStart');
+  var text = textarea.val();
+  var newText = text.slice(0, cursorPos) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(cursorPos);
+  
+  textarea.val(newText);
+  textarea.focus();
+  textarea.prop('selectionStart', cursorPos + tag.length + 3); // move cursor past the opening tag
+  textarea.prop('selectionEnd', cursorPos + tag.length + 3 + selectedText.length); // select inserted text
+}
+
 
   function getSelectedText() {
-    var start = textarea[0].selectionStart;
-    var end = textarea[0].selectionEnd;
-    var text = textarea.val();
+  var start = textarea[0].selectionStart;
+  var end = textarea[0].selectionEnd;
+  var text = textarea.val();
+  
+  // Only return selected text if it exists
+  if (start !== end) {
     var selectedText = text.slice(start, end);
     return selectedText;
   }
+
+  return '';
+}
+
 });
 
 </script>
