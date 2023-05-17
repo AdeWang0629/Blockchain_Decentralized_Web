@@ -151,7 +151,7 @@
     <div class="col">
        <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
-        <textarea id="html-code" name="html-code"></textarea><br><br>
+        <textarea id="html-code" name="html-code" rows="10" cols="50"></textarea><br><br>
         <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
@@ -357,7 +357,7 @@
 })
 </script>
 <script>
-var textarea = document.getElementById("code");
+var textarea = document.getElementById("html-code");
 var lineNumbers = document.createElement("div");
 lineNumbers.className = "line-numbers";
 
