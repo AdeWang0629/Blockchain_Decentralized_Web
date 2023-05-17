@@ -91,7 +91,7 @@
 <div class="container">
  <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
-        <textarea id="html-code" name="editor"></textarea><br><br>
+        <textarea id="editor" name="editor"></textarea><br><br>
         <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
@@ -221,7 +221,11 @@
 })
 </script>
 <script>
-  CKEDITOR.replace('editor');
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 <div id="encrypted-url"></div>
 </body>
