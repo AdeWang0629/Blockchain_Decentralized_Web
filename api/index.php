@@ -123,201 +123,141 @@
         </ul>
     </div>
 </nav>   
-<div class="container">
- <form onsubmit="return false;">
-        <label for="html-code">Content:</label><br>
-       <div class="dropdown" id="headings-dropdown">
-    <button class="dropbtn">Headings</button>
-    <div class="dropdown-content">
-      <a href="#" data-tag="h1">H1</a>
-      <a href="#" data-tag="h2">H2</a>
-      <a href="#" data-tag="h3">H3</a>
-      <a href="#" data-tag="h4">H4</a>
-      <a href="#" data-tag="h5">H5</a>
-      <a href="#" data-tag="h6">H6</a>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-secondary" data-toggle="collapse" data-target="#headings">Headings</button>
+      <button class="btn btn-secondary" data-toggle="collapse" data-target="#links">Links</button>
+      <button class="btn btn-secondary" data-toggle="collapse" data-target="#images">Images</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#meta">Meta</button>
     </div>
-  </div> <button data-tag="a">Link</button> <button data-tag="b">Bold</button> <button data-tag="i">Italic</button> <button data-tag="u">Underline</button> <button data-tag="img">Image</button> <button data-tag="meta">Meta</button> <div class="modal fade" tabindex="-1" role="dialog" id="meta-modal"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Meta Head Fields</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"> <form id="meta-form" class="image-form"> <div class="form-group"> <label for="title-input">Title:</label> <input type="text" class="form-control" id="title-input" name="title"> </div> <div class="form-group"> <label for="description-input">Description:</label> <input type="text" class="form-control" id="description-input" name="description"> </div> <div class="form-group"> <label for="author-input">Author:</label> <input type="text" class="form-control" id="author-input" name="author"> </div> <div class="form-group"> <label for="keywords-input">Keywords:</label> <input type="text" class="form-control" id="keywords-input" name="keywords"> </div> <div class="form-group"> <label for="charset-input">Charset:</label> <input type="text" class="form-control" id="charset-input" name="charset"> </div> </form> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="meta-submit">OK</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> </div> </div> </div> </div>
-        <textarea id="html-code" name="html-code"></textarea><br><br>
-        <button type="button" onclick="encrypt()">Publish</button>
-        <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
-    </form>
-    <div id="encrypted-html"></div>
-<div id="man-creator-is-one-he-is-allah"></div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Settings</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-        <div class="btn-group" role="group">
-            <button type="button" data-class="fixed-left" class="btn btn-primary">
-                <i class="fa fa-arrow-left"></i>
-                Fixed Left
-            </button>
-            <button type="button" data-class="fixed-top" class="btn btn-primary">
-                <i class="fa fa-arrow-up"></i>
-                Fixed Top
-                <small>(original)</small>
-            </button>
-            <button type="button" data-class="fixed-right" class="btn btn-primary">
-                <i class="fa fa-arrow-right"></i>
-                Fixed Right
-            </button>
-        </div>
-        <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label>
-                    Select another bootstrap theme from
-                    <a href="https://bootswatch.com/" target="_blank">Bootswatch</a>
-                </label>
-                <select class="form-control width-md" id="theme_select" onchange="selectTheme(value)"></select>
-            </div>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <textarea id="html-code" name="html-code"></textarea>
     </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" onclick="insertTag('<strong>', '</strong>')">Bold</button>
+      <button class="btn btn-primary" onclick="insertTag('<em>', '</em>')">Italic</button>
+      <button class="btn btn-primary" onclick="insertTag('<u>', '</u>')">Underline</button>
+      <button class="btn btn-primary" onclick="insertTag('<h1>', '</h1>')">H1</button>
+      <button class="btn btn-primary" onclick="insertTag('<h2>', '</h2>')">H2</button>
+      <button class="btn btn-primary" onclick="insertTag('<h3>', '</h3>')">H3</button>
+      <button class="btn btn-primary" onclick="insertTag('<h4>', '</h4>')">H4</button>
+      <button class="btn btn-primary" onclick="insertTag('<h5>', '</h5>')">H5</button>
+      <button class="btn btn-primary" onclick="insertTag('<p>', '</p>')">Paragraph</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div id="headings" class="collapse">
+        <button class="btn btn-secondary" onclick="insertTag('<h1>', '</h1>')">H1</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h2>', '</h2>')">H2</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h3>', '</h3>')">H3</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h4>', '</h4>')">H4</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h5>', '</h5>')">H5</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h6>', '</h6>')">H6</button>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div id="links" class="collapse">
+        <input type="text" id="link-url" placeholder="http://">
+        <button class="btn btn-secondary" onclick="insertLink()">Insert Link</button>
+      </div>
+      <div id="images" class="collapse">
+        <input type="text" id="image-url" placeholder="http://">
+        <button class="btn btn-secondary" onclick="insertImage()">Insert Image</button>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Modal for Meta -->
+<div class="modal fade" id="meta">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Meta tags</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title">
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="keywords">Keywords:</label>
+            <input type="text" class="form-control" id="keywords">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="insertMeta()">Insert Meta</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
-    $(document).ready(function() {
-      var textarea = $('#html-code');
-      var headingsDropdown = $('#headings-dropdown');
-      var headingsDropdownContent = headingsDropdown.find('.dropdown-content');
-      var nonHeadingsButtons = $('button:not([data-tag="h1"], [data-tag="h2"], [data-tag="h3"], [data-tag="h4"], [data-tag="h5"], [data-tag="h6"], [data-tag="meta"], [data-tag="title"], [data-tag="img"])');
-      var metaModal = $('#meta-modal');
-      
-      // Add event listener for button clicks
-      nonHeadingsButtons.click(function() {
-        insertTag($(this).data('tag'), getSelectedText(textarea));
-      });
-
-      // Add event listener for hyperlink tag click
-      $('button[data-tag="a"]').click(function() {
-        var url = prompt('Enter URL:', 'http://');
-        if (url) {
-          insertTag('a', getSelectedText(textarea), ' href="' + url + '"');
-        }
-      });
-
-      // Add event listener for image tag click
-      $('button[data-tag="img"]').click(function() {
-        var url = prompt('Enter image URL:', 'http://');
-        if (url) {
-          insertTag('img', '', ' src="' + url + '"');
-        }
-      });
-
-      // Add event listener for meta tag click
-      $('button[data-tag="meta"]').click(function() {
-        metaModal.modal('show');
-      });
-
-      // Add event listener for meta modal submit button click
-      $('#meta-submit').click(function() {
-        var form = $('#meta-form');
-        var title = form.find('input[name="title"]').val();
-        var description = form.find('input[name="description"]').val();
-        var author = form.find('input[name="author"]').val();
-        var keywords = form.find('input[name="keywords"]').val();
-        var charset = form.find('input[name="charset"]').val();
-
-        if (title.length > 0) {
-          insertTag('title', title);
-        }
-        if (description.length > 0) {
-          insertTag('meta', '', ' name="description" content="' + description + '"');
-        }
-        if (author.length > 0) {
-          insertTag('meta', '', ' name="author" content="' + author + '"');
-        }
-        if (keywords.length > 0) {
-          insertTag('meta', '', ' name="keywords" content="' + keywords + '"');
-        }
-        if (charset.length > 0) {
-          insertTag('meta', '', ' charset="' + charset + '"');
-        }
-
-        metaModal.modal('hide');
-      });
-
-      // Add event listener for dropdown clicks
-      headingsDropdownContent.on('click', 'a', function() {
-        insertTag($(this).data('tag'), getSelectedText(textarea));
-      });
-
-      // Add event listener for textarea selection change
-      textarea.on('mouseup keyup', function() {
-        var start = textarea[0].selectionStart;
-        var end = textarea[0].selectionEnd;
-        var text = textarea.val();
-        var selectedText = getSelectedText(textarea);
-        var hasText = (text.length > 0 && text.replace(/<\/?[^>]+(>|$)/g, '').length > 0);
-        var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-
-        // Update dropdown menu for headings
-        headingsDropdownContent.empty();
-        for (var i = 0; i < headings.length; i++) {
-          var heading = headings[i];
-          var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
-          headingsDropdownContent.append(option);
-        }
-        if (selectedText.length > 0) {
-          headingsDropdown.show();
-          var selectedTextPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
-          headingsDropdown.css('left', selectedTextPos);
-        } else if (hasText) {
-          headingsDropdown.show();
-          var textPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
-          headingsDropdown.css('left', textPos);
-        } else {
-          headingsDropdown.hide();
-        }
-
-        // Highlight selected text
-        var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
-        if (selectedText.length > 0) {
-          newText = newText.slice(0, start) + '<span class="selected-text">' + newText.slice(start, end) + '</span>' + newText.slice(end);
-        }
-        textarea.val(newText);
-      });
-
-      function insertTag(tag, selectedText, attributes) {
-        if (attributes === undefined) {
-          attributes = '';
-        }
-            var start = textarea[0].selectionStart;
-    var end = textarea[0].selectionEnd;
-    var text = textarea.val();
-    var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
-    textarea.val(newText);
+  function insertTag(openTag, closeTag) {
+    var textarea = document.getElementById("html-code");
+    var startIndex = textarea.selectionStart;
+    var endIndex = textarea.selectionEnd;
+    var selectedText = textarea.value.substring(startIndex, endIndex);
+    var replacedText = openTag + selectedText + closeTag;
+    textarea.value = textarea.value.substring(0, startIndex) + replacedText + textarea.value.substring(endIndex);
   }
-
-  function getSelectedText() {
-    var start = textarea[0].selectionStart;
-    var end = textarea[0].selectionEnd;
-    var text = textarea.val();
-    var selectedText = text.slice(start, end);
-    return selectedText;
+  
+  function insertLink() {
+    var url = $("#link-url").val();
+    var anchor = $("#html-code").val().substring($("#html-code")[0].selectionStart, $("#html-code")[0].selectionEnd);
+    if(anchor === "") {
+      alert("Please select the text to hyperlink.");
+    }
+    else if(url === "") {
+      alert("Please enter the URL to hyperlink.");
+    }
+    else {
+      var link = '<a href="' + url + '">' + anchor + '</a>';
+      document.execCommand("insertHTML", false, link);
+    }
   }
-});
-
+  
+  function insertImage() {
+    var url = $("#image-url").val();
+    if(url === "") {
+      alert("Please enter the URL of the image.");
+    }
+    else {
+      var img = '<img src="' + url + '">';
+      document.execCommand("insertHTML", false, img);
+    }
+  }
+  
+  function insertMeta() {
+    var title = $("#title").val();
+    var description = $("#description").val();
+    var keywords = $("#keywords").val();
+    if(title !== "") {
+      var metaTitle = '<title>' + title + '</title>';
+      document.execCommand("insertHTML", false, metaTitle);
+    }
+    if(description !== "") {
+      var metaDescription = '<meta name="description" content="' + description + '">';
+      document.execCommand("insertHTML", false, metaDescription);
+    }
+    if(keywords !== "") {
+      var metaKeywords = '<meta name="keywords" content="' + keywords + '">';
+      document.execCommand("insertHTML", false, metaKeywords);
+    }
+    $("#meta").modal("hide");
+  }
 </script>
-
 
 <script>
     function encrypt() {
