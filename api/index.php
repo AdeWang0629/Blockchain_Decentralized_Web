@@ -300,14 +300,15 @@ headingsDropdown.show();
   var end = textarea[0].selectionEnd;
   var text = textarea.val();
   
-  // Only return selected text if it exists
-  if (start !== end) {
+  // Only return selected text if selection length is greater than 0
+  if (end - start > 0) {
     var selectedText = text.slice(start, end);
     return selectedText;
   }
 
   return '';
 }
+
 
 });
 
