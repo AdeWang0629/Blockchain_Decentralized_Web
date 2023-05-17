@@ -183,146 +183,173 @@
 </div>
 
 
-<script>
-    $(document).ready(function() {
-      var textarea = $('#html-code');
-      var headingsDropdown = $('#headings-dropdown');
-      var headingsDropdownContent = headingsDropdown.find('.dropdown-content');
-      var nonHeadingsButtons = $('button:not([data-tag="h1"], [data-tag="h2"], [data-tag="h3"], [data-tag="h4"], [data-tag="h5"], [data-tag="h6"], [data-tag="meta"], [data-tag="title"], [data-tag="img"])');
-      var metaModal = $('#meta-modal');
+<script>$(document).ready(function() {
+  var textarea = $('#html-code');
+  var headingsDropdown = $('#headings-dropdown');
+  var headingsDropdownContent = headingsDropdown.find('.dropdown-content');
+  var nonHeadingsButtons = $('button:not([data-tag="h1"], [data-tag="h2"], [data-tag="h3"], [data-tag="h4"], [data-tag="h5"], [data-tag="h6"], [data-tag="meta"], [data-tag="title"], [data-tag="img"])');
+  var metaModal = $('#meta-modal');
+  
+  // Add event listener for button clicks
+  nonHeadingsButtons.click(function() {
+    insertTag($(this).data('tag'), getSelectedText());
+  });
+
+  // Add event listener for hyperlink tag click
+  $('button[data-tag="a"]').click(function() {
+    var url = prompt('Enter URL:', 'http://');
+    if (url) {
+      insertTag('a', getSelectedText(), ' href="' + url + '"');
+    }
+  });
+
+  // Add event listener for image tag click
+  $('button[data-tag="img"]').click(function() {
+    var url = prompt('Enter image URL:', 'http://');
+    if (url) {
+      insertTag('img', '', ' src="' + url + '"');
+    }
+  });
+
+  // Add event listener for meta tag click
+  $('button[data-tag="meta"]').click(function() {
+    metaModal.modal('show');
+  });
+
+  // Add event listener for meta modal submit button click
+  $('#meta-submit').click(function() {
+    var form = $('#meta-form');
+    var title = form.find('input[name="title"]').val();
+    var description = form.find('input[name="description"]').val();
+    var author = form.find('input[name="author"]').val();
+    var keywords = form.find('input[name="keywords"]').val();
+    var charset = form.find('input[name="charset"]').val();
+
+    if (title.length > 0) {
+      insertTag('title', title);
+    }
+    if (description.length > 0) {
+      insertTag('meta', '', ' name="description" content="' + description + '"');
+    }
+    if (author.length > 0) {
+      insertTag('meta', '', ' name="author" content="' + author + '"');
+    }
+    if (keywords.length > 0) {
+      insertTag('meta', '', ' name="keywords" content="' + keywords + '"');
+    }
+    if (charset.length > 0) {
+      insertTag('meta', '', ' charset="' + charset + '"');
+    }
+
+    metaModal.modal('hide');
+  });
+
+  // Add event listener for dropdown clicks
+  headingsDropdownContent.on('click','a', function() {
+    insertTag($(this).data('tag'), getSelectedText());
+  });
+
+  // Add event listener for textarea selection change
+  textarea.on('mouseup keyup', function() {
+    var start = textarea[0].selectionStart;
+    var end = textarea[0].selectionEnd;
+    var text = textarea.val();
+    var selectedText = getSelectedText();
+    var hasText = (text.length > 0 && text.replace(/<\/?[^>]+(>|$)/g, '').length > 0);
+    var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
+    // Update dropdown menu for headings
+    headingsDropdownContent.empty();
+    for (var i = 0; i < headings.length; i++) {
+      var heading = headings[i];
+      var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
+      headingsDropdownContent.append(option);
+    }
+
+    // Check if there is any selected text
+    if (selectedText.length > 0) {
+      // Show headings dropdown if there are headings available
+        if (hasText) {
+    // Get index of the selected text
+    var startIndex = text.indexOf(selectedText);
+    var endIndex = startIndex + selectedText.length;
+    
+    // Check if selected text is already wrapped in a heading tag
+    var isInHeading = false;
+    for (var i = 0; i < headings.length; i++) {
+      var heading = headings[i];
+      if (text.slice(startIndex, endIndex).match(new RegExp('<' + heading + '( |>|$)'))) {
+        isInHeading = true;
+        break;
+      }
+    }
+
+    // Disable headings dropdown if selected text is already in a heading tag
+    if (!isInHeading) {
+      headingsDropdown.show();
+    } else {
+      headingsDropdown.hide();
+    }
+  } else {
+   
+// Hide headings dropdown if there is no selected text or non-tagged text in textarea
+        headingsDropdown.hide();
+      }
+
+      // Highlight selected text
+      var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
+      if (selectedText.length > 0) {
+        // Check if selected text is already wrapped in a heading tag
+        var selectedTextIsInHeading = false;
+        var headingRegex = new RegExp('<(' + headings.join('|') + ')( |>|$)');
+        if (text.slice(startIndex, endIndex).match(headingRegex)) {
+          selectedTextIsInHeading = true;
+        }
+
+        // Wrap selected text in heading tag if necessary
+        var newSelectedText;
+        if (!selectedTextIsInHeading && headingsDropdownContent.children().length > 0) {
+          var headingTag = headingsDropdownContent.children().first().data('tag');
+          newSelectedText = '<' + headingTag + '>' + selectedText + '</' + headingTag + '>';
+        } else {
+          newSelectedText = selectedText;
+        }
+
+        newText = newText.slice(0, startIndex) + '<span class="selected-text">' + newSelectedText + '</span>' + newText.slice(endIndex);
+      }
+      textarea.val(newText);
+    });
+
+    function insertTag(tag, selectedText, attributes) {
+      if (attributes === undefined) {
+        attributes = '';
+      }
       
-      // Add event listener for button clicks
-      nonHeadingsButtons.click(function() {
-        insertTag($(this).data('tag'), getSelectedText(textarea));
-      });
+      var start = textarea[0].selectionStart;
+      var end = textarea[0].selectionEnd;
+      var text = textarea.val();
+      var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
+      
+      textarea.val(newText);
+      textarea.focus();
+      textarea.prop('selectionStart', start + tag.length + 2); // move cursor after opening tag
+      textarea.prop('selectionEnd', start + tag.length + 2 + selectedText.length); // select inserted text
+    }
 
-      // Add event listener for hyperlink tag click
-      $('button[data-tag="a"]').click(function() {
-        var url = prompt('Enter URL:', 'http://');
-        if (url) {
-          insertTag('a', getSelectedText(textarea), ' href="' + url + '"');
-        }
-      });
+    function getSelectedText() {
+      var start = textarea[0].selectionStart;
+      var end = textarea[0].selectionEnd;
+      var text = textarea.val();
+      
+      // Only return selected text if selection length is greater than 0 and selection range is valid
+      if (end - start > 0 && start >= 0 && end <= text.length) {
+       var selectedText = text.slice(start, end);
+        return selectedText;
+      }
 
-      // Add event listener for image tag click
-      $('button[data-tag="img"]').click(function() {
-        var url = prompt('Enter image URL:', 'http://');
-        if (url) {
-          insertTag('img', '', ' src="' + url + '"');
-        }
-      });
-
-      // Add event listener for meta tag click
-      $('button[data-tag="meta"]').click(function() {
-        metaModal.modal('show');
-      });
-
-      // Add event listener for meta modal submit button click
-      $('#meta-submit').click(function() {
-        var form = $('#meta-form');
-        var title = form.find('input[name="title"]').val();
-        var description = form.find('input[name="description"]').val();
-        var author = form.find('input[name="author"]').val();
-        var keywords = form.find('input[name="keywords"]').val();
-        var charset = form.find('input[name="charset"]').val();
-
-        if (title.length > 0) {
-          insertTag('title', title);
-        }
-        if (description.length > 0) {
-          insertTag('meta', '', ' name="description" content="' + description + '"');
-        }
-        if (author.length > 0) {
-          insertTag('meta', '', ' name="author" content="' + author + '"');
-        }
-        if (keywords.length > 0) {
-          insertTag('meta', '', ' name="keywords" content="' + keywords + '"');
-        }
-        if (charset.length > 0) {
-          insertTag('meta', '', ' charset="' + charset + '"');
-        }
-
-        metaModal.modal('hide');
-      });
-
-      // Add event listener for dropdown clicks
-      headingsDropdownContent.on('click', 'a', function() {
-        insertTag($(this).data('tag'), getSelectedText(textarea));
-      });
-
-      // Add event listener for textarea selection change
-      textarea.on('mouseup keyup', function() {
-        var start = textarea[0].selectionStart;
-        var end = textarea[0].selectionEnd;
-        var text = textarea.val();
-        var selectedText = getSelectedText(textarea);
-        var hasText = (text.length > 0 && text.replace(/<\/?[^>]+(>|$)/g, '').length > 0);
-        var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-
-        // Update dropdown menu for headings
-headingsDropdownContent.empty();
-for (var i = 0; i < headings.length; i++) {
-  var heading = headings[i];
-  var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
-  headingsDropdownContent.append(option);
-}
-
-// Hide dropdown if no headings are found
-if (headingsDropdownContent.children().length > 0) {
-  headingsDropdown.show();
-} else {
-  headingsDropdown.hide();
-}
-
-// Show dropdown
-headingsDropdown.toggleClass('show', true);
-
-
-
-        // Highlight selected text
-        var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
-        if (selectedText.length > 0) {
-          newText = newText.slice(0, start) + '<span class="selected-text">' + newText.slice(start, end) + '</span>' + newText.slice(end);
-        }
-        textarea.val(newText);
-      });
-
-      function insertTag(tag, selectedText, attributes) {
-  if (attributes === undefined) {
-    attributes = '';
-  }
-  
-  var start = textarea[0].selectionStart;
-  var end = textarea[0].selectionEnd;
-  var text = textarea.val();
-  var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
-  
-  textarea.val(newText);
-  textarea.focus();
-  textarea.prop('selectionStart', start + tag.length + 2); // move cursor after opening tag
-  textarea.prop('selectionEnd', start + tag.length + 2 + selectedText.length); // select inserted text
-}
-
-
-
-  function getSelectedText() {
-  var start = textarea[0].selectionStart;
-  var end = textarea[0].selectionEnd;
-  var text = textarea.val();
-  
-  // Only return selected text if selection length is greater than 0 and selection range is valid
-  if (end - start > 0 && start >= 0 && end <= text.length) {
-    var selectedText = text.slice(start, end);
-    return selectedText;
-  }
-
-  return '';
-}
-
-
-
+      return '';
+    }
 });
-
 </script>
 
 
