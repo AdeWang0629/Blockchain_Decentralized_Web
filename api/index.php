@@ -122,10 +122,7 @@
 <div class="container">
  <form onsubmit="return false;">
         <label for="html-code">Content:</label><br>
-        <textarea id="html-code" name="html-code"></textarea>
-        <div class="dropdown" id="headings-dropdown">
-    <button class="dropbtn">Headings</button>
-    <div class="dropdown-content">
+        <div class="dropdown-content">
       <a href="#" data-tag="h1">H1</a>
       <a href="#" data-tag="h2">H2</a>
       <a href="#" data-tag="h3">H3</a>
@@ -136,8 +133,9 @@
   </div>
   <button data-tag="a">Link</button>
   <button data-tag="b">Bold</button>
-
-        <br><br>
+        <textarea id="html-code" name="html-code"></textarea>
+        <div class="dropdown" id="headings-dropdown">
+    <button class="dropbtn">Headings</button> <br><br>
         <button type="button" onclick="encrypt()">Publish</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
@@ -192,19 +190,31 @@
   </div>
 </div>
   <script>
-  //editor
     $(document).ready(function() {
       // Add event listener for button clicks
       $('button').click(function() {
         // Get textarea and button data
         var textarea = $('#html-code');
         var tag = $(this).data('tag');
+        var selectedText = getSelectedText(textarea);
+        
+        if (tag === 'a') {
+          // If inserting hyperlink, prompt for URL and insert link with URL in href attribute
+          var url = prompt('Enter URL:', 'http://');
+          if (url) {
+            var hrefString = ' href="' + url + '"';
+          } else {
+            return;
+          }
+        } else {
+          var hrefString = '';
+        }
         
         // Insert tag at current cursor position
         var start = textarea[0].selectionStart;
         var end = textarea[0].selectionEnd;
         var text = textarea.val();
-        var newText = text.slice(0, start) + '<' + tag + '>' + text.slice(start, end) + '</' + tag + '>' + text.slice(end);
+        var newText = text.slice(0, start) + '<' + tag + hrefString + '>' + selectedText + '</' + tag + '>' + text.slice(end);
         textarea.val(newText);
       });
       
@@ -213,12 +223,25 @@
         // Get textarea and dropdown data
         var textarea = $('#html-code');
         var tag = $(this).data('tag');
+        var selectedText = getSelectedText(textarea);
+        
+        if (tag === 'a') {
+          // If inserting hyperlink, prompt for URL and insert link with URL in href attribute
+          var url = prompt('Enter URL:', 'http://');
+          if (url) {
+            var hrefString = ' href="' + url + '"';
+          } else {
+            return;
+          }
+        } else {
+          var hrefString = '';
+        }
         
         // Insert tag at current cursor position
         var start = textarea[0].selectionStart;
         var end = textarea[0].selectionEnd;
         var text = textarea.val();
-        var newText = text.slice(0, start) + '<' + tag + '>' + text.slice(start, end) + '</' + tag + '>' + text.slice(end);
+        var newText = text.slice(0, start) + '<' + tag + hrefString + '>' + selectedText + '</' + tag + '>' + text.slice(end);
         textarea.val(newText);
       });
       
@@ -228,7 +251,7 @@
         var start = textarea[0].selectionStart;
         var end = textarea[0].selectionEnd;
         var text = textarea.val();
-        var selectedText = text.slice(start, end);
+        var selectedText = getSelectedText(textarea);
         var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
         
         // Update dropdown menu for headings
@@ -256,6 +279,15 @@
         textarea.val(newText);
       });
     });
+    
+    // Helper function to get selected text in textarea
+    function getSelectedText(textarea) {
+      var start = textarea[0].selectionStart;
+      var end = textarea[0].selectionEnd;
+      var text = textarea.val();
+      var selectedText = text.slice(start, end);
+      return selectedText;
+    }
   </script>
 <script>
     function encrypt() {
