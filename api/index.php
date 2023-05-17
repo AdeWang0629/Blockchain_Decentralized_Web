@@ -125,7 +125,8 @@
 </nav>   
 <div class="container">
  <form onsubmit="return false;">
-        <label for="html-code">Content:</label><br> <button data-tag="a">Link</button> <button data-tag="b">Bold</button> <button data-tag="i">Italic</button> <button data-tag="u">Underline</button> <button data-tag="img">Image</button> <button data-tag="meta" data-toggle="modal" data-target="#meta-modal">Meta</button> <div class="modal fade" id="meta-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Meta Head Fields</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"> <form id="meta-form" class="image-form"> <div class="form-group"> <label for="title-input">Title:</label> <input type="text" class="form-control" id="title-input" name="title"> </div> <div class="form-group"> <label for="description-input">Description:</label> <input type="text" class="form-control" id="description-input" name="description"> </div> <div class="form-group"> <label for="author-input">Author:</label> <input type="text" class="form-control" id="author-input" name="author"> </div> <div class="form-group"> <label for="keywords-input">Keywords:</label> <input type="text" class="form-control" id="keywords-input" name="keywords"> </div> <div class="form-group"> <label for="charset-input">Charset:</label> <input type="text" class="form-control" id="charset-input" name="charset"> </div> </form> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="meta-submit">OK</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> </div> </div> </div> </div>
+        <label for="html-code">Content:</label><br>
+       <div class="dropdown" id="headings-dropdown"> <button class="dropbtn">Headings</button> <div class="dropdown-content"></div> </div> <button data-tag="a">Link</button> <button data-tag="b">Bold</button> <button data-tag="i">Italic</button> <button data-tag="u">Underline</button> <button data-tag="img">Image</button> <button data-tag="meta">Meta</button> <div class="modal fade" tabindex="-1" role="dialog" id="meta-modal"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Meta Head Fields</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"> <form id="meta-form" class="image-form"> <div class="form-group"> <label for="title-input">Title:</label> <input type="text" class="form-control" id="title-input" name="title"> </div> <div class="form-group"> <label for="description-input">Description:</label> <input type="text" class="form-control" id="description-input" name="description"> </div> <div class="form-group"> <label for="author-input">Author:</label> <input type="text" class="form-control" id="author-input" name="author"> </div> <div class="form-group"> <label for="keywords-input">Keywords:</label> <input type="text" class="form-control" id="keywords-input" name="keywords"> </div> <div class="form-group"> <label for="charset-input">Charset:</label> <input type="text" class="form-control" id="charset-input" name="charset"> </div> </form> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="meta-submit">OK</button> <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> </div> </div> </div> </div>
         <textarea id="html-code" name="html-code"></textarea><br><br>
         <button type="button" onclick="encrypt()">Publish</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
@@ -249,17 +250,33 @@
         insertTag($(this).data('tag'), getSelectedText(textarea));
       });
 
+      // Add event listener for textarea selection change
+      textarea.on('mouseup keyup', function() {
+        var start = textarea[0].selectionStart;
+        var end = textarea[0].selectionEnd;
+        var text = textarea.val();
+        var selectedText = getSelectedText(textarea);
+        var hasText = (text.length > 0 && text.replace(/<\/?[^>]+(>|$)/g, '').length > 0);
+        var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
         // Update dropdown menu for headings
-headingsDropdownContent.empty();
-for (var i = 0; i < headings.length; i++) {
-  var heading = headings[i];
-  var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
-  headingsDropdownContent.append(option);
-}
-
-// Show headings dropdown
-headingsDropdown.show();
-
+        headingsDropdownContent.empty();
+        for (var i = 0; i < headings.length; i++) {
+          var heading = headings[i];
+          var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
+          headingsDropdownContent.append(option);
+        }
+        if (selectedText.length > 0) {
+          headingsDropdown.show();
+          var selectedTextPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
+          headingsDropdown.css('left', selectedTextPos);
+        } else if (hasText) {
+          headingsDropdown.show();
+          var textPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
+          headingsDropdown.css('left', textPos);
+        } else {
+          headingsDropdown.hide();
+        }
 
         // Highlight selected text
         var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
@@ -270,36 +287,23 @@ headingsDropdown.show();
       });
 
       function insertTag(tag, selectedText, attributes) {
-  if (attributes === undefined) {
-    attributes = '';
+        if (attributes === undefined) {
+          attributes = '';
+        }
+            var start = textarea[0].selectionStart;
+    var end = textarea[0].selectionEnd;
+    var text = textarea.val();
+    var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
+    textarea.val(newText);
   }
-  
-  var cursorPos = textarea.prop('selectionStart');
-  var text = textarea.val();
-  var newText = text.slice(0, cursorPos) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(cursorPos);
-  
-  textarea.val(newText);
-  textarea.focus();
-  textarea.prop('selectionStart', cursorPos + tag.length + 3); // move cursor past the opening tag
-  textarea.prop('selectionEnd', cursorPos + tag.length + 3 + selectedText.length); // select inserted text
-}
-
 
   function getSelectedText() {
-  var start = textarea[0].selectionStart;
-  var end = textarea[0].selectionEnd;
-  var text = textarea.val();
-  
-  // Only return selected text if selection length is greater than 0
-  if (end - start > 0) {
+    var start = textarea[0].selectionStart;
+    var end = textarea[0].selectionEnd;
+    var text = textarea.val();
     var selectedText = text.slice(start, end);
     return selectedText;
   }
-
-  return '';
-}
-
-
 });
 
 </script>
