@@ -45,39 +45,55 @@
 }
 
 
-/* Editor */
-.dropdown {
-      display: inline-block;
-      position: relative;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 25px;
-      left: 0;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-    .selected-text {
-      background-color: #ffff00;
-    }
-    .image-form input {
-      margin-bottom: 10px;
-    }
+/* Set the font and color of the text in the textarea */
+#html-code {
+  font-family: monospace;
+  font-size: 14px;
+  color: #333;
+  
+  /* Remove the default textarea border and background */
+  border: none;
+  background-color: transparent;
+  
+  /* Add a border and padding to the container */
+  border: 1px solid #ddd;
+  padding: 10px;
+  
+  /* Set the position and width of the line numbers */
+  position: relative;
+}
+#html-code::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  
+  /* Set the background color of the line numbers */
+  background-color: #eee;
+  
+  /* Add a border and border-radius to the line numbers */
+  border-right: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+}
+
+/* Style the line numbers */
+#html-code .line-numbers {
+  display: inline-block;
+  width: 40px;
+  text-align: right;
+  color: #888;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+/* Highlight the current line */
+#html-code .current-line {
+  background-color: #f0f0f0;
+}
+
  </style>
 </head>
 <body>
@@ -339,6 +355,54 @@
  $('#modal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+</script>
+<script>
+var textarea = document.getElementById("code");
+var lineNumbers = document.createElement("div");
+lineNumbers.className = "line-numbers";
+
+for (var i = 1; i <= textarea.rows; i++) {
+  var div = document.createElement("div");
+  div.innerHTML = i;
+  lineNumbers.appendChild(div);
+}
+
+textarea.parentNode.insertBefore(lineNumbers, textarea);
+
+textarea.addEventListener("input", function() {
+  updateLineNumbers();
+});
+
+textarea.addEventListener("scroll", function() {
+  updateLineNumbers();
+});
+
+function updateLineNumbers() {
+  var scrollTop = textarea.scrollTop;
+  var lineHeight = parseFloat(getComputedStyle(textarea).lineHeight);
+  var firstVisibleLine = Math.round(scrollTop / lineHeight) + 1;
+  
+  var lineNumbers = document.querySelectorAll(".line-numbers > div");
+  
+  for (var i = 0; i < lineNumbers.length; i++) {
+    var lineNumber = i + firstVisibleLine;
+    lineNumbers[i].innerHTML = lineNumber;
+  }
+  
+  var currentLine = Math.floor(scrollTop / lineHeight);
+  var currentLineElement = document.querySelector(".current-line");
+  
+  if (currentLineElement) {
+    currentLineElement.classList.remove("current-line");
+  }
+  
+  var lineElements = document.querySelectorAll(".line-numbers > div");
+  var currentLineElement = lineElements[currentLine];
+  
+  if (currentLineElement) {
+    currentLineElement.classList.add("current-line");
+  }
+}
 </script>
 <div id="encrypted-url"></div>
 </body>
