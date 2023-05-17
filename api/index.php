@@ -23,6 +23,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="../public/editor.js"></script>
  <style>
   .bgray {
     --tw-bg-opacity: 1;
@@ -189,106 +190,6 @@
     </div>
   </div>
 </div>
-  <script>
-    $(document).ready(function() {
-      // Add event listener for button clicks
-      $('button').click(function() {
-        // Get textarea and button data
-        var textarea = $('#html-code');
-        var tag = $(this).data('tag');
-        var selectedText = getSelectedText(textarea);
-        
-        if (tag === 'a') {
-          // If inserting hyperlink, prompt for URL and insert link with URL in href attribute
-          var url = prompt('Enter URL:', 'http://');
-          if (url) {
-            var hrefString = ' href="' + url + '"';
-          } else {
-            return;
-          }
-        } else {
-          var hrefString = '';
-        }
-        
-        // Insert tag at current cursor position
-        var start = textarea[0].selectionStart;
-        var end = textarea[0].selectionEnd;
-        var text = textarea.val();
-        var newText = text.slice(0, start) + '<' + tag + hrefString + '>' + selectedText + '</' + tag + '>' + text.slice(end);
-        textarea.val(newText);
-      });
-      
-      // Add event listener for dropdown clicks
-      $('.dropdown-content a').click(function() {
-        // Get textarea and dropdown data
-        var textarea = $('#html-code');
-        var tag = $(this).data('tag');
-        var selectedText = getSelectedText(textarea);
-        
-        if (tag === 'a') {
-          // If inserting hyperlink, prompt for URL and insert link with URL in href attribute
-          var url = prompt('Enter URL:', 'http://');
-          if (url) {
-            var hrefString = ' href="' + url + '"';
-          } else {
-            return;
-          }
-        } else {
-          var hrefString = '';
-        }
-        
-        // Insert tag at current cursor position
-        var start = textarea[0].selectionStart;
-        var end = textarea[0].selectionEnd;
-        var text = textarea.val();
-        var newText = text.slice(0, start) + '<' + tag + hrefString + '>' + selectedText + '</' + tag + '>' + text.slice(end);
-        textarea.val(newText);
-      });
-      
-      // Add event listener for textarea selection change
-      $('#html-code').on('mouseup keyup', function() {
-        var textarea = $(this);
-        var start = textarea[0].selectionStart;
-        var end = textarea[0].selectionEnd;
-        var text = textarea.val();
-        var selectedText = getSelectedText(textarea);
-        var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-        
-        // Update dropdown menu for headings
-        var dropdown = $('#headings-dropdown');
-        var dropdownContent = dropdown.find('.dropdown-content');
-        dropdownContent.empty();
-        for (var i = 0; i < headings.length; i++) {
-          var heading = headings[i];
-          var option = $('<a>').attr('href', '#').data('tag', heading).text(heading.toUpperCase());
-          dropdownContent.append(option);
-        }
-        if (selectedText.length > 0) {
-          dropdown.show();
-          var selectedTextPos = textarea[0].offsetLeft + textarea[0].offsetWidth/2;
-          dropdown.css('left', selectedTextPos);
-        } else {
-          dropdown.hide();
-        }
-        
-        // Highlight selected text
-        var newText = text.replace('<span class="selected-text">', '').replace('</span>', '');
-        if (selectedText.length > 0) {
-          newText = newText.slice(0, start) + '<span class="selected-text">' + newText.slice(start, end) + '</span>' + newText.slice(end);
-        }
-        textarea.val(newText);
-      });
-    });
-    
-    // Helper function to get selected text in textarea
-    function getSelectedText(textarea) {
-      var start = textarea[0].selectionStart;
-      var end = textarea[0].selectionEnd;
-      var text = textarea.val();
-      var selectedText = text.slice(start, end);
-      return selectedText;
-    }
-  </script>
 <script>
     function encrypt() {
         var htmlCode = document.getElementById('html-code').value;
