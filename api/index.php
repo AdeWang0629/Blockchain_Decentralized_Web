@@ -141,6 +141,7 @@
     </form>
     </div>
   </div>
+  <div id="man-creator-is-one-he-is-allah"></div>
   <div class="row">
     <div class="col">
       <button class="btn btn-primary" onclick="insertTag('<strong>', '</strong>')">Bold</button>
