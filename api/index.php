@@ -284,15 +284,17 @@ headingsDropdown.show();
     attributes = '';
   }
   
-  var cursorPos = textarea.prop('selectionStart');
+  var start = textarea[0].selectionStart;
+  var end = textarea[0].selectionEnd;
   var text = textarea.val();
-  var newText = text.slice(0, cursorPos) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(cursorPos);
+  var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(end);
   
   textarea.val(newText);
   textarea.focus();
-  textarea.prop('selectionStart', cursorPos + tag.length + 3); // move cursor past the opening tag
-  textarea.prop('selectionEnd', cursorPos + tag.length + 3 + selectedText.length); // select inserted text
+  textarea.prop('selectionStart', start + tag.length + 2); // move cursor after opening tag
+  textarea.prop('selectionEnd', start + tag.length + 2 + selectedText.length); // select inserted text
 }
+
 
 
   function getSelectedText() {
