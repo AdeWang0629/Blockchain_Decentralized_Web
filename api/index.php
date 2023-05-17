@@ -270,18 +270,20 @@ headingsDropdown.show();
       });
 
       function insertTag(tag, selectedText, attributes) {
-  if (attributes === undefined) {
+  if (!attributes) {
     attributes = '';
   }
   
-  var cursorPos = textarea.prop('selectionStart');
+  var start = textarea[0].selectionStart;
+  var end = textarea[0].selectionEnd;
   var text = textarea.val();
-  var newText = text.slice(0, cursorPos) + '<' + tag + attributes + '>' + selectedText + '</' + tag + '>' + text.slice(cursorPos);
+  var selectedTextHTML = selectedText ? selectedText : ''; // Use empty string as fallback if selectedText is falsy
+  var newText = text.slice(0, start) + '<' + tag + attributes + '>' + selectedTextHTML + '</' + tag + '>' + text.slice(end);
   
   textarea.val(newText);
   textarea.focus();
-  textarea.prop('selectionStart', cursorPos + tag.length + 3); // move cursor past the opening tag
-  textarea.prop('selectionEnd', cursorPos + tag.length + 3 + selectedText.length); // select inserted text
+  textarea.prop('selectionStart', start + tag.length + 2); // move cursor after opening tag
+  textarea.prop('selectionEnd', start + tag.length + 2 + selectedTextHTML.length); // select inserted text
 }
 
 
