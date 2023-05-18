@@ -156,14 +156,25 @@ div#headings {
 .bg-white {
     border-radius: 9px;
 }
-#encrypted-url {
+.preview {
     width: 100%;
+    padding: 0rem 1.2rem 0rem 1.2rem;
+    margin-top: 1rem;
 }
 div#man-creator-is-one-he-is-allah {
     border-bottom: 4px solid #444;
     border-top: 19px solid #444;
     margin-top: 1rem;
     border-radius: 4px;
+    padding: 1rem;
+}
+#encrypted-url {
+    width: 100%;
+    border-top: 9px solid #444;
+    border-right: 4px solid #444;
+    border-left: 4px solid #444;
+    border-bottom: 9px solid #444;
+    border-radius: 1px;
     padding: 1rem;
 }
 /* Desktop and Mobile */  
