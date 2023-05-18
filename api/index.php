@@ -485,10 +485,10 @@ div#man-creator-is-one-he-is-allah {
     }
 </script>
 <script type="text/javascript">
-const previewDiv = document.getElementById("preview");  
-
-if (previewDiv.textContent.trim() === "") {  
-  previewDiv.style.display = "none";  
+if (\$.trim(\$('#preview').text()) === '') {  
+  \$('#preview').hide();  
+} else {  
+  \$('#preview').show();  
 }
 </script>
 </body>
