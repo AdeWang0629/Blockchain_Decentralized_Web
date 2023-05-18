@@ -86,27 +86,12 @@
 .button-publish:hover,
 .button-copy:hover {
   background-color: #444444ab;
-  color: #fff;
-    background: #444 -webkit-gradient(linear, left top, left bottom, from(#444), to(#444)) repeat-x;
-    background: #444 linear-gradient(180deg, #444, #444) repeat-x;
 }
 
 .button-publish i,
 .button-copy i {
   margin-right: 10px;
   font-size: 18px;
-}
-.button-publish,
-.button-copy:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #444;
-    background-image: none;
-    border-color: #444;
-}
-.button-publish,
-.button-copy:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show>.btn-primary.dropdown-toggle:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(239,239,239,0.5);
-    box-shadow: 0 0 0 0.2rem rgba(239,239,239,0.5);
 }
 .btn-primary {
     color: #fff;
