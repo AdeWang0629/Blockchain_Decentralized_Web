@@ -165,7 +165,6 @@ div#man-creator-is-one-he-is-allah {
     margin-top: 1rem;
     border-radius: 4px;
     padding: 1rem;
-    position: relative;
 }
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
