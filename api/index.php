@@ -397,7 +397,7 @@ div#headings {
 
         // Update the URL with the encrypted HTML using the pushState method
         if (history.pushState) {
-         //   var path = "/site/" + encodeURIComponent(encrypted);
+            var path = "/site/" + encodeURIComponent(encrypted);
         //    window.history.pushState({path: path}, '', path);
             var url = window.location.origin + path;
             // Displaying encrypted URL to user
