@@ -220,8 +220,8 @@ div#headings {
   <div class="row">
     <div class="col">
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#headings">Headings</button>
-      <button id="link-btn" class="btn btn-secondary" data-toggle="collapse" data-target="#links">Links</button>
-      <button id="image-btn" class="btn btn-secondary" data-toggle="collapse" data-target="#images">Images</button>
+      <button id="link-btn" class="btn btn-secondary">Links</button>
+      <button id="image-btn" class="btn btn-secondary">Images</button>
       <button class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
     </div>
   </div>
@@ -234,14 +234,6 @@ div#headings {
         <button class="btn btn-secondary" onclick="insertTag('<h4>', '</h4>')">H4</button>
         <button class="btn btn-secondary" onclick="insertTag('<h5>', '</h5>')">H5</button>
         <button class="btn btn-secondary" onclick="insertTag('<h6>', '</h6>')">H6</button>
-      </div>
-      <div id="links" class="collapse">
-        <input type="text" id="link-url" placeholder="http://">
-        <button class="btn btn-secondary" onclick="insertLink()">Insert Link</button>
-      </div>
-      <div id="images" class="collapse">
-        <input type="text" id="image-url" placeholder="http://">
-        <button class="btn btn-secondary" onclick="insertImage()">Insert Image</button>
       </div>
     </div>
   </div>
