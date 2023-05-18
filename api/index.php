@@ -65,6 +65,7 @@
   position: relative;
   border-radius: 9px;
   width:-webkit-fill-available;
+  position: relative;
 }
 .button-publish,
 .button-copy {
@@ -91,7 +92,11 @@
   margin-right: 10px;
   font-size: 18px;
 }
-
+.editor-buttons {
+position: absolute;
+top:0;
+left:0;
+}
  </style>
 </head>
 <body>
@@ -167,19 +172,16 @@
     </div>
   </div>
   <div id="man-creator-is-one-he-is-allah"></div>
+<div class="editor-buttons">
   <div class="row">
     <div class="col">
       <button class="btn btn-primary" onclick="insertTag('<strong>', '</strong>')">Bold</button>
       <button class="btn btn-primary" onclick="insertTag('<em>', '</em>')">Italic</button>
       <button class="btn btn-primary" onclick="insertTag('<u>', '</u>')">Underline</button>
-      <button class="btn btn-primary" onclick="insertTag('<h1>', '</h1>')">H1</button>
-      <button class="btn btn-primary" onclick="insertTag('<h2>', '</h2>')">H2</button>
-      <button class="btn btn-primary" onclick="insertTag('<h3>', '</h3>')">H3</button>
-      <button class="btn btn-primary" onclick="insertTag('<h4>', '</h4>')">H4</button>
-      <button class="btn btn-primary" onclick="insertTag('<h5>', '</h5>')">H5</button>
       <button class="btn btn-primary" onclick="insertTag('<p>', '</p>')">Paragraph</button>
     </div>
   </div>
+</div>
   <div class="row">
     <div class="col">
       <div id="headings" class="collapse">
