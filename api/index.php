@@ -174,13 +174,12 @@ button.btn.btn-primary {
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#headings">Headings</button>
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#links">Links</button>
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#images">Images</button>
-      <button class="btn btn-secondary" data-toggle="modal" data-target="#meta">Meta</button>
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
     </div>
   </div>
   <div class="row">
     <div class="col">
        <form onsubmit="return false;">
-        <label for="html-code">Enter your HTML code:</label><br>
         <textarea class="textarea" id="html-code" name="html-code" rows="10"></textarea><br><br>
         <button class="button-publish" type="button" onclick="encrypt()">
   <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
@@ -224,27 +223,18 @@ button.btn.btn-primary {
   </div>
 </div>
 
-<!-- Modal for Meta -->
-<div class="modal fade" id="meta">
+<!-- Modal for Help -->
+<div class="modal fade" id="help">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Meta tags</h4>
+        <h4 class="modal-title">Know What You Want to Know</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title">
-          </div>
-          <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea class="form-control" id="description"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="keywords">Keywords:</label>
-            <input type="text" class="form-control" id="keywords">
+          
           </div>
         </form>
       </div>
