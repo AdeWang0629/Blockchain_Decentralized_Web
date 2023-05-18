@@ -203,7 +203,6 @@ button.btn.btn-primary {
       </div>
     </div>
   </div>
-</div>
   <div class="row">
     <div class="col">
        <form onsubmit="return false;">
