@@ -100,7 +100,7 @@ textarea:focus {
   outline: none;  
   border: 4px solid #efefef;  
   opacity: 0.5;
-  box-shadow: inset 0 -2px 0 rgb(239, 239, 239, 0.5) !important;
+  box-shadow: inset 0 -2px 0 rgb(239, 239, 239, 0.3) !important;
 }
 .editor-buttons {
     position: absolute;
