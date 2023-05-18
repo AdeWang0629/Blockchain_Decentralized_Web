@@ -151,6 +151,9 @@ div#headings {
     position: absolute;
     padding-top: 9px;
 }
+.bg-white {
+    border-radius: 9px;
+}
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
   /* Add styles here for mobile and smaller screens */  
@@ -273,125 +276,7 @@ div#headings {
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-               <!-- Question 1 -->
-       <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="question1">
-               <h4 class="panel-title">
-                   <a data-toggle="collapse" data-parent="#accordion" href="#answer1" aria-expanded="true" aria-controls="answer1">
-                       How do I add a hyperlink in my HTML code?
-                   </a>
-               </h4>
-           </div>
-           <div id="answer1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="question1">
-               <div class="panel-body">
-                   To add a hyperlink in HTML, you can use the following code:
-                   <pre>&lt;a href="https://www.example.com"&gt;Link Text&lt;/a&gt;</pre>
-               </div>
-           </div>
-       </div>
-
-       <!-- Question 2 -->
-       <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="question2">
-               <h4 class="panel-title">
-                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#answer2" aria-expanded="false" aria-controls="answer2">
-                       How do I add an image in my HTML code?
-                   </a>
-               </h4>
-           </div>
-           <div id="answer2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="question2">
-               <div class="panel-body">
-                   To add an image in HTML, you can use the following code:
-                   <pre>&lt;img src="image-url.jpg" alt="Alt Text"&gt;</pre>
-               </div>
-           </div>
-       </div>
-
-       <!-- Question 3 -->
-       <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="question3">
-               <h4 class="panel-title">
-                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#answer3" aria-expanded="false" aria-controls="answer3">
-                       How do I make text bold in my HTML code?
-                   </a>
-               </h4>
-           </div>
-           <div id="answer3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="question3">
-               <div class="panel-body">
-                   To make text bold in HTML, you can use the following code:
-                   <pre>&lt;b&gt;Bold Text&lt;/b&gt;</pre>
-               </div>
-           </div>
-       </div>
-
-       <!-- Question 4 -->
-       <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="question4">
-               <h4 class="panel-title">
-                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#answer4" aria-expanded="false" aria-controls="answer4">
-                       How do I make text italic in my HTML code?
-                   </a>
-               </h4>
-           </div>
-           <div id="answer4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="question4">
-               <div class="panel-body">
-                   To make text italic in HTML, you can use the following code:
-                   <pre>&lt;i&gt;Italic Text&lt;/i&gt;</pre>
-               </div>
-           </div>
-       </div>
-
-       <!-- Question 5 -->
-       <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="question5">
-               <h4 class="panel-title">
-                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#answer5" aria-expanded="false" aria-controls="answer5">
-                       How do I make text underlined in my HTML code?
-                   </a>
-               </h4>
-           </div>
-           <div id="answer5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="question5">
-               <div class="panel-body">
-                   To make text underlined in HTML, you can use the following code:
-                   <pre>&lt;u&gt;Underlined Text&lt;/u&gt;</pre>
-               </div>
-           </div>
-       </div>
-       
-       <!--Question 6-->
-       <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="question6">
-               <h4 class="panel-title">
-                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#answer6" aria-expanded="false" aria-controls="answer6">
-                       How do I create a div element in HTML?
-                   </a>
-               </h4>
-           </div>
-           <div id="answer6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="question6">
-               <div class="panel-body">
-                   To create a div element in HTML, you can use the following code:
-                   <pre>&lt;div&gt;Content Here&lt;/div&gt;</pre>
-               </div>
-           </div>
-       </div>
-       
-       <!--Question 7-->
-       <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="question7">
-               <h4 class="panel-title">
-                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#answer7" aria-expanded="false" aria-controls="answer7">
-                       How do I create a label element in HTML?
-                   </a>
-               </h4>
-           </div>
-           <div id="answer7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="question7">
-               <div class="panel-body">
-                   To create a label element in HTML, you can use the following code:
-                   <pre>&lt;label for="input-id"&gt;Label Text&lt;/label&gt;</pre>
-               </div>
-           </div>
-       </div>
-   </div>
+        
       </div>
     </div>
   </div>
