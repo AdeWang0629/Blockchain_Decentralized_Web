@@ -109,8 +109,8 @@ button.btn.btn-primary {
   /* Add styles here for mobile and smaller screens */  
   .editor-buttons {
     position: absolute;
-    top: 75px;
-    left: 5%;
+    top: 12.2%;
+    left: 5.9%;
 }
 }  
 
