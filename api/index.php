@@ -256,7 +256,7 @@ div#headings {
 <div class="editor-buttons">
   <div class="row">
     <div class="col">
-      <button class="btn btn-primary" onclick="insertTag('<strong>', '</strong>')">Bold</button>
+      <button class="btn btn-primary" onclick=onclick="boldText()">Bold</button>
       <button class="btn btn-primary" onclick="insertTag('<em>', '</em>')">Italic</button>
       <button class="btn btn-primary" onclick="insertTag('<u>', '</u>')">Underline</button>
       <button class="btn btn-primary" onclick="insertTag('<p>', '</p>')">Paragraph</button>
@@ -301,6 +301,18 @@ function insertTextBeforeAndAfter(textBefore, textAfter) {
            var selectedText = text.substring(start, end);
            var newText = textBefore + selectedText + textAfter;
            txtarea.value = text.slice(0, start) + newText + text.slice(end);
+       }
+       
+   function boldText() {
+           insertTextBeforeAndAfter("<b>", "</b>");
+       }
+
+       function italicText() {
+           insertTextBeforeAndAfter("<i>", "</i>");
+       }
+
+       function underlineText() {
+           insertTextBeforeAndAfter("<u>", "</u>");
        }
 
    function addLink() {
