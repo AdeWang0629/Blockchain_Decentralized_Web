@@ -300,23 +300,24 @@ function insertLink() {
     alert("Please select the text to hyperlink.");
   }
   else {
-    var url = prompt("Enter the URL to hyperlink:", "http://");
+    var url = prompt("Enter the URL to hyperlink:", "https://");
     if(url !== null) {
       var link = '<a href="' + url + '">' + anchor + '</a>';
       document.execCommand("insertHTML", false, link);
+      $("#html-code").val($("#html-code").val()); // Update the textarea value to reflect the changes made via execCommand
     }
   }
 }
 
-function insertLink() {
+function insertImage() {
   var anchor = $("#html-code").val().substring($("#html-code")[0].selectionStart, $("#html-code")[0].selectionEnd);
   if(anchor === "") {
     alert("Please select the text to hyperlink.");
   }
   else {
-    var url = prompt("Enter the URL to hyperlink:", "https://");
+    var url = prompt("Enter an image url:", "https://");
     if(url !== null) {
-      var link = '<a href="' + url + '">' + anchor + '</a>';
+      var link = '<img src="' + url + '">' + anchor + '</a>';
       document.execCommand("insertHTML", false, link);
       $("#html-code").val($("#html-code").val()); // Update the textarea value to reflect the changes made via execCommand
     }
