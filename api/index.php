@@ -109,6 +109,9 @@ textarea:focus {
 button.btn.btn-primary {
     font-size: 9px;
 }
+.button-at {
+    display:flex;
+}
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
   /* Add styles here for mobile and smaller screens */  
@@ -207,12 +210,14 @@ button.btn.btn-primary {
     <div class="col">
        <form onsubmit="return false;">
         <textarea class="textarea" id="html-code" name="html-code" rows="10"></textarea><br><br>
+        <div class="button-at">
         <button class="button-publish" type="button" onclick="encrypt()">
   <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
 </button>
 <button class="button-copy" type="button" onclick="copyURL()">
   <i class="iconify" data-icon="bi:clipboard"></i> Copy URL to Clipboard
 </button>
+</div>
     </form>
     </div>
   </div>
