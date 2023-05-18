@@ -93,6 +93,31 @@
   margin-right: 10px;
   font-size: 18px;
 }
+.btn-primary {
+    color: #fff;
+    background: #444 -webkit-gradient(linear, left top, left bottom, from(#444), to(#444)) repeat-x;
+    background: #444 linear-gradient(180deg, #444, #444) repeat-x;
+    border-color: #444;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #444;
+    background-image: none;
+    border-color: #444;
+}
+.btn-primary:hover, .btn-primary:active:hover {
+    background-color: #444;
+}
+.btn-primary:hover {
+    color: #fff;
+    background: #444 -webkit-gradient(linear, left top, left bottom, from(#444), to(#444)) repeat-x;
+    background: #444 linear-gradient(180deg, #444, #444) repeat-x;
+    border-color: #444;
+}
+.btn:hover {
+    color: #444;
+    text-decoration: none;
+}
 .textarea {
 position: relative;
 box-shadow: unset! important;
