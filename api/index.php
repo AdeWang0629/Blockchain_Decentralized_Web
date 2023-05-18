@@ -461,11 +461,6 @@ div#headings {
     }
     return false;
 </script>
-<script type="text/javascript">
- $('#modal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-</script>
 <div id="encrypted-url"></div>
 </body>
 </html>
