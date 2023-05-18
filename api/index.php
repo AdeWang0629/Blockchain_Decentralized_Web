@@ -156,6 +156,9 @@ div#headings {
 .bg-white {
     border-radius: 9px;
 }
+#encrypted-url {
+    width: 100%;
+}
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
   /* Add styles here for mobile and smaller screens */  
@@ -435,8 +438,8 @@ div#headings {
     }
 
     // Call the decrypt function on page load
-    if (window.location.pathname.startsWith('/site/') && window.location.pathname.slice(6)) {
-        var encrypted = decodeURIComponent(window.location.pathname.slice(6));
+    if (window.location.pathname.startsWith('/site/') && window.location.pathname.slice(9)) {
+        var encrypted = decodeURIComponent(window.location.pathname.slice(9));
         var encryptedHtml = { 'encrypted-html': encrypted };
 
         // Update the URL with the encrypted HTML using the pushState method
@@ -446,7 +449,7 @@ div#headings {
 
         // Displaying encrypted URL to user
         var url = window.location.origin + window.location.pathname;
-        document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
+        document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Web URL:</p><pre>' + url + '</pre>';
 
         // Decrypt and display the HTML code
         var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "ALLAH");
