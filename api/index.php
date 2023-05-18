@@ -100,6 +100,23 @@ position: relative;
     top: 19%;
     left: 3%;
 }
+button.btn.btn-primary {
+    font-size: 9px;
+}
+/* Desktop and Mobile */  
+@media screen and (max-width: 768px) {  
+  /* Add styles here for mobile and smaller screens */  
+  .editor-buttons {
+    position: absolute;
+    top: 75px;
+    left: 5%;
+}
+}  
+
+/* Desktop only */  
+@media screen and (min-width: 769px) {  
+  /* Add styles here for desktop and larger screens */  
+}
  </style>
 </head>
 <body>
