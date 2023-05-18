@@ -119,7 +119,7 @@
     border-color: #444;
 }
 .btn:hover {
-    color: #fff;
+    color: #444;
     text-decoration: none;
 }
 .textarea {
@@ -180,13 +180,13 @@ div#headings {
     <div class="collapse navbar-collapse bg-white" id="navbarsExampleDefault">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link">Home</a>
+                <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link">About</a>
+                <a class="nav-link" href="https://dub.sh/about-us">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link">Contact</a>
+                <a class="nav-link" href="https://dub.sh/support-us">Support Movement</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
