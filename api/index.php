@@ -296,17 +296,14 @@ function insertTextBeforeAndAfter(textBefore, textAfter) {
        }
 
    function addLink() {
-           var linkURL = prompt("Enter URL:", "http://");
-           if (linkURL != null) {
-               var linkText = prompt("Enter link text:", "");
-               if (linkText != null) {
-                   insertTextBeforeAndAfter('<a href="' + linkURL + '">', "</a>");
-               }
-           }
-       }
+    var linkURL = prompt("Enter URL:", "https://");
+    if (linkURL != null) {
+        insertTextBeforeAndAfter('<a href="' + linkURL + '">', "</a>");
+    }
+}
 
        function addImage() {
-           var imgURL = prompt("Enter image URL:", "http://");
+           var imgURL = prompt("Enter image URL:", "https://");
            if (imgURL != null) {
                insertTextBeforeAndAfter('<img src="' + imgURL + '">', "");
            }
