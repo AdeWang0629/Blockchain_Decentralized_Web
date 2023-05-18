@@ -220,7 +220,7 @@ div#headings {
   <div class="row">
     <div class="col">
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#headings">Headings</button>
-      <button id="link-btn" class="btn btn-secondary">Links</button>
+      <button id="link-btn" class="btn btn-secondary" onclick="addLink()">Links</button>
       <button id="image-btn" class="btn btn-secondary">Images</button>
       <button class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
     </div>
