@@ -404,7 +404,7 @@ div#headings {
             window.history.pushState({path: path}, '', path);
             var url = window.location.origin + path;
             // Displaying encrypted URL to user
-            document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
+            document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Web URL:</p><pre>' + url + '</pre>';
         }
         
         // Clear existing HTML from decrypted-html div
