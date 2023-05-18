@@ -61,39 +61,8 @@
   
   /* Set the position and width of the line numbers */
   position: relative;
+  border-radius: 9px;
 }
-#html-code::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  
-  /* Set the background color of the line numbers */
-  background-color: #eee;
-  
-  /* Add a border and border-radius to the line numbers */
-  border-right: 1px solid #ddd;
-  border-radius: 5px 0 0 5px;
-}
-
-/* Style the line numbers */
-#html-code .line-numbers {
-  display: inline-block;
-  width: 40px;
-  text-align: right;
-  color: #888;
-  padding-right: 10px;
-  margin-right: 10px;
-}
-
-/* Highlight the current line */
-#html-code .current-line {
-  background-color: #f0f0f0;
-}
-
  </style>
 </head>
 <body>
@@ -151,7 +120,7 @@
     <div class="col">
        <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
-        <textarea id="html-code" name="html-code" rows="10" cols="50"></textarea><br><br>
+        <textarea id="html-code" name="html-code" rows="10" cols="74"></textarea><br><br>
         <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
