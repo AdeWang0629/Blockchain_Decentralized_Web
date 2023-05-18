@@ -26,6 +26,9 @@
 <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 <script src="../public/editor.js"></script>
  <style>
+ body {
+   min-height: unset;
+}
   .bgray {
     --tw-bg-opacity: 1;
     background-color: #f3f4f6;
@@ -65,7 +68,7 @@
   border-radius: 9px;
   width:-webkit-fill-available;
   padding-top: 59px;
-  opacity: 0.5;
+  opacity: 0.9;
 }
 .button-publish,
 .button-copy {
@@ -176,6 +179,14 @@ div#man-creator-is-one-he-is-allah {
     border-bottom: 9px solid #444;
     border-radius: 1px;
     padding: 1rem;
+}
+.footer {
+    background-image: url(https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 99px;
+    width: 100%;
 }
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
@@ -354,6 +365,7 @@ div#man-creator-is-one-he-is-allah {
 <div class="preview" id="preview">
 <div id="encrypted-url"></div>
 </div>
+<div class="footer"></div>
 <script>
        function insertTextBeforeAndAfter(textBefore, textAfter) {
            var txtarea = document.getElementById("html-code");
@@ -483,13 +495,6 @@ div#man-creator-is-one-he-is-allah {
     } else {
         document.querySelector('form button:first-of-type').style.display = 'inline-block';
     }
-</script>
-<script type="text/javascript">
-if (\$.trim(\$('#preview').text()) === '') {  
-  \$('#preview').hide();  
-} else {  
-  \$('#preview').show();  
-}
 </script>
 </body>
 </html>
