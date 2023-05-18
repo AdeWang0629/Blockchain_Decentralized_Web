@@ -293,7 +293,7 @@ div#headings {
 </div>
 
 <script>
-  function insertTag(openTag, closeTag) {
+function insertTag(openTag, closeTag) {
   var textarea = document.getElementById("html-code");
   var startIndex = textarea.selectionStart;
   var endIndex = textarea.selectionEnd;
@@ -308,15 +308,23 @@ function insertLink() {
     alert("Please select the text to hyperlink.");
   }
   else {
-    document.execCommand("createLink", false, null);
+    var url = prompt("Enter the URL to hyperlink:", "http://");
+    if(url !== null) {
+      var link = '<a href="' + url + '">' + anchor + '</a>';
+      document.execCommand("insertHTML", false, link);
+    }
   }
 }
 
 function insertImage() {
-  document.execCommand("insertImage", false, null);
+  var url = prompt("Enter the URL of the image:", "http://");
+  if(url !== null) {
+    var img = '<img src="' + url + '">';
+    document.execCommand("insertHTML", false, img);
+  }
 }
 
-// Add event listeners to open pop-ups
+// Add event listeners to trigger functions
 document.getElementById("link-btn").addEventListener("click", insertLink);
 document.getElementById("image-btn").addEventListener("click", insertImage);
 </script>
