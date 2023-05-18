@@ -293,35 +293,42 @@ function insertTag(openTag, closeTag) {
   var replacedText = openTag + selectedText + closeTag;
   element.innerHTML = element.innerHTML.substring(0, startIndex) + replacedText + element.innerHTML.substring(endIndex);
 }
+var htmlCode = document.getElementById('html-code');
+  function addTag(tag) {
+        var start = htmlCode.selectionStart;
+        var end = htmlCode.selectionEnd;
 
-function insertLink() {
-  var element = $("#html-code")[0];
-  var anchor = element.innerHTML.substring(element.selectionStart, element.selectionEnd).replace(/<\/?[^>]+>/gi, ''); // remove any HTML tags from the selected text
-  if(anchor === "") {
-    alert("Please select the text to hyperlink.");
-  }
-  else {
-    var url = prompt("Enter the URL to hyperlink:", "https://");
-    if(url !== null) {
-      var link = '<a href="' + url + '">' + anchor + '</a>';
-      document.execCommand("insertHTML", false, link);
+        var selectedText = htmlCode.value.substring(start, end);
+        var additional = '';
+
+        if (tag === 'a') {
+            var link = prompt('Enter link URL:', 'https://');
+            if (link) {
+                additional = ' href="' + link + '"';
+            }
+        }
+
+        var html = '<' + tag + additional + '>' + selectedText + '</' + tag + '>';
+
+        htmlCode.value = htmlCode.value.substring(0, start) + html + htmlCode.value.substring(end);
+        htmlCode.setSelectionRange(start + 2 + tag.length + additional.length, end + 2 + tag.length + additional.length + selectedText.length);
     }
-  }
-}
 
-function insertImage() {
-  var element = $("#html-code")[0];
-  var url = prompt("Enter an image url:", "https://");
-  if(url !== null) {
-    var img = '<img src="' + url + '">';
-    document.execCommand("insertHTML", false, img);
-  }
-}
+    function addLink() {
+        var start = htmlCode.selectionStart;
+        var end = htmlCode.selectionEnd;
 
-// Add event listeners to trigger functions
-document.getElementById("link-btn").addEventListener("click", insertLink);
-document.getElementById("image-btn").addEventListener("click", insertImage);
+        var selectedText = htmlCode.value.substring(start, end);
 
+        var linkURL = prompt("Enter link URL", "https://");
+
+        if (linkURL) {
+            var html = '<a href="' + linkURL + '">' + selectedText + '</a>';
+
+            htmlCode.value = htmlCode.value.substring(0, start) + html + htmlCode.value.substring(end);
+            htmlCode.setSelectionRange(start + 9, start + 9 + linkURL.length);
+        }
+    }
 </script>
 
 <script>
