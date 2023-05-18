@@ -159,6 +159,28 @@ div#headings {
 #encrypted-url {
     width: 100%;
 }
+div#man-creator-is-one-he-is-allah {
+    border-bottom: 4px solid #444;
+    border-top: 19px solid #444;
+    margin-top: 1rem;
+    border-radius: 4px;
+    padding: 1rem;
+    position: relative;
+}
+div#man-creator-is-one-he-is-allah::before {
+    content: "Preview";
+    position: absolute;
+    top: -35%;
+    left: 41%;
+    color: #fff;
+}
+div#encrypted-url {
+    width: 100%;
+    border-radius: 4px;
+    padding: 1rem;
+    border-right: 4px solid #444;
+    border-left: 4px solid #444;
+}
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
   /* Add styles here for mobile and smaller screens */  
@@ -333,6 +355,9 @@ div#headings {
     </div>
   </div>
 </div>
+<div class="preview">
+<div id="encrypted-url"></div>
+</div>
 <script>
        function insertTextBeforeAndAfter(textBefore, textAfter) {
            var txtarea = document.getElementById("html-code");
@@ -468,6 +493,5 @@ div#headings {
   $('#myInput').trigger('focus')
 })
 </script>
-<div id="encrypted-url"></div>
 </body>
 </html>
