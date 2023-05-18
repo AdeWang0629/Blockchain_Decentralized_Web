@@ -256,9 +256,9 @@ div#headings {
 <div class="editor-buttons">
   <div class="row">
     <div class="col">
-      <button class="btn btn-primary" onclick=onclick="boldText()">Bold</button>
-      <button class="btn btn-primary" onclick="insertTag('<em>', '</em>')">Italic</button>
-      <button class="btn btn-primary" onclick="insertTag('<u>', '</u>')">Underline</button>
+      <button class="btn btn-primary" onclick="boldText()">Bold</button>
+      <button class="btn btn-primary" onclick="italicText()">Italic</button>
+      <button class="btn btn-primary" onclick="underlineText()">Underline</button>
       <button class="btn btn-primary" onclick="insertTag('<p>', '</p>')">Paragraph</button>
     </div>
   </div>
@@ -285,7 +285,7 @@ div#headings {
 </div>
 
 <script>
-function insertTextBeforeAndAfter(textBefore, textAfter) {
+       function insertTextBeforeAndAfter(textBefore, textAfter) {
            var txtarea = document.getElementById("html-code");
            var start = txtarea.selectionStart;
            var end = txtarea.selectionEnd;
@@ -294,8 +294,8 @@ function insertTextBeforeAndAfter(textBefore, textAfter) {
            var newText = textBefore + selectedText + textAfter;
            txtarea.value = text.slice(0, start) + newText + text.slice(end);
        }
-       
-   function boldText() {
+
+       function boldText() {
            insertTextBeforeAndAfter("<b>", "</b>");
        }
 
