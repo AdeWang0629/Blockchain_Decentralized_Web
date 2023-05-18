@@ -95,6 +95,7 @@
 }
 .textarea {
 position: relative;
+box-shadow: unset! important;
 }
 textarea:focus {  
   outline: none;  
