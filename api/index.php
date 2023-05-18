@@ -247,7 +247,7 @@ div#headings {
        <form onsubmit="return false;">
         <textarea class="textarea" id="html-code" name="html-code" contenteditable="true" rows="10"></textarea><br><br>
         <div class="button-at">
-        <button class="button-publish" type="button" onclick="encrypt()">
+        <button class="button-publish" type="button" onclick="return encrypt()">
   <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
 </button>
 <button class="button-copy" type="button" onclick="copyURL()">
@@ -396,14 +396,13 @@ div#headings {
         var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
 
         // Update the URL with the encrypted HTML using the pushState method
-        if (history.replaceState) {
-    var path = "/site/" + encodeURIComponent(encrypted);
-    window.history.replaceState({path: path}, '', path);
-    var url = window.location.origin + path;
-    // Displaying encrypted URL to user
-    document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
-}
-
+        if (history.pushState) {
+            var path = "/site/" + encodeURIComponent(encrypted);
+            window.history.pushState({path: path}, '', path);
+            var url = window.location.origin + path;
+            // Displaying encrypted URL to user
+            document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
+        }
         
         // Clear existing HTML from decrypted-html div
         document.getElementById('man-creator-is-one-he-is-allah').innerHTML = '';
@@ -460,6 +459,7 @@ div#headings {
     } else {
         document.querySelector('form button:first-of-type').style.display = 'inline-block';
     }
+    return false;
 </script>
 <script type="text/javascript">
  $('#modal').on('shown.bs.modal', function () {
