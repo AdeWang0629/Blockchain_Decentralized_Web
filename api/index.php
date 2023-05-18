@@ -228,12 +228,12 @@ div#headings {
   <div class="row">
     <div class="col">
       <div id="headings" class="collapse">
-        <button class="btn btn-secondary" onclick="insertTag('<h1>', '</h1>')">H1</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h2>', '</h2>')">H2</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h3>', '</h3>')">H3</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h4>', '</h4>')">H4</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h5>', '</h5>')">H5</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h6>', '</h6>')">H6</button>
+        <button class="btn btn-secondary" onclick="h1()">H1</button>
+        <button class="btn btn-secondary" onclick="h2()">H2</button>
+        <button class="btn btn-secondary" onclick="h3()">H3</button>
+        <button class="btn btn-secondary" onclick="h4()">H4</button>
+        <button class="btn btn-secondary" onclick="h5()">H5</button>
+        <button class="btn btn-secondary" onclick="h6()">H6</button>
       </div>
     </div>
   </div>
@@ -354,6 +354,24 @@ div#headings {
        
        function paragraph() {
            insertTextBeforeAndAfter("<p>", "</p>");
+       }
+       function h1() {
+           insertTextBeforeAndAfter("<h1>", "</h1>");
+       }
+       function h2() {
+           insertTextBeforeAndAfter("<h2>", "</h2>");
+       }
+       function h3() {
+           insertTextBeforeAndAfter("<h3>", "</h3>");
+       }
+       function h4() {
+           insertTextBeforeAndAfter("<h4>", "</h4>");
+       }
+       function h5() {
+           insertTextBeforeAndAfter("<h5>", "</h5>");
+       }
+       function h6() {
+           insertTextBeforeAndAfter("<h6>", "</h6>");
        }
 
    function addLink() {
