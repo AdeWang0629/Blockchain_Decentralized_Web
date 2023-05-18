@@ -220,8 +220,8 @@ div#headings {
   <div class="row">
     <div class="col">
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#headings">Headings</button>
-      <button class="btn btn-secondary" data-toggle="collapse" data-target="#links">Links</button>
-      <button class="btn btn-secondary" data-toggle="collapse" data-target="#images">Images</button>
+      <button id="link-btn" class="btn btn-secondary" data-toggle="collapse" data-target="#links">Links</button>
+      <button id="image-btn" class="btn btn-secondary" data-toggle="collapse" data-target="#images">Images</button>
       <button class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
     </div>
   </div>
