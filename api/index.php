@@ -170,6 +170,91 @@ div#headings {
 @media screen and (min-width: 769px) {  
   /* Add styles here for desktop and larger screens */  
 }
+
+
+
+/* general styling */
+body {
+    margin: 0;
+  	padding: 0;
+  	background-color: #fff;
+  	font-family: Arial, sans-serif;
+}
+
+/* desktop screen styling */
+.desktop {
+    position: relative;
+    height: 100vh;
+    background-color: #f3f3f3;
+    overflow: hidden;
+}
+
+.desktop-image {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.desktop-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.date-time {
+    font-size: 14px;
+}
+
+.icons {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.icons a:hover {
+    color: #fff;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
  </style>
 </head>
 <body>
@@ -330,6 +415,45 @@ div#headings {
     </div>
   </div>
 </div>
+
+
+
+<div class="desktop">
+    <div class="taskbar">
+        <p class="date-time">
+          <span id="date"></span>
+          <span id="time"></span>
+        </p>
+    </div>
+    <div class="icons">
+        <a href="#">
+            <img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_assessment_48px-512.png" alt="Assessment Icon">
+            <p>Assessment</p>
+        </a>
+        <a href="#">
+            <img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_chat_48px-512.png" alt="Chat Icon">
+            <p>Chat</p>
+        </a>
+        <a href="#">
+            <img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_contacts_48px-512.png" alt="Contacts Icon">
+            <p>Contacts</p>
+        </a>
+        <a href="#">
+            <img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_email_48px-512.png" alt="Email Icon">
+            <p>Email</p>
+        </a>
+        <a href="#">
+            <img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_folder_48px-512.png" alt="Folder Icon">
+            <p>Folder</p>
+        </a>
+    </div>
+    <div class="desktop-image">
+        <img src="https://images.unsplash.com/photo-1612391930827-700f641a5b10" alt="Desktop Image">
+    </div>
+</div>
+
+
+
 <script>
        function insertTextBeforeAndAfter(textBefore, textAfter) {
            var txtarea = document.getElementById("html-code");
