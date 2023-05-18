@@ -65,6 +65,7 @@
   position: relative;
   border-radius: 9px;
   width:-webkit-fill-available;
+  padding-top: 59px;
 }
 .button-publish,
 .button-copy {
@@ -95,9 +96,9 @@
 position: relative;
 }
 .editor-buttons {
-position: absolute;
-top:0;
-left:0;
+    position: absolute;
+    top: 19%;
+    left: 3%;
 }
  </style>
 </head>
