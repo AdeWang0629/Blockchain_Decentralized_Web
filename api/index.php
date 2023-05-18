@@ -122,6 +122,9 @@
     color: #444;
     text-decoration: none;
 }
+.editor-buttons .btn:hover {
+    color: #fff;
+}
 .textarea {
 position: relative;
 box-shadow: unset! important;
