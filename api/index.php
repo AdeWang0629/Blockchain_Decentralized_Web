@@ -157,10 +157,10 @@
        <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
         <textarea id="html-code" name="html-code" rows="10"></textarea><br><br>
-        <button type="button" onclick="encrypt()">
+        <button class="button-publish" type="button" onclick="encrypt()">
   <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
 </button>
-<button type="button" onclick="copyURL()">
+<button class="button-copy" type="button" onclick="copyURL()">
   <i class="iconify" data-icon="bi:clipboard"></i> Copy URL to Clipboard
 </button>
     </form>
