@@ -62,6 +62,7 @@
   /* Set the position and width of the line numbers */
   position: relative;
   border-radius: 9px;
+  width:-webkit-fill-available;
 }
  </style>
 </head>
@@ -107,7 +108,14 @@
             </li>
         </ul>
     </div>
-</nav>   
+</nav>
+
+
+<!-- Content --->
+<div class="container">
+<div class="row">
+    <div class="col">
+  
   <div class="row">
     <div class="col">
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#headings">Headings</button>
@@ -120,7 +128,7 @@
     <div class="col">
        <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
-        <textarea id="html-code" name="html-code" rows="10" cols="74"></textarea><br><br>
+        <textarea id="html-code" name="html-code" rows="10"></textarea><br><br>
         <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
         <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
     </form>
@@ -192,6 +200,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <script>
