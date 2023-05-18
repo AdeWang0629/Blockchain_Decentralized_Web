@@ -105,6 +105,10 @@
     background-image: none;
     border-color: #444;
 }
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(239,239,239,0.5);
+    box-shadow: 0 0 0 0.2rem rgba(239,239,239,0.5);
+}
 .btn-primary:hover, .btn-primary:active:hover {
     background-color: #444;
 }
@@ -115,7 +119,7 @@
     border-color: #444;
 }
 .btn:hover {
-    color: #444;
+    color: #fff;
     text-decoration: none;
 }
 .textarea {
