@@ -146,6 +146,11 @@ button.btn.btn-primary {
 .button-at button {
     margin-right: 1rem;
 }
+div#headings {
+    z-index: 9999;
+    position: absolute;
+    padding-top: 9px;
+}
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
   /* Add styles here for mobile and smaller screens */  
@@ -289,58 +294,31 @@ button.btn.btn-primary {
 
 <script>
   function insertTag(openTag, closeTag) {
-    var textarea = document.getElementById("html-code");
-    var startIndex = textarea.selectionStart;
-    var endIndex = textarea.selectionEnd;
-    var selectedText = textarea.value.substring(startIndex, endIndex);
-    var replacedText = openTag + selectedText + closeTag;
-    textarea.value = textarea.value.substring(0, startIndex) + replacedText + textarea.value.substring(endIndex);
+  var textarea = document.getElementById("html-code");
+  var startIndex = textarea.selectionStart;
+  var endIndex = textarea.selectionEnd;
+  var selectedText = textarea.value.substring(startIndex, endIndex);
+  var replacedText = openTag + selectedText + closeTag;
+  textarea.value = textarea.value.substring(0, startIndex) + replacedText + textarea.value.substring(endIndex);
+}
+
+function insertLink() {
+  var anchor = $("#html-code").val().substring($("#html-code")[0].selectionStart, $("#html-code")[0].selectionEnd);
+  if(anchor === "") {
+    alert("Please select the text to hyperlink.");
   }
-  
-  function insertLink() {
-    var url = $("#link-url").val();
-    var anchor = $("#html-code").val().substring($("#html-code")[0].selectionStart, $("#html-code")[0].selectionEnd);
-    if(anchor === "") {
-      alert("Please select the text to hyperlink.");
-    }
-    else if(url === "") {
-      alert("Please enter the URL to hyperlink.");
-    }
-    else {
-      var link = '<a href="' + url + '">' + anchor + '</a>';
-      document.execCommand("insertHTML", false, link);
-    }
+  else {
+    document.execCommand("createLink", false, null);
   }
-  
-  function insertImage() {
-    var url = $("#image-url").val();
-    if(url === "") {
-      alert("Please enter the URL of the image.");
-    }
-    else {
-      var img = '<img src="' + url + '">';
-      document.execCommand("insertHTML", false, img);
-    }
-  }
-  
-  function insertMeta() {
-    var title = $("#title").val();
-    var description = $("#description").val();
-    var keywords = $("#keywords").val();
-    if(title !== "") {
-      var metaTitle = '<title>' + title + '</title>';
-      document.execCommand("insertHTML", false, metaTitle);
-    }
-    if(description !== "") {
-      var metaDescription = '<meta name="description" content="' + description + '">';
-      document.execCommand("insertHTML", false, metaDescription);
-    }
-    if(keywords !== "") {
-      var metaKeywords = '<meta name="keywords" content="' + keywords + '">';
-      document.execCommand("insertHTML", false, metaKeywords);
-    }
-    $("#meta").modal("hide");
-  }
+}
+
+function insertImage() {
+  document.execCommand("insertImage", false, null);
+}
+
+// Add event listeners to open pop-ups
+document.getElementById("link-btn").addEventListener("click", insertLink);
+document.getElementById("image-btn").addEventListener("click", insertImage);
 </script>
 
 <script>
