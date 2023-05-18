@@ -23,6 +23,8 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  <link rel="stylesheet" href="https://code.iconify.design/2/2.0.3/iconify.min.css" />
 <script src="../public/editor.js"></script>
  <style>
   .bgray {
@@ -129,8 +131,12 @@
        <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
         <textarea id="html-code" name="html-code" rows="10"></textarea><br><br>
-        <button type="button" onclick="encrypt()">Generate Encrypted URL</button>
-        <button type="button" onclick="copyURL()">Copy URL to Clipboard</button>
+        <button type="button" onclick="encrypt()">
+  <i class="iconify" data-icon="ph:lock-lock-fill"></i> Publish
+</button>
+<button type="button" onclick="copyURL()">
+  <i class="iconify" data-icon="bi:clipboard"></i> Copy URL to Clipboard
+</button>
     </form>
     </div>
   </div>
