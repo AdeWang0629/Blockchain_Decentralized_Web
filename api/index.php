@@ -435,8 +435,8 @@ div#headings {
     }
 
     // Call the decrypt function on page load
-    if (window.location.pathname.startsWith('/site/') && window.location.pathname.slice(6)) {
-        var encrypted = decodeURIComponent(window.location.pathname.slice(6));
+    if (window.location.pathname.startsWith('/site/') && window.location.pathname.slice(9)) {
+        var encrypted = decodeURIComponent(window.location.pathname.slice(9));
         var encryptedHtml = { 'encrypted-html': encrypted };
 
         // Update the URL with the encrypted HTML using the pushState method
