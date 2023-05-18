@@ -72,7 +72,7 @@
 .button-copy {
   display: inline-block;
   border: none;
-  background-color: #1292B4;
+  background-color: #444;
   color: #fff;
   padding: 10px 20px;
   font-size: 14px;
@@ -85,7 +85,7 @@
 
 .button-publish:hover,
 .button-copy:hover {
-  background-color: #107DAC;
+  background-color: #444444ab;
 }
 
 .button-publish i,
