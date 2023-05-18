@@ -24,6 +24,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+<script src="../public/editor.js"></script>
  <style>
  body {
    min-height: unset;
@@ -169,12 +170,6 @@ div#man-creator-is-one-he-is-allah {
     margin-top: 1rem;
     border-radius: 4px;
     padding: 1rem;
-    width:0px;
-    height:0px;
-}
-#man-creator-is-one-he-is-allah div {
-    width:0px;
-    height:0px;
 }
 #encrypted-url {
     width: 100%;
