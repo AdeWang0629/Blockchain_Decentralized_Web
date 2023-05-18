@@ -247,7 +247,7 @@ div#headings {
        <form onsubmit="return false;">
         <textarea class="textarea" id="html-code" name="html-code" contenteditable="true" rows="10"></textarea><br><br>
         <div class="button-at">
-        <button class="button-publish" type="button" onclick="return encrypt()">
+        <button class="button-publish" type="button" onclick="encrypt()">
   <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
 </button>
 <button class="button-copy" type="button" onclick="copyURL()">
@@ -459,7 +459,11 @@ div#headings {
     } else {
         document.querySelector('form button:first-of-type').style.display = 'inline-block';
     }
-    return false;
+</script>
+<script type="text/javascript">
+ $('#modal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
 </script>
 <div id="encrypted-url"></div>
 </body>
