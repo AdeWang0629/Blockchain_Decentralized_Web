@@ -310,17 +310,11 @@ function insertLink() {
 }
 
 function insertImage() {
-  var anchor = $("#html-code").val().substring($("#html-code")[0].selectionStart, $("#html-code")[0].selectionEnd);
-  if(anchor === "") {
-    alert("Please select the text to hyperlink.");
-  }
-  else {
-    var url = prompt("Enter an image url:", "https://");
-    if(url !== null) {
-      var link = '<img src="' + url + '">' + anchor + '</a>';
-      document.execCommand("insertHTML", false, link);
-      $("#html-code").val($("#html-code").val()); // Update the textarea value to reflect the changes made via execCommand
-    }
+  var url = prompt("Enter an image url:", "https://");
+  if(url !== null) {
+    var img = '<img src="' + url + '">';
+    document.execCommand("insertHTML", false, img);
+    $("#html-code").val($("#html-code").val()); // Update the textarea value to reflect the changes made via execCommand
   }
 }
 
