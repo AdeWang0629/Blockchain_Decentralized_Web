@@ -112,6 +112,9 @@ button.btn.btn-primary {
 .button-at {
     display:flex;
 }
+.button-at button {
+    margin-right: 1rem;
+}
 /* Desktop and Mobile */  
 @media screen and (max-width: 768px) {  
   /* Add styles here for mobile and smaller screens */  
