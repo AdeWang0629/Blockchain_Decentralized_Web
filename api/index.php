@@ -170,6 +170,10 @@ div#man-creator-is-one-he-is-allah {
     margin-top: 1rem;
     border-radius: 4px;
     padding: 1rem;
+    display: none;
+}
+#man-creator-is-one-he-is-allah div {
+    display: none;
 }
 #encrypted-url {
     width: 100%;
