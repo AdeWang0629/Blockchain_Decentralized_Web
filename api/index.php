@@ -58,7 +58,7 @@
   background-color: transparent;
   
   /* Add a border and padding to the container */
-  border: 1px solid #ddd;
+  border: 4px solid #efefef;
   padding: 10px;
   
   /* Set the position and width of the line numbers */
@@ -66,6 +66,7 @@
   border-radius: 9px;
   width:-webkit-fill-available;
   padding-top: 59px;
+  opacity: 0.5;
 }
 .button-publish,
 .button-copy {
@@ -97,7 +98,7 @@ position: relative;
 }
 .editor-buttons {
     position: absolute;
-    top: 19%;
+    top: 14%;
     left: 3%;
 }
 button.btn.btn-primary {
@@ -237,10 +238,6 @@ button.btn.btn-primary {
           
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="insertMeta()">Insert Meta</button>
       </div>
     </div>
   </div>
