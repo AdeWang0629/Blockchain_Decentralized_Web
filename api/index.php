@@ -65,7 +65,6 @@
   position: relative;
   border-radius: 9px;
   width:-webkit-fill-available;
-  position: relative;
 }
 .button-publish,
 .button-copy {
@@ -91,6 +90,9 @@
 .button-copy i {
   margin-right: 10px;
   font-size: 18px;
+}
+.textarea {
+position: relative;
 }
 .editor-buttons {
 position: absolute;
@@ -161,7 +163,7 @@ left:0;
     <div class="col">
        <form onsubmit="return false;">
         <label for="html-code">Enter your HTML code:</label><br>
-        <textarea id="html-code" name="html-code" rows="10"></textarea><br><br>
+        <textarea class="textarea" id="html-code" name="html-code" rows="10"></textarea><br><br>
         <button class="button-publish" type="button" onclick="encrypt()">
   <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
 </button>
