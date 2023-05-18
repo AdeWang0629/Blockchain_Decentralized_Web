@@ -397,8 +397,8 @@ div#headings {
 
         // Update the URL with the encrypted HTML using the pushState method
         if (history.pushState) {
-            var path = "/site/" + encodeURIComponent(encrypted);
-            window.history.pushState({path: path}, '', path);
+         //   var path = "/site/" + encodeURIComponent(encrypted);
+        //    window.history.pushState({path: path}, '', path);
             var url = window.location.origin + path;
             // Displaying encrypted URL to user
             document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
@@ -440,9 +440,9 @@ div#headings {
         var encryptedHtml = { 'encrypted-html': encrypted };
 
         // Update the URL with the encrypted HTML using the pushState method
-      //  if (history.pushState) {
-     //       window.history.replaceState({}, '', '/site/' + encodeURIComponent(encrypted));
-    //    }
+        if (history.pushState) {
+            window.history.replaceState({}, '', '/site/' + encodeURIComponent(encrypted));
+        }
 
         // Displaying encrypted URL to user
         var url = window.location.origin + window.location.pathname;
