@@ -285,14 +285,6 @@ div#headings {
 </div>
 
 <script>
-function insertTag(openTag, closeTag) {
-  var element = document.getElementById("html-code");
-  var startIndex = element.selectionStart;
-  var endIndex = element.selectionEnd;
-  var selectedText = element.innerHTML.substring(startIndex, endIndex);
-  var replacedText = openTag + selectedText + closeTag;
-  element.innerHTML = element.innerHTML.substring(0, startIndex) + replacedText + element.innerHTML.substring(endIndex);
-}
 function insertTextBeforeAndAfter(textBefore, textAfter) {
            var txtarea = document.getElementById("html-code");
            var start = txtarea.selectionStart;
