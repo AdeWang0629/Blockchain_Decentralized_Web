@@ -397,12 +397,12 @@ div#headings {
 
         // Update the URL with the encrypted HTML using the pushState method
         if (history.pushState) {
-            var path = "/site/" + encodeURIComponent(encrypted);
-            window.history.pushState({path: path}, '', path);
-            var url = window.location.origin + path;
-            // Displaying encrypted URL to user
-            document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
-        }
+    var path = "/site/" + encodeURIComponent(encrypted);
+    window.history.pushState({path: path}, '', path);
+    var url = window.location.origin + path;
+    // Displaying encrypted URL to user
+    document.getElementById('encrypted-url').innerHTML = '<p>Your encrypted URL:</p><pre>' + url + '</pre>';
+}
         
         // Clear existing HTML from decrypted-html div
         document.getElementById('man-creator-is-one-he-is-allah').innerHTML = '';
@@ -441,7 +441,7 @@ div#headings {
 
         // Update the URL with the encrypted HTML using the pushState method
         if (history.pushState) {
-            window.history.dontreplaceState({}, '', '/site/' + encodeURIComponent(encrypted));
+            window.history.replaceState({}, '', '/site/' + encodeURIComponent(encrypted));
         }
 
         // Displaying encrypted URL to user
