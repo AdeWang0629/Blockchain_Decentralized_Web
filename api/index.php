@@ -96,8 +96,10 @@
 .textarea {
 position: relative;
 }
-.textarea::focus-visible {
-border: 4px solid #efefef;
+textarea:focus {  
+  outline: none;  
+  border: 4px solid #efefef;  
+  opacity: 0.5;
 }
 .editor-buttons {
     position: absolute;
