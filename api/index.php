@@ -240,7 +240,7 @@ div#headings {
   <div class="row">
     <div class="col">
        <form onsubmit="return false;">
-        <textarea class="textarea" id="html-code" name="html-code" rows="10"></textarea><br><br>
+        <textarea class="textarea" id="html-code" name="html-code" contenteditable="true" rows="10"></textarea><br><br>
         <div class="button-at">
         <button class="button-publish" type="button" onclick="encrypt()">
   <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
