@@ -66,6 +66,32 @@
   border-radius: 9px;
   width:-webkit-fill-available;
 }
+.button-publish,
+.button-copy {
+  display: inline-block;
+  border: none;
+  background-color: #1292B4;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-publish:hover,
+.button-copy:hover {
+  background-color: #107DAC;
+}
+
+.button-publish i,
+.button-copy i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
  </style>
 </head>
 <body>
@@ -132,7 +158,7 @@
         <label for="html-code">Enter your HTML code:</label><br>
         <textarea id="html-code" name="html-code" rows="10"></textarea><br><br>
         <button type="button" onclick="encrypt()">
-  <i class="iconify" data-icon="ph:lock-lock-fill"></i> Publish
+  <i class="iconify" data-icon="game-icons:peace-dove"></i> Publish
 </button>
 <button type="button" onclick="copyURL()">
   <i class="iconify" data-icon="bi:clipboard"></i> Copy URL to Clipboard
