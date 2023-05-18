@@ -351,7 +351,7 @@ div#man-creator-is-one-he-is-allah {
     </div>
   </div>
 </div>
-<div class="preview">
+<div class="preview" id="preview">
 <div id="encrypted-url"></div>
 </div>
 <script>
@@ -485,9 +485,11 @@ div#man-creator-is-one-he-is-allah {
     }
 </script>
 <script type="text/javascript">
- $('#modal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+const previewDiv = document.getElementById("preview");  
+
+if (previewDiv.textContent.trim() === "") {  
+  previewDiv.style.display = "none";  
+}
 </script>
 </body>
 </html>
