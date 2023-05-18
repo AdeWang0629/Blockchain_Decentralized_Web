@@ -259,7 +259,7 @@ div#headings {
       <button class="btn btn-primary" onclick="boldText()">Bold</button>
       <button class="btn btn-primary" onclick="italicText()">Italic</button>
       <button class="btn btn-primary" onclick="underlineText()">Underline</button>
-      <button class="btn btn-primary" onclick="insertTag('<p>', '</p>')">Paragraph</button>
+      <button class="btn btn-primary" onclick="paragraph()">Paragraph</button>
     </div>
   </div>
 </div>  
@@ -283,7 +283,52 @@ div#headings {
   </div>
 </div>
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Settings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="btn-group" role="group">
+            <button type="button" data-class="fixed-left" class="btn btn-primary">
+                <i class="fa fa-arrow-left"></i>
+                Fixed Left
+            </button>
+            <button type="button" data-class="fixed-top" class="btn btn-primary">
+                <i class="fa fa-arrow-up"></i>
+                Fixed Top
+                <small>(original)</small>
+            </button>
+            <button type="button" data-class="fixed-right" class="btn btn-primary">
+                <i class="fa fa-arrow-right"></i>
+                Fixed Right
+            </button>
+        </div>
+        <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label>
+                    Select another bootstrap theme from
+                    <a href="https://bootswatch.com/" target="_blank">Bootswatch</a>
+                </label>
+                <select class="form-control width-md" id="theme_select" onchange="selectTheme(value)"></select>
+            </div>
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
        function insertTextBeforeAndAfter(textBefore, textAfter) {
            var txtarea = document.getElementById("html-code");
@@ -305,6 +350,10 @@ div#headings {
 
        function underlineText() {
            insertTextBeforeAndAfter("<u>", "</u>");
+       }
+       
+       function paragraph() {
+           insertTextBeforeAndAfter("<p>", "</p>");
        }
 
    function addLink() {
