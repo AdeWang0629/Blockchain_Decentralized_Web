@@ -221,7 +221,7 @@ div#headings {
     <div class="col">
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#headings">Headings</button>
       <button id="link-btn" class="btn btn-secondary" onclick="addLink()">Links</button>
-      <button id="image-btn" class="btn btn-secondary">Images</button>
+      <button id="image-btn" class="btn btn-secondary" onclick="addImage()">Images</button>
       <button class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
     </div>
   </div>
@@ -294,41 +294,22 @@ function insertTag(openTag, closeTag) {
   element.innerHTML = element.innerHTML.substring(0, startIndex) + replacedText + element.innerHTML.substring(endIndex);
 }
 
-  function addTag(tag) {
-        var start = htmlCode.selectionStart;
-        var end = htmlCode.selectionEnd;
+   function addLink() {
+           var linkURL = prompt("Enter URL:", "http://");
+           if (linkURL != null) {
+               var linkText = prompt("Enter link text:", "");
+               if (linkText != null) {
+                   insertTextBeforeAndAfter('<a href="' + linkURL + '">', "</a>");
+               }
+           }
+       }
 
-        var selectedText = htmlCode.value.substring(start, end);
-        var additional = '';
-
-        if (tag === 'a') {
-            var link = prompt('Enter link URL:', 'https://');
-            if (link) {
-                additional = ' href="' + link + '"';
-            }
-        }
-
-        var html = '<' + tag + additional + '>' + selectedText + '</' + tag + '>';
-
-        htmlCode.value = htmlCode.value.substring(0, start) + html + htmlCode.value.substring(end);
-        htmlCode.setSelectionRange(start + 2 + tag.length + additional.length, end + 2 + tag.length + additional.length + selectedText.length);
-    }
-
-    function addLink() {
-        var start = htmlCode.selectionStart;
-        var end = htmlCode.selectionEnd;
-
-        var selectedText = htmlCode.value.substring(start, end);
-
-        var linkURL = prompt("Enter link URL", "https://");
-
-        if (linkURL) {
-            var html = '<a href="' + linkURL + '">' + selectedText + '</a>';
-
-            htmlCode.value = htmlCode.value.substring(0, start) + html + htmlCode.value.substring(end);
-            htmlCode.setSelectionRange(start + 9, start + 9 + linkURL.length);
-        }
-    }
+       function addImage() {
+           var imgURL = prompt("Enter image URL:", "http://");
+           if (imgURL != null) {
+               insertTextBeforeAndAfter('<img src="' + imgURL + '">', "");
+           }
+       }
 </script>
 
 <script>
