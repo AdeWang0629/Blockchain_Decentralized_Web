@@ -180,6 +180,27 @@ button.btn.btn-primary {
   </div>
   <div class="row">
     <div class="col">
+      <div id="headings" class="collapse">
+        <button class="btn btn-secondary" onclick="insertTag('<h1>', '</h1>')">H1</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h2>', '</h2>')">H2</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h3>', '</h3>')">H3</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h4>', '</h4>')">H4</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h5>', '</h5>')">H5</button>
+        <button class="btn btn-secondary" onclick="insertTag('<h6>', '</h6>')">H6</button>
+      </div>
+      <div id="links" class="collapse">
+        <input type="text" id="link-url" placeholder="http://">
+        <button class="btn btn-secondary" onclick="insertLink()">Insert Link</button>
+      </div>
+      <div id="images" class="collapse">
+        <input type="text" id="image-url" placeholder="http://">
+        <button class="btn btn-secondary" onclick="insertImage()">Insert Image</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col">
        <form onsubmit="return false;">
         <textarea class="textarea" id="html-code" name="html-code" rows="10"></textarea><br><br>
         <button class="button-publish" type="button" onclick="encrypt()">
@@ -201,28 +222,7 @@ button.btn.btn-primary {
       <button class="btn btn-primary" onclick="insertTag('<p>', '</p>')">Paragraph</button>
     </div>
   </div>
-</div>
-  <div class="row">
-    <div class="col">
-      <div id="headings" class="collapse">
-        <button class="btn btn-secondary" onclick="insertTag('<h1>', '</h1>')">H1</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h2>', '</h2>')">H2</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h3>', '</h3>')">H3</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h4>', '</h4>')">H4</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h5>', '</h5>')">H5</button>
-        <button class="btn btn-secondary" onclick="insertTag('<h6>', '</h6>')">H6</button>
-      </div>
-      <div id="links" class="collapse">
-        <input type="text" id="link-url" placeholder="http://">
-        <button class="btn btn-secondary" onclick="insertLink()">Insert Link</button>
-      </div>
-      <div id="images" class="collapse">
-        <input type="text" id="image-url" placeholder="http://">
-        <button class="btn btn-secondary" onclick="insertImage()">Insert Image</button>
-      </div>
-    </div>
-  </div>
-</div>
+</div>  
 
 <!-- Modal for Help -->
 <div class="modal fade" id="help">
