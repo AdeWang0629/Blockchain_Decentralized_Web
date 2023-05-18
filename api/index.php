@@ -286,16 +286,17 @@ div#headings {
 
 <script>
 function insertTag(openTag, closeTag) {
-  var textarea = document.getElementById("html-code");
-  var startIndex = textarea.selectionStart;
-  var endIndex = textarea.selectionEnd;
-  var selectedText = textarea.value.substring(startIndex, endIndex);
+  var element = document.getElementById("html-code");
+  var startIndex = element.selectionStart;
+  var endIndex = element.selectionEnd;
+  var selectedText = element.innerHTML.substring(startIndex, endIndex);
   var replacedText = openTag + selectedText + closeTag;
-  textarea.value = textarea.value.substring(0, startIndex) + replacedText + textarea.value.substring(endIndex);
+  element.innerHTML = element.innerHTML.substring(0, startIndex) + replacedText + element.innerHTML.substring(endIndex);
 }
 
 function insertLink() {
-  var anchor = $("#html-code").val().substring($("#html-code")[0].selectionStart, $("#html-code")[0].selectionEnd);
+  var element = $("#html-code")[0];
+  var anchor = element.innerHTML.substring(element.selectionStart, element.selectionEnd).replace(/<\/?[^>]+>/gi, ''); // remove any HTML tags from the selected text
   if(anchor === "") {
     alert("Please select the text to hyperlink.");
   }
@@ -304,23 +305,23 @@ function insertLink() {
     if(url !== null) {
       var link = '<a href="' + url + '">' + anchor + '</a>';
       document.execCommand("insertHTML", false, link);
-      $("#html-code").val($("#html-code").val()); // Update the textarea value to reflect the changes made via execCommand
     }
   }
 }
 
 function insertImage() {
+  var element = $("#html-code")[0];
   var url = prompt("Enter an image url:", "https://");
   if(url !== null) {
     var img = '<img src="' + url + '">';
     document.execCommand("insertHTML", false, img);
-    $("#html-code").val($("#html-code").val()); // Update the textarea value to reflect the changes made via execCommand
   }
 }
 
 // Add event listeners to trigger functions
 document.getElementById("link-btn").addEventListener("click", insertLink);
 document.getElementById("image-btn").addEventListener("click", insertImage);
+
 </script>
 
 <script>
