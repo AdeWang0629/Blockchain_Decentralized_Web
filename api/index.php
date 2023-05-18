@@ -464,6 +464,9 @@ div#headings {
   $('#myInput').trigger('focus')
 })
 </script>
+<script>  
+import { NuxtIcon } from "@nuxtjs/icon";
+</script>
 <div id="encrypted-url"></div>
 </body>
 </html>
