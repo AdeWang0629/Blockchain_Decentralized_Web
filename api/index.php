@@ -293,7 +293,7 @@ function insertTag(openTag, closeTag) {
   var replacedText = openTag + selectedText + closeTag;
   element.innerHTML = element.innerHTML.substring(0, startIndex) + replacedText + element.innerHTML.substring(endIndex);
 }
-var htmlCode = document.getElementById('html-code');
+
   function addTag(tag) {
         var start = htmlCode.selectionStart;
         var end = htmlCode.selectionEnd;
