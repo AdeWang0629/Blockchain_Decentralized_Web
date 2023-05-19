@@ -5,6 +5,12 @@
     },
     "api/site.php": {
       "runtime": "vercel-php@0.3.3"
+    },
+    "api/plugins/notes.php": {
+      "runtime": "vercel-php@0.3.3"
+    },
+    "api/plugins/note.php": {
+      "runtime": "vercel-php@0.3.3"
     }
   },
   "routes": [
