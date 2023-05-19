@@ -1,0 +1,30 @@
+{
+  "name": "decentrealizedweb",
+  "version": "1.0.1",
+  "description": "A More Secure, Private, and Free Anonymous Internet",
+  "main": "/api/index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ki-ask/decentrealizedweb.git"
+  },
+  "keywords": [
+    "decentrealized",
+    "web",
+    "web3",
+    "internet",
+    "freedom",
+    "online",
+    "privacy",
+    "anonymous",
+    "internet"
+  ],
+  "author": "imTAHER",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/ki-ask/decentrealizedweb/issues"
+  },
+  "homepage": "https://github.com/ki-ask/decentrealizedweb#readme"
+}
