@@ -265,7 +265,7 @@
                   <br><br>
                   <div class="button-at">
                      <button class="button-publish" type="button" onclick="encrypt()">
-                     <i class="iconify" data-icon="game-icons:peace-dove"></i> Enter
+                     <i class="iconify" data-icon="game-icons:peace-dove"></i> Peace
                      </button>
                      <button class="button-copy" type="button" onclick="copyURL()">
                      <i class="iconify" data-icon="bi:clipboard"></i> Copy URL to Clipboard
