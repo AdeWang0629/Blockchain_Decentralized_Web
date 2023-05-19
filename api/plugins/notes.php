@@ -4,7 +4,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Decentrealized Notes</title>
+      <title>Notes</title>
       <link rel="icon" type="image/png" href="/icons/favicon.png">
       <meta name="description" content="Create and manage your own decentrealized website with ease using our Web-3 powered CMS. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
       <meta name="keywords" content="decentrealized web, web3, internet freedom, online privacy, anonymous internet">
