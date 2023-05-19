@@ -16,7 +16,9 @@
   "routes": [
     { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
     { "src": "/site/(.*)?", "dest": "/api/site.php" },
-    { "src": "/(.*)", "dest": "/api/index.php" }
+    { "src": "/(.*)", "dest": "/api/index.php" },
+    { "src": "/notes/(.*)?", "dest": "/api/plugins/notes.php" },
+    { "src": "/note/(.*)?", "dest": "/api/plugins/note.php" }
   ],
   "outputDirectory": "public",
   "public": true
