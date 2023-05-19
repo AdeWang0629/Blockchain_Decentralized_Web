@@ -8,7 +8,7 @@
     }
   },
   "routes": [
-    { "src": "/(css|js|img)/(.*)", "dest": "public/$1/$2" },
+    { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
     { "src": "/site/(.*)?", "dest": "/api/site.php" },
     { "src": "/(.*)", "dest": "/api/index.php" }
   ],
