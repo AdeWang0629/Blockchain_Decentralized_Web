@@ -5,7 +5,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Decentrealized Web - A More Secure, Private, and Free Anonymous Internet</title>
-      <link rel="icon" type="image/png" href="favicon.png">
+      <link rel="icon" type="image/png" href="../public/resources/icons/favicon.png">
       <meta name="description" content="Create and manage your own decentrealized website with ease using our Web-3 powered CMS. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
       <meta name="keywords" content="decentrealized web, web3, internet freedom, online privacy, anonymous internet">
       <script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
@@ -212,20 +212,15 @@
                   <a class="nav-link" href="/">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="https://dub.sh/about-us">About</a>
+                  <a class="nav-link" href="https://dub.sh/about-us">About Decentrealized Web</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="https://dub.sh/support-us">Support Movement</a>
                </li>
                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plugins</a>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item">Action</a>
-                     <a class="dropdown-item">Another action</a>
-                     <a class="dropdown-item">Something else here</a>
-                     <div class="dropdown-divider"></div>
-                     <a class="dropdown-item">Separated link</a>
-                     <a class="dropdown-item">One more separated link</a>
+                     <a class="dropdown-item" href="/decentrealizednotes">Decentrealized Notes</a>
                   </div>
                </li>
             </ul>
