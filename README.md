@@ -2,7 +2,7 @@
 
 # Decentrealized Web
 
-The Decentralized Web represents the evolution of the internet, in which data is rendered secure and immutable. The data is stored in the URL indefinitely, ensuring its perpetual availability. The data is further transformed into an AES-256 string, which serves as the fundamental building block for the secure infrastructure of the Decentralized Web.
+The Decentrealized Web represents the evolution of the internet, in which data is rendered secure and immutable. The data is stored in the URL indefinitely, ensuring its perpetual availability. The data is further transformed into an AES-256 string, which serves as the fundamental building block for the secure infrastructure of the Decentrealized Web.
 
 ## What is it?
 - It's like a super cool version of the internet
