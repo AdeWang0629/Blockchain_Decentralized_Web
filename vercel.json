@@ -17,7 +17,7 @@
     { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
     { "src": "/site/(.*)?", "dest": "/api/site.php" },
     { "src": "/(.*)", "dest": "/api/index.php" },
-    { "src": "/plugins/notes/(.*)?", "dest": "/api/plugins/notes/notes.php" },
+    { "src": "/plugins/notes/(.*)", "dest": "/api/plugins/notes/notes.php" },
     { "src": "/note/(.*)?", "dest": "/api/plugins/notes/note.php" }
   ],
   "outputDirectory": "public",
