@@ -2,7 +2,7 @@
 <html id="man-creator-is-one-he-is-allah">
 <head>
 	<title>Man Creator is One and He is Allah</title>
-	<script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
+	<script src="../public/js/crypto.js"></script>
 	<style>
 	</style>
 </head>
