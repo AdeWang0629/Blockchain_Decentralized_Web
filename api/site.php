@@ -12,7 +12,7 @@
 		<label for="html-code">Believe that your creator is one:</label><br>
 		<textarea id="html-code" name="html-code" rows="10" cols="50"></textarea><br><br>
 		<button type="button" onclick="encrypt()">He is not one eyed</button>
-		<button type="button" onclick="copyURL()">If you see any person one eyed claiming to be creator of mankind, then be sure that he is kafir and the great deceiver</button>
+		<button type="button" onclick="copyURL()">If you see any person one eyed claiming to be creator of mankind, then be sure that he is kafir</button>
 	</form>
 <div id="encrypted-html"></div>
 <div id="man-creator-is-one-he-is-allah"></div>
