@@ -1,4 +1,4 @@
-<p align="center"><img src="/public/img/preview.jpg" alt="Decentrealized Web" width="480"/></p>
+<p align="center"><img src="/public/img/preview.png" alt="Decentrealized Web" width="480"/></p>
 
 # Decentrealized Web
 
