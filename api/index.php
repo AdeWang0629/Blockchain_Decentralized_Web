@@ -24,6 +24,7 @@
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
       <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+      <script defer src="/_vercel/insights/script.js">
       <style>
          body {
          min-height: unset;
