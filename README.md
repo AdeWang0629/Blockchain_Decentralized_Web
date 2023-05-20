@@ -101,9 +101,7 @@ Contributions to this project are welcome. If you find a bug or have a feature s
 
 ### Opening issues
 
-I administer the project when I have time and motivation. You're free to open PRs (Pull Requests) if you're ok with having no response for a (possibly very) long time and me possibly ending up getting inspiration from your proposal but merging something different myself (I'll try to credit you though). Apologies in advance for the delay, and thank you for making the project better!
-
-Opening issues with suggestions and bug reports is welcome.
+Feel free to open pull requests if you don't mind receiving no response for a long time. I might take inspiration from what you propose but merge something different instead. I'll try my best to give you credit. You can also open issues with suggestions or bug reports. Apologies for the delay and thank you for contributing to the project.
 
 ### Guidelines to contributing
 

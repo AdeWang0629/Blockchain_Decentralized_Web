@@ -9,3 +9,5 @@
 
 ## Version- 1.0.2
 - Added NETWORKS.md
+- Updated LICENSE.md
+- Updated README.md
