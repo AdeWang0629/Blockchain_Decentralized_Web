@@ -11,3 +11,7 @@
 - Added NETWORKS.md
 - Updated LICENSE.md
 - Updated README.md
+
+## Version- 1.0.3
+- Updated api/index.php
+- Added new feature encrypted data

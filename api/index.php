@@ -406,31 +406,35 @@
       </script>
       <script>
          function encrypt() {
-             var htmlCode = document.getElementById('html-code').value;
-             var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
+    var htmlCode = document.getElementById('html-code').value;
+    var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
+
+    // Update the URL with the encrypted HTML using the pushState method
+    if (history.pushState) {
+        var path = "/site/" + encodeURIComponent(encrypted);
+        window.history.pushState({ path: path }, '', path);
+        var url = window.location.origin + path;
+
+        // Displaying encrypted URL to user
+        document.getElementById('encrypted-url').innerHTML = '<p>Your Decentralized Web URL:</p><pre>' + url + '</pre>';
          
-             // Update the URL with the encrypted HTML using the pushState method
-             if (history.pushState) {
-                 var path = "/site/" + encodeURIComponent(encrypted);
-                 window.history.pushState({path: path}, '', path);
-                 var url = window.location.origin + path;
-                 // Displaying encrypted URL to user
-                 document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Web URL:</p><pre>' + url + '</pre>';
-             }
-             
-             // Clear existing HTML from decrypted-html div
-             document.getElementById('man-creator-is-one-he-is-allah').innerHTML = '';
-         
-             // Append a div element to the decrypted-html div
-             var div = document.createElement('div');
-             div.innerHTML = htmlCode;
-             document.getElementById('man-creator-is-one-he-is-allah').appendChild(div);
-         
-             // Hide the form fields
-             document.getElementById('html-code').style.display = 'block';
-             document.querySelector('form button:first-of-type').style.display = 'block';
-             document.querySelector('form button:last-of-type').style.display = 'inline-block';
-         }
+        // Displaying encrypted HTML to user
+        document.getElementById('encrypted-data').innerHTML = '<p>Your Encrypted HTML:</p><pre>' + encrypted + '</pre>'; 
+    }
+    
+    // Clear existing HTML from decrypted-html div
+    document.getElementById('man-creator-is-one-he-is-allah').innerHTML = '';
+
+    // Append a div element to the decrypted-html div
+    var div = document.createElement('div');
+    div.innerHTML = htmlCode;
+    document.getElementById('man-creator-is-one-he-is-allah').appendChild(div);
+
+    // Hide the form fields
+    document.getElementById('html-code').style.display = 'block';
+    document.querySelector('form button:first-of-type').style.display = 'block';
+    document.querySelector('form button:last-of-type').style.display = 'inline-block';
+}
          
          function decrypt() {
              var urlParams = new URLSearchParams(window.location.search);
