@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="man-creator-is-one-he-is-allah">
+<html>
 <head>
 	<title>Man Creator is One and He is Allah</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
