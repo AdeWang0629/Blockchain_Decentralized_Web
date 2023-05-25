@@ -1,6 +1,6 @@
 function encrypt() {
              var htmlCode = document.getElementById('html-code').value;
-             var noteTitle = document.getElementById('note-title-field').value;
+             var noteTitle = document.getElementById('note-title').value;
              var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
          
              // Update the URL with the encrypted HTML using the pushState method
@@ -14,11 +14,15 @@ function encrypt() {
              
              // Clear existing HTML from decrypted-html div
              document.getElementById('man-creator-is-one-he-is-allah').innerHTML = '';
+             document.getElementById('note-title').innerHTML = '';
          
              // Append a div element to the decrypted-html div
              var div = document.createElement('div');
              div.innerHTML = htmlCode;
              document.getElementById('man-creator-is-one-he-is-allah').appendChild(div);
+             var div = document.createElement('div');
+             div.innerHTML = htmlCode;
+             document.getElementById('note-title').appendChild(div);
          
              // Hide the form fields
              document.getElementById('html-code').style.display = 'block';
