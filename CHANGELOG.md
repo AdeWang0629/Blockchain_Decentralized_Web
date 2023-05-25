@@ -15,4 +15,3 @@
 ## Version- 1.0.3
 - Updated api/index.php
 - Added new feature encrypted data
-- Updated Vercel.json
