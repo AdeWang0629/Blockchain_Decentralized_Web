@@ -1,6 +1,15 @@
 {
   "functions": {
-    "api/*.php": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.3.3"
+    },
+    "api/site.php": {
+      "runtime": "vercel-php@0.3.3"
+    },
+    "api/plugins/notes/notes.php": {
+      "runtime": "vercel-php@0.3.3"
+    },
+    "api/plugins/notes/note.php": {
       "runtime": "vercel-php@0.3.3"
     }
   },
