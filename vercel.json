@@ -3,7 +3,13 @@
     "api/index.php": {
       "runtime": "vercel-php@0.3.3"
     },
-    "api/*.php": {
+    "api/site.php": {
+      "runtime": "vercel-php@0.3.3"
+    },
+    "api/plugins/notes/notes.php": {
+      "runtime": "vercel-php@0.3.3"
+    },
+    "api/plugins/notes/note.php": {
       "runtime": "vercel-php@0.3.3"
     }
   },
@@ -12,6 +18,7 @@
     { "src": "/site/(.*)?", "dest": "/api/site.php" },
     { "src": "/(.*)", "dest": "/api/index.php" },
     { "src": "/plugins/notes/(.*)", "dest": "/api/plugins/notes/notes.php" },
+    { "src": "/(.*)", "dest": "/api/$1" },
     { "src": "/note/(.*)?", "dest": "/api/plugins/notes/note.php" }
   ],
   "outputDirectory": "public",
