@@ -1,25 +1,12 @@
 {
   "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.3.3"
-    },
-    "api/site.php": {
-      "runtime": "vercel-php@0.3.3"
-    },
-    "api/plugins/notes/notes.php": {
-      "runtime": "vercel-php@0.3.3"
-    },
-    "api/plugins/notes/note.php": {
+    "api/*.php": {
       "runtime": "vercel-php@0.3.3"
     }
   },
   "routes": [
-    { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
-    { "src": "/site/(.*)?", "dest": "/api/site.php" },
-    { "src": "/(.*)", "dest": "/api/index.php" },
-    { "src": "/plugins/notes/(.*)", "dest": "/api/plugins/notes/notes.php" },
-    { "src": "/(.*)", "dest": "/api/$1" },
-    { "src": "/note/(.*)?", "dest": "/api/plugins/notes/note.php" }
+    { "src": "/(css|js)/(.*)", "dest": "public/$1/$2" },
+    { "src": "/(.*)", "dest": "/api/$1" }
   ],
   "outputDirectory": "public",
   "public": true
