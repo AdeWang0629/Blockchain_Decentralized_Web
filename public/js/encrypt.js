@@ -26,11 +26,21 @@ function encrypt() {
              document.querySelector('form button:last-of-type').style.display = 'inline-block';
          }
          
-function copyURL() {
+         function decrypt() {
+             var urlParams = new URLSearchParams(window.location.search);
+             var encryptedHtml = urlParams.get('encrypted-html');
+         
+             if (encryptedHtml) {
+                 var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "ALLAH");
+                 document.getElementById('man-creator-is-one-he-is-allah').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+             }
+         }
+         
+         function copyURL() {
              var encryptedURL = document.getElementById('encrypted-url').getElementsByTagName('pre')[0].textContent;
              navigator.clipboard.writeText(encryptedURL);
              alert('URL copied to clipboard!');
-}
+         }
          
          // Call the decrypt function on page load
          if (window.location.pathname.startsWith('/note/') && window.location.pathname.slice(9)) {
@@ -46,4 +56,14 @@ function copyURL() {
              var url = window.location.origin + window.location.pathname;
              document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Note URL:</p><pre>' + url + '</pre>';
          
-            
+             // Decrypt and display the HTML code
+             var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "ALLAH");
+             document.getElementById('man-creator-is-one-he-is-allah').innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+         
+             // Hide the form fields
+             document.getElementById('html-code').style.display = 'block';
+             document.querySelector('form button:first-of-type').style.display = 'block';
+             document.querySelector('form button:last-of-type').style.display = 'inline-block';
+         } else {
+             document.querySelector('form button:first-of-type').style.display = 'inline-block';
+         }
