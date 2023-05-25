@@ -1,6 +1,6 @@
 function encrypt() {
              var htmlCode = document.getElementById('html-code').value;
-             var noteTitle = document.getElementById('note-title-field').value;
+             var noteTitle = document.getElementById('note-title').value;
              var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
          
              // Update the URL with the encrypted HTML using the pushState method
