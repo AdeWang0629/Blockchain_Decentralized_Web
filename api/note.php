@@ -172,11 +172,6 @@ function getNoteTitle() {
   return '';
 }
 
-function displayNoteTitle() {
-  var noteTitle = getNoteTitle();
-  document.querySelector('h1').textContent = noteTitle;
-}
-
 displayNoteTitle();
 </script>
 <div id="encrypted-url"></div> <div id="man-creator-is-one-he-is-allah"></div> </body> </html>
