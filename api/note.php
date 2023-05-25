@@ -118,7 +118,7 @@ function decrypt() {
     var path = window.location.pathname;
     var pathParts = path.split('/');
 
-    if (pathParts[1] === 'site' && pathParts[2]) {
+    if (pathParts[1] === 'note' && pathParts[2]) {
         var encryptedHtml = decodeURIComponent(pathParts[2]);
         var decrypted = CryptoJS.AES.decrypt(encryptedHtml, "ALLAH");
         var html = decrypted.toString(CryptoJS.enc.Utf8);
@@ -147,11 +147,36 @@ decrypt();
 
 // Hide the form fields if data is available in the URL
 var pathParts = window.location.pathname.split('/');
-if (pathParts[1] === 'site' && pathParts[2]) {
+if (pathParts[1] === 'note' && pathParts[2]) {
     document.getElementById('html-code').style.display = 'none';
     document.querySelector('form button:first-of-type').style.display = 'none';
     document.querySelector('form button:last-of-type').style.display = 'none';
 } else {
     document.querySelector('form button:first-of-type').style.display = 'inline-block';
 }
-</script> <div id="encrypted-url"></div> <div id="man-creator-is-one-he-is-allah"></div> </body> </html>
+</script>
+<script>
+function decodeURLParam(param) {
+  return decodeURIComponent(param.replace(/\+/g, ' '));
+}
+
+function getNoteTitle() {
+  var query = window.location.search.substring(1);
+  var params = query.split('&');
+  for (var i = 0; i < params.length; i++) {
+    var parts = params[i].split('=');
+    if (parts[0] === 'title') {
+      return decodeURLParam(parts[1]);
+    }
+  }
+  return '';
+}
+
+function displayNoteTitle() {
+  var noteTitle = getNoteTitle();
+  document.querySelector('h1').textContent = noteTitle;
+}
+
+displayNoteTitle();
+</script>
+<div id="encrypted-url"></div> <div id="man-creator-is-one-he-is-allah"></div> </body> </html>

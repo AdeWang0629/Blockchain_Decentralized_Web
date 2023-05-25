@@ -221,7 +221,7 @@
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plugins</a>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item" href="/decentrealizednotes">Decentrealized Notes</a>
+                     <a class="dropdown-item" href="/notes">Decentrealized Notes</a>
                   </div>
                </li>
             </ul>

@@ -4,10 +4,10 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Notes</title>
+      <title>Decentrealized Notes</title>
       <link rel="icon" type="image/png" href="/icons/favicon.png">
-      <meta name="description" content="Create and manage your own decentrealized website with ease using our Web-3 powered CMS. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
-      <meta name="keywords" content="decentrealized web, web3, internet freedom, online privacy, anonymous internet">
+      <meta name="description" content="Create and manage your own decentrealized notes with ease which never get deleted. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
+      <meta name="keywords" content="notes, decentrealized web, web3, internet freedom, online privacy, anonymous internet">
       <script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
       <link rel="stylesheet"
          id="theme_link"
@@ -220,7 +220,7 @@
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plugins</a>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item" href="/decentrealizednotes">Decentrealized Notes</a>
+                     <a class="dropdown-item" href="/notes">Decentrealized Notes</a>
                   </div>
                </li>
             </ul>
@@ -259,6 +259,7 @@
             </div>
          </div>
          <div class="row">
+            <input type="text" name="note-title" id="note-title-field" placeholder="Note title" required>
             <div class="col">
                <form onsubmit="return false;">
                   <textarea class="textarea" id="html-code" name="html-code" contenteditable="true" rows="10"></textarea>
@@ -345,76 +346,18 @@
       </div>
       <div class="footer"></div>
       <script>
-         function insertTextBeforeAndAfter(textBefore, textAfter) {
-             var txtarea = document.getElementById("html-code");
-             var start = txtarea.selectionStart;
-             var end = txtarea.selectionEnd;
-             var text = txtarea.value;
-             var selectedText = text.substring(start, end);
-             var newText = textBefore + selectedText + textAfter;
-             txtarea.value = text.slice(0, start) + newText + text.slice(end);
-         }
-         
-         function boldText() {
-             insertTextBeforeAndAfter("<b>", "</b>");
-         }
-         
-         function italicText() {
-             insertTextBeforeAndAfter("<i>", "</i>");
-         }
-         
-         function underlineText() {
-             insertTextBeforeAndAfter("<u>", "</u>");
-         }
-         
-         function paragraph() {
-             insertTextBeforeAndAfter("<p>", "</p>");
-         }
-         function h1() {
-             insertTextBeforeAndAfter("<h1>", "</h1>");
-         }
-         function h2() {
-             insertTextBeforeAndAfter("<h2>", "</h2>");
-         }
-         function h3() {
-             insertTextBeforeAndAfter("<h3>", "</h3>");
-         }
-         function h4() {
-             insertTextBeforeAndAfter("<h4>", "</h4>");
-         }
-         function h5() {
-             insertTextBeforeAndAfter("<h5>", "</h5>");
-         }
-         function h6() {
-             insertTextBeforeAndAfter("<h6>", "</h6>");
-         }
-         
-         function addLink() {
-         var linkURL = prompt("Enter URL:", "https://");
-         if (linkURL != null) {
-          insertTextBeforeAndAfter('<a href="' + linkURL + '">', "</a>");
-         }
-         }
-         
-         function addImage() {
-             var imgURL = prompt("Enter image URL:", "https://");
-             if (imgURL != null) {
-                 insertTextBeforeAndAfter('<img src="' + imgURL + '">', "");
-             }
-         }
-      </script>
-      <script>
          function encrypt() {
              var htmlCode = document.getElementById('html-code').value;
+             var noteTitle = document.getElementById('note-title-field').value;
              var encrypted = CryptoJS.AES.encrypt(htmlCode, "ALLAH");
          
              // Update the URL with the encrypted HTML using the pushState method
              if (history.pushState) {
-                 var path = "/site/" + encodeURIComponent(encrypted);
+                 var path = "/note/" + encodeURIComponent(encrypted);
                  window.history.pushState({path: path}, '', path);
                  var url = window.location.origin + path;
                  // Displaying encrypted URL to user
-                 document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Web URL:</p><pre>' + url + '</pre>';
+                 document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Note URL:</p><pre>' + url + '</pre>';
              }
              
              // Clear existing HTML from decrypted-html div
@@ -448,18 +391,18 @@
          }
          
          // Call the decrypt function on page load
-         if (window.location.pathname.startsWith('/site/') && window.location.pathname.slice(9)) {
+         if (window.location.pathname.startsWith('/note/') && window.location.pathname.slice(9)) {
              var encrypted = decodeURIComponent(window.location.pathname.slice(9));
              var encryptedHtml = { 'encrypted-html': encrypted };
          
              // Update the URL with the encrypted HTML using the pushState method
              if (history.pushState) {
-                 window.history.replaceState({}, '', '/site/' + encodeURIComponent(encrypted));
+                 window.history.replaceState({}, '', '/note/' + encodeURIComponent(encrypted));
              }
          
              // Displaying encrypted URL to user
              var url = window.location.origin + window.location.pathname;
-             document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Web URL:</p><pre>' + url + '</pre>';
+             document.getElementById('encrypted-url').innerHTML = '<p>Your Decentrealized Note URL:</p><pre>' + url + '</pre>';
          
              // Decrypt and display the HTML code
              var decrypted = CryptoJS.AES.decrypt(encryptedHtml['encrypted-html'], "ALLAH");
