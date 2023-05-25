@@ -76,7 +76,7 @@ p {
 </head>
 <body>
 <div class="container">
-      <h1><?php echo urldecode($_GET['title']); ?></h1>
+      <h1 id="note-title"></h1>
       <p>This is my note. I’m writing some text here for my own reference.</p>
       <div class="actions">
         <a href="#" class="share"><i class="fas fa-share-square"></i> Share</a>
@@ -156,22 +156,27 @@ if (pathParts[1] === 'note' && pathParts[2]) {
 }
 </script>
 <script>
-function decodeURLParam(param) {
-  return decodeURIComponent(param.replace(/\+/g, ' '));
-}
-
-function getNoteTitle() {
-  var query = window.location.search.substring(1);
-  var params = query.split('&');
-  for (var i = 0; i < params.length; i++) {
-    var parts = params[i].split('=');
-    if (parts[0] === 'title') {
-      return decodeURLParam(parts[1]);
+    function decodeURLParam(param) {
+      return decodeURIComponent(param.replace(/\+/g, ' '));
     }
-  }
-  return '';
-}
 
-displayNoteTitle();
+    function getNoteTitle() {
+      var query = window.location.search.substring(1);
+      var params = query.split('&');
+      for (var i = 0; i < params.length; i++) {
+        var parts = params[i].split('=');
+        if (parts[0] === 'title') {
+          return decodeURLParam(parts[1]);
+        }
+      }
+      return '';
+    }
+
+    function displayNoteTitle() {
+      var noteTitle = getNoteTitle();
+      document.getElementById("note-title").textContent = noteTitle;
+    }
+
+    displayNoteTitle();
 </script>
 <div id="encrypted-url"></div> <div id="man-creator-is-one-he-is-allah"></div> </body> </html>
