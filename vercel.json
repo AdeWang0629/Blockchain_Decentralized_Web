@@ -6,7 +6,8 @@
   },
   "routes": [
     { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
-    { "src": "/(.*)?", "dest": "/api/$1" }
+    { "src": "/site/(.*)?", "dest": "/api/site.php" },
+    { "src": "/(.*)", "dest": "/api/$1" }
   ],
   "outputDirectory": "public",
   "public": true
