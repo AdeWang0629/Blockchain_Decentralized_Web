@@ -76,7 +76,7 @@ p {
 </head>
 <body>
 <div class="container">
-      <h1><?php echo displayNoteTitle(); ?></h1>
+      <h1><?php echo getNoteTitle(); ?></h1>
       <p>This is my note. I’m writing some text here for my own reference.</p>
       <div class="actions">
         <a href="#" class="share"><i class="fas fa-share-square"></i> Share</a>
