@@ -6,7 +6,7 @@
   },
   "routes": [
     { "src": "/(css|js)/(.*)", "dest": "public/$1/$2" },
-    { "src": "/(.*)", "dest": "/api/$1" }
+    { "src": "/(.*)", "dest": "/api/$1/$2" }
   ],
   "outputDirectory": "public",
   "public": true
