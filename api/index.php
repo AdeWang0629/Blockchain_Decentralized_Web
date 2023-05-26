@@ -312,18 +312,15 @@
                </div>
                <div class="modal-body">
                   <div class="btn-group" role="group">
-                     <button type="button" data-class="fixed-left" class="btn btn-primary" onclick="saveSettingsLeft()">
-  <i class="fa fa-arrow-left"></i>
-  Fixed Left
-</button>
-<button type="button" data-class="fixed-top" class="btn btn-primary" onclick="saveSettingsTop()">
-  <i class="fa fa-arrow-up"></i>
-  Fixed Top
-</button>
-<button type="button" data-class="fixed-right" class="btn btn-primary" onclick="saveSettingsRight()">
-  <i class="fa fa-arrow-right"></i>
-  Fixed Right
-</button>
+                     <label class="radio-inline">
+  <input type="radio" name="navbar_position" value="fixed-left" onclick="saveSettings()"> Fixed Left
+</label>
+<label class="radio-inline">
+  <input type="radio" name="navbar_position" value="fixed-top" onclick="saveSettings()"> Fixed Top
+</label>
+<label class="radio-inline">
+  <input type="radio" name="navbar_position" value="fixed-right" onclick="saveSettings()"> Fixed Right 
+</label>
                   </div>
                   <div class="card">
                      <div class="card-body">
@@ -478,7 +475,7 @@
          }
       </script>
 <script>
-  // Load saved theme and sidebar position from cookies
+  // Load saved theme and navbar position from cookie
   function loadSettings() {
     var cookies = document.cookie.split("; ");
     for (var i = 0; i < cookies.length; i++) {
@@ -486,40 +483,19 @@
       if (keyValue[0] === "theme") {
         document.getElementById("theme_select").value = keyValue[1];
         selectTheme(keyValue[1]);
+      } else if (keyValue[0] === "navbarPosition") {
+        document.querySelector('input[name="navbar_position"][value="'+keyValue[1]+'"]').checked = true;
+        setNavbarPosition(keyValue[1]);
       }
     }
   }
 
-  // Save selected theme and sidebar position as cookies
-  function saveSettingsLeft() {
-    saveSettings("left");
-  }
-  
-  function saveSettingsRight() {
-    saveSettings("right");
-  }
-  
-  function saveSettingsTop() {
-    saveSettings("top");
-  }
-  
-  function saveSettings(position) {
-    // Get the selected value of the theme_select element
+  // Save selected theme and navbar position as cookie
+  function saveSettings() {
     var theme = document.getElementById("theme_select").value;
-
-    // Get the selected value of the sidebar position
-    var buttons = document.querySelectorAll('.btn-group-' + position + ' > button');
-    var sidebarPosition = "";
-    for (var i = 0; i < buttons.length; i++) {
-      if (buttons[i].classList.contains('active')) {
-        sidebarPosition = buttons[i].getAttribute('data-class');
-        break;
-      }
-    }
-
-    // Save the theme value and sidebar position as cookies
-    document.cookie = "sidebarPosition-" + position + "=" + sidebarPosition + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    var navbarPosition = document.querySelector('input[name="navbar_position"]:checked').value;
     document.cookie = "theme=" + theme + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    document.cookie = "navbarPosition=" + navbarPosition + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
   }
 
   // Call the loadSettings function when the page is loaded
