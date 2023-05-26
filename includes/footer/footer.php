@@ -2,28 +2,28 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <p>
-          Decentrealized Web is powered by
+        <label>Used on Decentrealized Web</label>
+        <div class="cr-list">
           <a href="https://getbootstrap.com" target="_blank">
-            <i class="fab fa-bootstrap"></i> Bootstrap
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/bootstrap.png" alt="Bootstrap" />
           </a>,
           <a href="https://cryptojs.gitbook.io" target="_blank">
-            <i class="fas fa-lock"></i> CryptoJS
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/cryptojs.png" alt="CryptoJS" />
           </a>,
           <a href="https://jquery.com" target="_blank">
-            <i class="fab fa-js-square"></i> jQuery
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/jquery.png" alt="jQuery" />
           </a>,
           <a href="https://fontawesome.com" target="_blank">
-            <i class="fab fa-font-awesome"></i> Font Awesome
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/fa.png" alt="Font Awesome" />
           </a>,
           <a href="https://iconify.design" target="_blank">
-            <i class="iconify" data-icon="mdi:format-paint"></i> Iconify
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/iconify.png" alt="Iconify" />
           </a>,
           and deployed on
           <a href="https://vercel.com" target="_blank">
-            <i class="fas fa-rocket"></i> Vercel
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/vercel.png" alt="Vercel" />
           </a>.
-        </p>
+        </div>
       </div>
     </div>
   </div>
