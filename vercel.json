@@ -4,12 +4,15 @@
       "runtime": "vercel-php@0.3.3"
     }
   },
-  "routes": [
-    { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
-    { "src": "/site/(.*)?", "dest": "/api/site.php" },
-    { "src": "/note/(.*)?", "dest": "/api/note.php" },
-    { "src": "/(.*)", "dest": "/api/$1" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/$1" }
   ],
+  "headers": [
+    { "source": "/(.*)", "headers": [{ "key": "Cache-Control", "value": "s-maxage=1, stale-while-revalidate" }] }
+  ],
+  "fallback": {
+    "function": "/../includes/error/404.php"
+  },
   "outputDirectory": "public",
   "public": true
 }
