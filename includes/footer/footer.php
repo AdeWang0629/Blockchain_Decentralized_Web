@@ -33,6 +33,18 @@
 <div class="footerpicsay"></div>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/kwuwtk.js"></script>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/system.js"></script>
-   <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/theme.js"></script>      
+   <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/theme.js"></script>
+<style>
+.label-uses {
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.9;
+    margin-top: 1rem;
+}.cr-list {
+    display: inline-block;
+}.cr-list a img {
+    width: 79px;
+}
+</style>     
 </body>
 </html>
