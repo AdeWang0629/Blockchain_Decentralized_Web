@@ -527,24 +527,30 @@
 </script>
 <script>
   function saveSettingsLeft() {
-    document.cookie = "position=fixed-left";
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 7);
+    document.cookie = "position=fixed-left; expires=" + expirationDate.toUTCString();
   }
 
   function saveSettingsTop() {
-    document.cookie = "position=fixed-top";
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 7);
+    document.cookie = "position=fixed-top; expires=" + expirationDate.toUTCString();
   }
 
   function saveSettingsRight() {
-    document.cookie = "position=fixed-right";
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 7);
+    document.cookie = "position=fixed-right; expires=" + expirationDate.toUTCString();
   }
 
   window.onload = function() {
-    var cookiestring = document.cookie;
-    if (cookiestring.includes("position=fixed-left")) {
+    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)position\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    if (cookieValue === "fixed-left") {
       // set position to fixed-left
-    } else if (cookiestring.includes("position=fixed-top")) {
+    } else if (cookieValue === "fixed-top") {
       // set position to fixed-top
-    } else if (cookiestring.includes("position=fixed-right")) {
+    } else if (cookieValue === "fixed-right") {
       // set position to fixed-right
     }
   };
