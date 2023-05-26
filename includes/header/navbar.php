@@ -17,12 +17,12 @@
                <li class="nav-item">
                   <a class="nav-link" href="https://dub.sh/support-us">Support Movement</a>
                </li>
-               <li class="nav-item dropdown">
+               <!--li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plugins</a>
                   <div class="dropdown-menu">
                      <a class="dropdown-item" href="/notes">Decentrealized Notes</a>
                   </div>
-               </li>
+               </li -->
             </ul>
             <ul class="navbar-nav">
                <li class="nav-item">
