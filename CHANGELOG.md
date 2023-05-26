@@ -18,3 +18,4 @@
 
 ## Version 1.0.4
 - Fixed Theme not get changed after save.
+- Changed file structure.
