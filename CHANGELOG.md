@@ -15,3 +15,6 @@
 ## Version- 1.0.3
 - Updated api/index.php
 - Added new feature encrypted data
+
+## Version 1.0.4
+- Fixed Theme not get changed after save.
