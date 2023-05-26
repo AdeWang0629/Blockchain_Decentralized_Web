@@ -39,9 +39,16 @@
      </div>
    </div>
 </div>
+<div id="cookies-eu-banner" style="display: none;">
+    By continuing to visit this site, you accept the use of cookies by Vercel Analytics for statistical purposes and for better browsing experience.
+    <a href="https://commission.europa.eu/cookies-policy_en" id="cookies-eu-more">Read more</a>
+    <button id="cookies-eu-reject">Reject</button>
+    <button id="cookies-eu-accept">Accept</button>
+</div>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/kwuwtk.js"></script>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/system.js"></script>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/theme.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/Alex-D/Cookies-EU-banner@master/src/cookies-eu-banner.js"></script>
 <style>
 .label-uses {
     text-transform: uppercase;
