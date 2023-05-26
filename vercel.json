@@ -11,6 +11,7 @@
     { "src": "/(.*)", "dest": "/../includes/error/404.php" },
     { "src": "/(.*)", "dest": "/api/$1" }
   ],
+  "cleanUrls": true,
   "outputDirectory": "public",
   "public": true
 }
