@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
       <div class="uses">
-        <label class="label-uses">Used on Decentrealized Web</label>
+        <div class="text-center">Used on Decentrealized Web</div>
         <div class="cr-list">
           <a href="https://getbootstrap.com" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/bootstrap.png" alt="Bootstrap" />
@@ -56,7 +56,7 @@
 .host a img {
     width: 99px;
 }
-.ftr a img {
+.ftr img {
     width: 100%;
 }
 </style>     
