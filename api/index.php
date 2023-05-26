@@ -312,19 +312,18 @@
                </div>
                <div class="modal-body">
                   <div class="btn-group" role="group">
-                     <button type="button" data-class="fixed-left" class="btn btn-primary" onclick="saveSettingsLeft">
-                     <i class="fa fa-arrow-left"></i>
-                     Fixed Left
-                     </button>
-                     <button type="button" data-class="fixed-top" class="btn btn-primary" onclick="saveSettingsTop">
-                     <i class="fa fa-arrow-up"></i>
-                     Fixed Top
-                     <small>(original)</small>
-                     </button>
-                     <button type="button" data-class="fixed-right" class="btn btn-primary" onclick="saveSettingsRight">
-                     <i class="fa fa-arrow-right"></i>
-                     Fixed Right
-                     </button>
+                     <button type="button" data-class="fixed-left" class="btn btn-primary" onclick="saveSettingsLeft()">
+  <i class="fa fa-arrow-left"></i>
+  Fixed Left
+</button>
+<button type="button" data-class="fixed-top" class="btn btn-primary" onclick="saveSettingsTop()">
+  <i class="fa fa-arrow-up"></i>
+  Fixed Top
+</button>
+<button type="button" data-class="fixed-right" class="btn btn-primary" onclick="saveSettingsRight()">
+  <i class="fa fa-arrow-right"></i>
+  Fixed Right
+</button>
                   </div>
                   <div class="card">
                      <div class="card-body">
