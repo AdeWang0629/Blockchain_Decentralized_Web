@@ -8,7 +8,7 @@
     { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
     { "src": "/site/(.*)?", "dest": "/api/site.php" },
     { "src": "/note/(.*)?", "dest": "/api/note.php" },
-    { "src": "/(.*)", "dest": "/../includes/error/404.php" },
+    { "src": "/(.*)", "status": 404, "dest": "/../includes/error/404.php" },
     { "src": "/(.*)", "dest": "/api/$1" }
   ],
   "outputDirectory": "public",
