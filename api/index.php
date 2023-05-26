@@ -1,1 +1,1 @@
-<?php include '/includes/autoload.php';?>
+<?php include './includes/autoload.php';?>
