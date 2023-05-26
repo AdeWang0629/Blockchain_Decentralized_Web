@@ -193,6 +193,9 @@
          top: 12.2%;
          left: 5.9%;
          }
+         .btn-group {
+         display: none; 
+         }
          }  
          /* Desktop only */  
          @media screen and (min-width: 769px) {  
@@ -319,7 +322,6 @@
                      <button type="button" data-class="fixed-top" class="btn btn-primary">
                      <i class="fa fa-arrow-up"></i>
                      Fixed Top
-                     <small>(original)</small>
                      </button>
                      <button type="button" data-class="fixed-right" class="btn btn-primary">
                      <i class="fa fa-arrow-right"></i>
