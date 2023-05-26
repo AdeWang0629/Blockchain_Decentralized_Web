@@ -4,8 +4,7 @@
       "runtime": "vercel-php@0.3.3"
     }
   },
-  "routes": [   
-    { "handle": "filesystem" },
+  "routes": [
     { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
     { "src": "/site/(.*)?", "dest": "/api/site.php" },
     { "src": "/note/(.*)?", "dest": "/api/note.php" },
