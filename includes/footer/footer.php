@@ -52,6 +52,8 @@
     display: inline-block;
 }.cr-list a img {
     width: 79px;
+    margin-right: 1rem;
+    border-radius: 4px; 
 }
 .host a img {
     width: 99px;
@@ -61,7 +63,6 @@
 }
 @media screen and (min-width:768px){.cr-list a img {
     width: 144px;
-    margin-left: 1rem;
 }}
 </style>     
 </body>
