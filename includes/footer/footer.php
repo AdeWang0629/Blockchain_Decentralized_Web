@@ -42,8 +42,11 @@
     margin-top: 1rem;
 }.cr-list {
     display: inline-block;
-}.cr-list .host a img {
+}.cr-list a img {
     width: 79px;
+}
+.host a img {
+    width: 99px;
 }
 </style>     
 </body>
