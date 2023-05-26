@@ -18,11 +18,13 @@
           </a>,
           <a href="https://iconify.design" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/iconify.png" alt="Iconify" />
-          </a>,
-          and deployed on
+          </a>
+        </div>
+        <div class="host">       
+          Hosted on
           <a href="https://vercel.com" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/vercel.png" alt="Vercel" />
-          </a>.
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/vercel.png" alt="Hosted on Vercel" />
+          </a>
         </div>
       </div>
     </div>
