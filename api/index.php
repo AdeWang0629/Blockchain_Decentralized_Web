@@ -5,7 +5,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Decentrealized Web - A More Secure, Private, and Free Anonymous Internet</title>
-      <link rel="icon" type="image/png" href="/icons/decentralized-web-coming-out-from-night-to-shine-the-day-picsay.png">
+      <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/icons/decentralized-web-coming-out-from-night-to-shine-the-day-picsay.png">
       <meta name="description" content="Create and manage your own decentrealized website with ease using our Web-3 powered CMS. Experience the benefits of a more secure, private, and free internet. Get started today and join the movement towards a decentrealized web!">
       <meta name="keywords" content="decentrealized web, web3, internet freedom, online privacy, anonymous internet">
       <script src="https://cdn.kiask.xyz/decentrealized-web/resources/js/decentrealizedweb.js"></script>
@@ -209,7 +209,7 @@
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
          </button>
-         <a style="margin-right:4rem;" class="navbar-brand" href="/"><img class="h-4rem w-100" src="https://cdn.kiask.xyz/decentrealized-web/images/decentrealized-web.png" alt="Decentrealized Web"></a>
+         <a style="margin-right:4rem;" class="navbar-brand" href="/"><img class="h-4rem w-100" src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/decentrealized-web-720.png" alt="Decentrealized Web"></a>
          <div class="collapse navbar-collapse bg-white" id="navbarsExampleDefault">
             <ul class="navbar-nav">
                <li class="nav-item">
