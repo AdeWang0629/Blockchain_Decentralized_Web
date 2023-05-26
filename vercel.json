@@ -5,11 +5,11 @@
     }
   },
   "routes": [
-    { "src": "/(css|js|img|icons|pages)/(.*)", "dest": "public/$1/$2" },
+    { "src": "/(css|js|img|icons|pages|plugins)/(.*)", "dest": "public/$1/$2/$3/$4" },
     { "src": "/site/(.*)?", "dest": "/api/site.php" },
     { "src": "/note/(.*)?", "dest": "/api/note.php" },
     { "src": "/(.*)", "dest": "/../includes/error/404.php" },
-    { "src": "/(.*)", "dest": "/api/$1/$2" }
+    { "src": "/(.*)", "dest": "/api/$1" }
   ],
   "outputDirectory": "public",
   "public": true
