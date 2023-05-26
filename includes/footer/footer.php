@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <label>Used on Decentrealized Web</label>
+        <label class="label-uses">Used on Decentrealized Web</label>
         <div class="cr-list">
           <a href="https://getbootstrap.com" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/bootstrap.png" alt="Bootstrap" />
