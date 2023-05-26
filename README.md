@@ -1,4 +1,6 @@
-<p align="center"><img src="/public/img/preview.png" alt="Decentrealized Web" width="480"/></p>
+<p align="center"><img src="/public/img/b-1.png" alt="Decentrealized Web" width="480"/></p>
+<p align="center"><img src="/public/img/b-2.png" alt="Decentrealized Web" width="480"/></p>
+<p align="center"><img src="/public/img/b-3.png" alt="Decentrealized Web" width="480"/></p>
 
 # Decentrealized Web
 
