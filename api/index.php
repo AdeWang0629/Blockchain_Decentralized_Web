@@ -312,16 +312,16 @@
                </div>
                <div class="modal-body">
                   <div class="btn-group" role="group">
-                     <button type="button" data-class="fixed-left" class="btn btn-primary">
+                     <button type="button" data-class="fixed-left" class="btn btn-primary" onclick="saveSettingsLeft">
                      <i class="fa fa-arrow-left"></i>
                      Fixed Left
                      </button>
-                     <button type="button" data-class="fixed-top" class="btn btn-primary">
+                     <button type="button" data-class="fixed-top" class="btn btn-primary" onclick="saveSettingsTop">
                      <i class="fa fa-arrow-up"></i>
                      Fixed Top
                      <small>(original)</small>
                      </button>
-                     <button type="button" data-class="fixed-right" class="btn btn-primary">
+                     <button type="button" data-class="fixed-right" class="btn btn-primary" onclick="saveSettingsRight">
                      <i class="fa fa-arrow-right"></i>
                      Fixed Right
                      </button>
@@ -478,47 +478,53 @@
              document.querySelector('form button:first-of-type').style.display = 'inline-block';
          }
       </script>
-  <script>
-    // Save or load the settings as needed
-    function saveSettings() {
-      // If called from click event, save the settings
-      if (event.type === "click") {
-        // Get the selected value of the theme_select element
-        var theme = document.getElementById("theme_select").value;
-
-        // Get the selected value of the sidebar position and save it as a cookie
-        var sidebarPosition = document.querySelector('.btn-group > .active').getAttribute('data-class');
-        document.cookie = "sidebarPosition=" + sidebarPosition + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-
-        // Save the theme value as a cookie
-        document.cookie = "theme=" + theme + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+<script>
+  // Load saved theme and sidebar position from cookies
+  function loadSettings() {
+    var cookies = document.cookie.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+      var keyValue = cookies[i].split("=");
+      if (keyValue[0] === "theme") {
+        document.getElementById("theme_select").value = keyValue[1];
+        selectTheme(keyValue[1]);
       }
+    }
+  }
 
-      // Load the saved settings
-      var cookies = document.cookie.split("; ");
-      for (var i = 0; i < cookies.length; i++) {
-        var keyValue = cookies[i].split("=");
-        if (keyValue[0] === "theme") {
-          document.getElementById("theme_select").value = keyValue[1];
-          selectTheme(keyValue[1]);
-        } else if (keyValue[0] === "sidebarPosition") {
-          var buttons = document.querySelectorAll('.btn-group > button');
-          for (var j = 0; j < buttons.length; j++) {
-            if (buttons[j].getAttribute('data-class') === keyValue[1]) {
-              buttons[j].classList.add('active');
-              document.body.classList.add(keyValue[1]);
-            } else {
-              buttons[j].classList.remove('active');
-              document.body.classList.remove(buttons[j].getAttribute('data-class'));
-            }
-          }
-        }
+  // Save selected theme and sidebar position as cookies
+  function saveSettingsLeft() {
+    saveSettings("left");
+  }
+  
+  function saveSettingsRight() {
+    saveSettings("right");
+  }
+  
+  function saveSettingsTop() {
+    saveSettings("top");
+  }
+  
+  function saveSettings(position) {
+    // Get the selected value of the theme_select element
+    var theme = document.getElementById("theme_select").value;
+
+    // Get the selected value of the sidebar position
+    var buttons = document.querySelectorAll('.btn-group-' + position + ' > button');
+    var sidebarPosition = "";
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i].classList.contains('active')) {
+        sidebarPosition = buttons[i].getAttribute('data-class');
+        break;
       }
     }
 
-    // Call the saveSettings function on click or page load
-    window.addEventListener("load", saveSettings);
-    document.querySelector(".btn-group").addEventListener("click", saveSettings);
-  </script>
+    // Save the theme value and sidebar position as cookies
+    document.cookie = "sidebarPosition-" + position + "=" + sidebarPosition + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    document.cookie = "theme=" + theme + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+  }
+
+  // Call the loadSettings function when the page is loaded
+  window.onload = loadSettings;
+</script>
    </body>
 </html>
