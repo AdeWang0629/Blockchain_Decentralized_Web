@@ -6,16 +6,16 @@
         <div class="cr-list">
           <a href="https://getbootstrap.com" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/bootstrap.png" alt="Bootstrap" />
-          </a>,
+          </a>
           <a href="https://cryptojs.gitbook.io" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/cryptojs.png" alt="CryptoJS" />
-          </a>,
+          </a>
           <a href="https://jquery.com" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/jquery.png" alt="jQuery" />
-          </a>,
+          </a>
           <a href="https://fontawesome.com" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/fa.png" alt="Font Awesome" />
-          </a>,
+          </a>
           <a href="https://iconify.design" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/iconify.png" alt="Iconify" />
           </a>
@@ -29,8 +29,8 @@
       </div>
     </div>
   </div>
+  <div class="footerpicsay"></div>
 </footer>
-<div class="footerpicsay"></div>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/kwuwtk.js"></script>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/system.js"></script>
    <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/theme.js"></script>
@@ -42,7 +42,7 @@
     margin-top: 1rem;
 }.cr-list {
     display: inline-block;
-}.cr-list a img {
+}.cr-list.host a img {
     width: 79px;
 }
 </style>     
