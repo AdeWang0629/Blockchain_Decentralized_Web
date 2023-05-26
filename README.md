@@ -1,6 +1,6 @@
 <p align="center"><img src="/public/img/preview.png" alt="Decentrealized Web" width="480"/></p>
 
-# Decentrealized Web (Decentralized Web)
+# Decentrealized Web
 
 The Decentrealized Web represents the evolution of the internet, in which data is rendered secure and immutable. The data is stored in the URL indefinitely, ensuring its perpetual availability. The data is further transformed into an AES-256 string, which serves as the fundamental building block for the secure infrastructure of the Decentrealized Web.
 
