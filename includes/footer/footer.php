@@ -35,7 +35,7 @@
 <div class="container">
    <div class="row">
      <div class="ftr">
-      <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/decentrealized-web-720.png" alt="Hosted on Vercel" />
+      <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/decentrealized-web-720.png" alt="Decentrealized Web (WEB-3)" />
      </div>
    </div>
 </div>
