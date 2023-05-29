@@ -15,6 +15,9 @@
                   <a class="nav-link" href="https://dub.sh/about-us">About Decentrealized Web</a>
                </li>
                <li class="nav-item">
+                  <a class="nav-link" href="https://dub.sh/disclaimer">Disclaimer</a>
+               </li>
+               <li class="nav-item">
                   <a class="nav-link" href="https://dub.sh/support-us">Support Movement</a>
                </li>
                <!--li class="nav-item dropdown">
