@@ -10,6 +10,6 @@ require __DIR__.'/../includes/header/navbar.php';
 require __DIR__.'/../includes/body/editor.php';
 require __DIR__.'/../includes/body/modal.php';
 require __DIR__.'/../includes/body/preview.php';
-
+require __DIR__.'/../includes/body/plugins.php';
 /* Footer */
 require __DIR__.'/../includes/footer/footer.php';
