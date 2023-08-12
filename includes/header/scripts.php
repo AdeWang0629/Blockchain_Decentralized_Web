@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralizedweb@main/public/js/crypto.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/js/crypto.js"></script>
 <script
          src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
