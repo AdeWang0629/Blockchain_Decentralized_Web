@@ -5,7 +5,7 @@
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
          </button>
-         <a style="margin-right:4rem;" class="navbar-brand" href="/"><img class="h-4rem w-100" src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/decentrealized-web-720.png" alt="Decentrealized Web"></a>
+         <a style="margin-right:4rem;" class="navbar-brand" href="/"><img class="h-4rem w-100" src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralizedweb@main/public/img/decentrealized-web-720.png" alt="Decentralized Web"></a>
          <div class="collapse navbar-collapse bg-white" id="navbarsExampleDefault">
             <ul class="navbar-nav">
                <li class="nav-item">

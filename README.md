@@ -4,7 +4,7 @@
 
 # Decentralized Web
 
-The Decentrealized Web represents the evolution of the internet, in which data is rendered secure and immutable. The data is stored in the URL indefinitely, ensuring its perpetual availability. The data is further transformed into an AES-256 string, which serves as the fundamental building block for the secure infrastructure of the Decentralized Web.
+The Decentralized Web represents the evolution of the internet, in which data is rendered secure and immutable. The data is stored in the URL indefinitely, ensuring its perpetual availability. The data is further transformed into an AES-256 string, which serves as the fundamental building block for the secure infrastructure of the Decentralized Web.
 
 ## What is it?
 - It's like a super cool version of the internet
@@ -43,7 +43,7 @@ git clone https://github.com/imabutahersiddik/decentralizedweb.git
 Then, navigate to the directory and start a local web server:
 
 ```
-cd decentrealizedweb
+cd decentralizedweb
 php -S localhost:8000
 ```
 
@@ -53,11 +53,11 @@ Visit `http://localhost:8000/` in your web browser to use the tool.
 
 You can deploy your own "Decentralized Web" network on vercel for free.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imabutahersiddik/decentrealizedweb)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imabutahersiddik/decentralizedweb)
 
 ## Usage
 
-To use the Decentralized Web, write text or codes on editor and click the "Peace" button. The Decentrealized Web will encrypt text or codes and will generate an decentrealized web url, copy the url and save it to a secure place or share it with public if you want.
+To use the Decentralized Web, write text or codes on editor and click the "Peace" button. The Decentralized Web will encrypt text or codes and will generate an decentralized web url, copy the url and save it to a secure place or share it with public if you want.
 
 The generated link will be displayed on the page, and you can copy it to your clipboard by clicking the "Copy to Clipboard" button.
 
@@ -74,7 +74,7 @@ The generated link will be displayed on the page, and you can copy it to your cl
 
 ## How Decentralized Web Works
 
-Decentralized Web uses CryptoJS to decentrealized pages, page that can be decrypted in-browser when they visit the URL. You can then just rest assured that it never going to be erased untill all networks goes down, the most beautiful things that even all networks goes down then still if you deploy your own network then all data comes back to life again and you're done. The homepage will had a simple editor where you can write or paste pre-written text or html codes, and the cryptojs will encrypt and then it will decrypt and will load your HTML, all done in the browser and all that in one place which is called URL.
+Decentralized Web uses CryptoJS to decentralized pages, page that can be decrypted in-browser when they visit the URL. You can then just rest assured that it never going to be erased untill all networks goes down, the most beautiful things that even all networks goes down then still if you deploy your own network then all data comes back to life again and you're done. The homepage will had a simple editor where you can write or paste pre-written text or html codes, and the cryptojs will encrypt and then it will decrypt and will load your HTML, all done in the browser and all that in one place which is called URL.
 
 So it basically encrypts your text codes and puts everything in a user-friendly way to view your newly created uneraseable decentralizedweb page.
 
