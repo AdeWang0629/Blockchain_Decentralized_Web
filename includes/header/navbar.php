@@ -5,14 +5,14 @@
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
          </button>
-         <a style="margin-right:4rem;" class="navbar-brand" href="/"><img class="h-4rem w-100" src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralizedweb@main/public/img/decentrealized-web-720.png" alt="Decentralized Web"></a>
+         <a style="margin-right:4rem;" class="navbar-brand" href="/"><img class="h-4rem w-100" src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/decentrealized-web-720.png" alt="Decentralized Web"></a>
          <div class="collapse navbar-collapse bg-white" id="navbarsExampleDefault">
             <ul class="navbar-nav">
                <li class="nav-item">
                   <a class="nav-link" href="/">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="https://dub.sh/about-us">About Decentrealized Web</a>
+                  <a class="nav-link" href="https://dub.sh/about-us">About Decentralized Web</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="https://dub.sh/disclaimer">Disclaimer</a>
@@ -23,7 +23,7 @@
                <!--li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plugins</a>
                   <div class="dropdown-menu">
-                     <a class="dropdown-item" href="/notes">Decentrealized Notes</a>
+                     <a class="dropdown-item" href="/notes">Decentralized Notes</a>
                   </div>
                </li -->
             </ul>
