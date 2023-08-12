@@ -1,4 +1,4 @@
-<div class="text-center plugin-title">Plugins</div>
+<!-- <div class="text-center plugin-title">Plugins</div>
 <div class="row">
 <div class="col-md-3">
 <div class="plugin-list">
@@ -8,4 +8,4 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
