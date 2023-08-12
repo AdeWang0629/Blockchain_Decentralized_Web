@@ -24,7 +24,7 @@ The Decentralized Web represents the evolution of the internet, in which data is
 - Ensures that important information is always accessible
 - Helps preserve knowledge and culture for future generations
 
-You can encrypt any text or html codes online and then view them anytime from any Decentralized Web network at [decentrealizedweb.xyz](https://decentrealizedweb.xyz).
+You can encrypt any text or html codes online and then view them anytime from any Decentralized Web network at [https://decentralized-web.vercel.app/](https://decentralized-web.vercel.app/).
 
 > 🌱 **Supporting:** If you want to support Decentralized Web development you can do so by visiting [Decentralized Web Movement](https://dub.sh/support-us). Thank you!
 >
@@ -82,7 +82,7 @@ So it basically encrypts your text codes and puts everything in a user-friendly 
 
 ### Is it secure?
 
-Simple answer: Your page content has been encrypted with AES-256, a popular and strong encryption algorithm. You can now share it to any public place and no one will be able to modify or erase it even with your permission and even without your permission. After all thier is a web app called staticrypt which helps to protect text to be viewed publicly with a password protected form and it is also encrypted with AES-256. Learn more about [Staticrypt](https://protect-page.decentrealizedweb.xyz/)
+Simple answer: Your page content has been encrypted with AES-256, a popular and strong encryption algorithm. You can now share it to any public place and no one will be able to modify or erase it even with your permission and even without your permission. After all thier is a web app called staticrypt which helps to protect text to be viewed publicly with a password protected form and it is also encrypted with AES-256. Learn more about [Staticrypt](https://protect-web-page.vercel.app/)
 
 ## Supporting This Work
 
@@ -90,10 +90,11 @@ If you find this tool helpful and would like to support its development, you can
 
 - [Become a patron on Patreon](https://patreon.com/KiasK?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link)
 - Send cryptocurrency to the following address:
-  - Bitcoin: bc1q5pr26jufutp2rut95d2fgdppm3zw66uw09xy6k
-  - Litecoin: ltc1qwup3x6xqwp3fhtxq22elzxj9qkxyfdlsamtans
-  - Ethereum, USDT, BUSD: 0x7c13a89b8E192e635ac24179B8DA6cC77101C651 (ERC-20, BEP20, TRC-20)
-  - Ethereum Classic: 0x65cBE4Ae90932E8833F6EE54F42cC6C29fB63843
+  - Bitcoin: 1Ben8UCEfQdTY52uCxS2codTaKxEoMiUMN
+  - Litecoin: LRxf7twTmttfhrbteUKQcvny1nFRs7bPex
+  - USDT: 0x8A16d15524b2A1F4a2f2b945C9312a53F6a06230 (ERC-20)
+  - Ethereum: 0x8A16d15524b2A1F4a2f2b945C9312a53F6a06230
+  - BNB: 0x8A16d15524b2A1F4a2f2b945C9312a53F6a06230 (BSC)
 
 Your support is greatly appreciated and will help fund the ongoing development and supporting its developers.
 
