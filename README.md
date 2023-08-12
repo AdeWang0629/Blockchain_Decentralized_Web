@@ -37,13 +37,13 @@ To get started with this project, you can clone this repository and launch the w
 First, clone the repository:
 
 ```
-git clone https://github.com/imabutahersiddik/decentralizedweb.git
+git clone https://github.com/imabutahersiddik/Decentralized-Web.git
 ```
 
 Then, navigate to the directory and start a local web server:
 
 ```
-cd decentralizedweb
+cd Decentralized-Web
 php -S localhost:8000
 ```
 
@@ -53,7 +53,7 @@ Visit `http://localhost:8000/` in your web browser to use the tool.
 
 You can deploy your own "Decentralized Web" network on vercel for free.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imabutahersiddik/decentralizedweb)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imabutahersiddik/Decentralized-Web)
 
 ## Usage
 
