@@ -6,25 +6,25 @@
         <div class="text-center label-uses">Used on Decentrealized Web</div>
         <div class="cr-list">
           <a href="https://getbootstrap.com" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/bootstrap.png" alt="Bootstrap" />
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/bootstrap.png" alt="Bootstrap" />
           </a>
           <a href="https://cryptojs.gitbook.io" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/cryptojs.png" alt="CryptoJS" />
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/cryptojs.png" alt="CryptoJS" />
           </a>
           <a href="https://jquery.com" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/jquery.png" alt="jQuery" />
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/jquery.png" alt="jQuery" />
           </a>
           <a href="https://fontawesome.com" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/fa.png" alt="Font Awesome" />
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/fa.png" alt="Font Awesome" />
           </a>
           <a href="https://iconify.design" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/iconify.png" alt="Iconify" />
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/iconify.png" alt="Iconify" />
           </a>
         </div>
         <div class="host">       
           Hosted on
           <a href="https://vercel.com" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/vercel.png" alt="Hosted on Vercel" />
+            <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/vercel.png" alt="Hosted on Vercel" />
           </a>
         </div>
         </div>
@@ -35,7 +35,7 @@
 <div class="container">
    <div class="row">
      <div class="ftr">
-      <img src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/img/decentrealized-web-720.png" alt="Decentralized Web (WEB-3)" />
+      <img src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/img/decentrealized-web-720.png" alt="Decentrealized Web (WEB-3)" />
      </div>
    </div>
 </div>
@@ -48,9 +48,9 @@
         policyLink: 'https://commission.europa.eu/cookies-policy_en'
     });
    </script>
-   <script src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/js/kwuwtk.js"></script>
-   <script src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/js/system.js"></script>
-   <script src="https://cdn.jsdelivr.net/gh/imabutahersiddik/decentralized-web@main/public/js/theme.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/kwuwtk.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/system.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/ki-ask/decentrealizedweb@main/public/js/theme.js"></script>
 <style>
 .label-uses {
     text-transform: uppercase;
