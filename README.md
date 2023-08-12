@@ -37,7 +37,7 @@ To get started with this project, you can clone this repository and launch the w
 First, clone the repository:
 
 ```
-git clone https://github.com/ki-ask/decentrealizedweb.git
+git clone https://github.com/imabutahersiddik/decentrealizedweb.git
 ```
 
 Then, navigate to the directory and start a local web server:
@@ -53,7 +53,7 @@ Visit `http://localhost:8000/` in your web browser to use the tool.
 
 You can deploy your own "Decentrealized Web" network on vercel for free.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/ki-ask/decentrealizedweb)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imabutahersiddik/decentrealizedweb)
 
 ## Usage
 
@@ -117,4 +117,4 @@ Feel free to open pull requests if you don't mind receiving no response for a lo
 
 ## License
 
-This project is licensed under the [The Unlicense](https://unlicense.org/).
+This project is licensed under the [GNU General Public License v3.0](https://github.com/imabutahersiddik/Decentralized-Web/LICENSE).
