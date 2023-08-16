@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ki-ask/decentrealizedweb.git"
+    "url": "git+https://github.com/imabutahersiddik/Decentralized-Web.git"
   },
   "keywords": [
     "decentrealized",
@@ -24,7 +24,7 @@
   "author": "imTAHER",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/ki-ask/decentrealizedweb/issues"
+    "url": "https://github.com/imabutahersiddik/Decentralized-Web/issues"
   },
-  "homepage": "https://github.com/ki-ask/decentrealizedweb#readme"
+  "homepage": "https://github.com/imabutahersiddik/Decentralized-Web#readme"
 }
