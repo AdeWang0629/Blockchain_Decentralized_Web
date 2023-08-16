@@ -1,6 +1,6 @@
 {
   "name": "decentrealizedweb",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A More Secure, Private, and Free Anonymous Internet",
   "main": "/api/index.php",
   "scripts": {

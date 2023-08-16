@@ -12,13 +12,13 @@
                   <a class="nav-link" href="/">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="https://dub.sh/about-us">About Decentralized Web</a>
+                  <a class="nav-link" href="https://dub.sh/dw-about-us">About Decentralized Web</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="https://dub.sh/disclaimer">Disclaimer</a>
+                  <a class="nav-link" href="https://dub.sh/dw-disclaimer">Disclaimer</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="https://dub.sh/support-us">Support Movement</a>
+                  <a class="nav-link" href="https://dub.sh/dw-support-us">Support Movement</a>
                </li>
                <!--li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plugins</a>

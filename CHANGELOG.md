@@ -19,3 +19,8 @@
 ## Version 1.0.4
 - Fixed Theme not get changed after save.
 - Changed file structure.
+
+## Version 1.1.0
+- Moved from old repository to new one. 
+- Fixed errors after changing repository. 
+- Added one click go decentralized plugin which makes you to decentralized whole web page in seconds. (See here: https://github.com/imabutahersiddik/Go-Decentralized)
